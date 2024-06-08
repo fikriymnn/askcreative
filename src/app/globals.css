@@ -1,0 +1,57 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Ma+Shan+Zheng&display=swap');
+
+:root {
+  scroll-behavior: smooth;
+  font-family: ui-sans-serif, system-ui , -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+
+}
+::-webkit-scrollbar {
+  width: 0.5em;
+}::-webkit-scrollbar-thumb {
+  background: rgb(180, 180, 180);
+}
+
+.hideScroll {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+@media (max-width: 525px) {
+  .service-icon {
+    color: #fff;
+  }
+}
+
+.box-effect:hover .icon-effect {
+  color: white;
+}
+
+.service-list:hover .service-icon {
+  color: #ffff;
+}
+
+.bgtr {
+  background: rgba(113, 128, 150, 0.26);
+  backdrop-filter: blur(10px);
+}
+
+.bg-primary {
+  background-color: #007aff;
+}
+
+.currentColor {
+  fill: currentColor;
+}
+.bakg{
+  background: rgba(0, 0, 0, 0.6);
+}
+
+
+.ql-editor ol, .ql-editor ul {
+    padding-left: 0em !important;
+    margin-left: -7px !important;
+}
+

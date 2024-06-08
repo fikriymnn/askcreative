@@ -1,0 +1,4 @@
+.ql-editor ol, .ql-editor ul {
+    padding-left: 0em !important;
+    margin-left: -5px !important;
+}
