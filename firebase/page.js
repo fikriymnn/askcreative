@@ -6,13 +6,13 @@ import { getStorage } from "firebase/storage"
 import { getAnalytics, isSupported } from "firebase/analytics";
 
 const firebaseConfig = {
-  apiKey: "AIzaSyD6CLRrx_PtlEQfuKIXZMG0X81h0ozKb4I",
-  authDomain: "tys-proj.firebaseapp.com",
-  projectId: "tys-proj",
-  storageBucket: "tys-proj.appspot.com",
-  messagingSenderId: "284477659770",
-  appId: "1:284477659770:web:7930641d3cf683046139c3",
-  measurementId: "G-DDZFP75YTX"
+  apiKey: process.env.NEXT_PUBLIC_FIREBASE_API_KEY,
+  authDomain: process.env.NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN,
+  projectId: process.env.NEXT_PUBLIC_FIREBASE_PROJECT_ID,
+  storageBucket: process.env.NEXT_PUBLIC_FIREBASE_STORAGE_BUCKET,
+  messagingSenderId: process.env.NEXT_PUBLIC_FIREBASE_MESSAGING_SENDER_ID,
+  appId: process.env.NEXT_PUBLIC_FIREBASE_APP_ID,
+  measurementId: process.env.NEXT_PUBLIC_MEASUREMENT_ID,
 };
 
 // Initialize Firebase
@@ -22,7 +22,9 @@ export const db = getFirestore(app);
 export const storage = getStorage(app);
 export let firebaseAnalytics;
 if (typeof window !== 'undefined') {
-    firebaseAnalytics = getAnalytics(app)
+  firebaseAnalytics = getAnalytics(app)
 } else {
-    null;
+  null;
 }
+
+//new fbs
