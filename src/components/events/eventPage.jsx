@@ -56,89 +56,99 @@ function EventPage({ dataEvents }) {
           <div className="grid grid-cols-1 md:grid-cols-5 gap-5 px-5 pb-5">
             {search == ""
               ? dataEvents.map((data, i) => {
-                  return (
-                    <div key={i}>
-                      <a href={`/events/event?id=${data.id}`}>
-                        <div className="bg-white rounded-md shadow-xl md:hover:translate-y-[-10px] transition-transform duration-50 ease-in-out grid grid-cols-2 md:flex md:flex-col h-full ">
-                          <div
-                            className="bg-blue-700 md:grid grid-cols-1 h-28 md:h-36 bg-cover bg-no-repeat bg-center"
-                            style={{ backgroundImage: `url(${data.img})` }}
-                          ></div>
-                          <div className="p-3 flex flex-col justify-between h-[155px]">
-                            <div className="font-semibold text-black line-clamp-2  ">
-                              {language == "en"
-                                ? data.titleEnglish
-                                : data.titleChinese}
-                            </div>
-                            <div>
-                              <h2 className="md:flex text-[11px] md:text-base md:gap-1 font-medium text-gray-800">
-                                <div className="mt-2">
-                                  {language == "en"
-                                    ? data.durationFrom
-                                    : data.durationFromValue}{" "}
-                                </div>
-                                <p className="text-lg translate-y-[1px] md:translate-y-[4px]">
-                                  &#8226;
-                                </p>
-                                <div className="mt-2">{data.timeFrom}</div>
-                              </h2>
-                              <h2 className="text-gray-500 ">
-                                {data.location}
-                              </h2>
-                              <h2 className="font-medium text-gray-800">
+                return (
+                  <div key={i} className="rounded-md">
+                    <a href={`/events/event?id=${data.id}`}>
+                      <div className="bg-white rounded-md shadow-xl md:hover:translate-y-[-10px] transition-transform duration-50 ease-in-out grid grid-cols-2 md:flex md:flex-col h-full ">
+                        <div
+                          className="bg-blue-700 rounded-t-md md:grid grid-cols-1 h-full md:h-36 bg-cover bg-no-repeat bg-center"
+                          style={{ backgroundImage: `url(${data.img})` }}
+                        ></div>
+
+                        <div className="p-3 flex flex-col justify-between h-[180px]">
+                          <div className="lg:text-base md:text-xs sm:text-sm text-xs font-semibold text-black line-clamp-2  ">
+
+                            {data.titleEnglish}
+
+                          </div>
+                          <div>
+                            <div className="lg:flex text-[11px] lg:text-base md:text-xs sm:text-sm text-xs md:gap-1 font-medium text-gray-800">
+                              <div className="lg:mt-2">
                                 {language == "en"
-                                  ? data.feeRupiah
-                                  : data.feeYuan}
+                                  ? data.durationFrom
+                                  : data.durationFromValue}{" "}
+                              </div>
+                              <p className="lg:text-base md:text-xs sm:text-sm text-xs translate-y-[1px] md:translate-y-[4px]">
+                                &#8226;
+                              </p>
+                              <div className="lg:mt-2">{data.timeFrom}</div>
+                            </div>
+                            <h2 className="text-gray-500 lg:text-base md:text-xs sm:text-sm text-xs">
+                              {data.location}
+                            </h2>
+                            <div className=" w-full justify-between">
+                              <h2 className="font-medium text-gray-800 lg:text-base md:text-xs sm:text-sm text-xs">
+                                {
+                                  data.feeRupiah
+                                }
                               </h2>
+                              <h2 className="lg:text-base md:text-xs sm:text-sm text-xs">Available Quota : 20</h2>
+
                             </div>
                           </div>
                         </div>
-                      </a>
-                    </div>
-                  );
-                })
+                      </div>
+                    </a>
+                  </div>
+                );
+              })
               : dataEventsResult.map((data, i) => {
-                  return (
-                    <div key={i}>
-                      <a href={`/events/event?id=${data.id}`}>
-                        <div className="bg-white rounded-md shadow-xl md:hover:translate-y-[-10px] transition-transform duration-50 ease-in-out grid grid-cols-2 md:flex md:flex-col h-full ">
-                          <div
-                            className="bg-blue-700 md:grid grid-cols-1 h-28 md:h-36 bg-cover bg-no-repeat bg-center"
-                            style={{ backgroundImage: `url(${data.img})` }}
-                          ></div>
-                          <div className="p-3 flex flex-col justify-between h-[155px]">
-                            <div className="font-semibold text-black line-clamp-2  ">
-                              {language == "en"
-                                ? data.titleEnglish
-                                : data.titleChinese}
-                            </div>
-                            <div>
-                              <h2 className="md:flex text-[11px] md:text-base md:gap-1 font-medium text-gray-800">
-                                <div className="mt-2">
-                                  {language == "en"
-                                    ? data.durationFrom
-                                    : data.durationFromValue}{" "}
-                                </div>
-                                <p className="text-lg translate-y-[1px] md:translate-y-[4px]">
-                                  &#8226;
-                                </p>
-                                <div className="mt-2">{data.timeFrom}</div>
-                              </h2>
-                              <h2 className="text-gray-500 ">
-                                {data.location}
-                              </h2>
-                              <h2 className="font-medium text-gray-800">
+                return (
+                  <div key={i} className="rounded-md">
+                    <a href={`/events/event?id=${data.id}`}>
+                      <div className="bg-white rounded-md shadow-xl md:hover:translate-y-[-10px] transition-transform duration-50 ease-in-out grid grid-cols-2 md:flex md:flex-col h-full ">
+                        <div
+                          className="bg-blue-700 rounded-t-md md:grid grid-cols-1 h-full md:h-36 bg-cover bg-no-repeat bg-center"
+                          style={{ backgroundImage: `url(${data.img})` }}
+                        ></div>
+
+                        <div className="p-3 flex flex-col justify-between h-[180px]">
+                          <div className="lg:text-base md:text-xs sm:text-sm text-xs font-semibold text-black line-clamp-2  ">
+
+                            {data.titleEnglish}
+
+                          </div>
+                          <div>
+                            <div className="lg:flex text-[11px] lg:text-base md:text-xs sm:text-sm text-xs md:gap-1 font-medium text-gray-800">
+                              <div className="lg:mt-2">
                                 {language == "en"
-                                  ? data.feeRupiah
-                                  : data.feeYuan}
+                                  ? data.durationFrom
+                                  : data.durationFromValue}{" "}
+                              </div>
+                              <p className="lg:text-base md:text-xs sm:text-sm text-xs translate-y-[1px] md:translate-y-[4px]">
+                                &#8226;
+                              </p>
+                              <div className="lg:mt-2">{data.timeFrom}</div>
+                            </div>
+                            <h2 className="text-gray-500 lg:text-base md:text-xs sm:text-sm text-xs">
+                              {data.location}
+                            </h2>
+                            <div className=" w-full justify-between">
+                              <h2 className="font-medium text-gray-800 lg:text-base md:text-xs sm:text-sm text-xs">
+                                {
+                                  data.feeRupiah
+                                }
                               </h2>
+                              <h2 className="lg:text-base md:text-xs sm:text-sm text-xs">Available Quota : 20</h2>
+
                             </div>
                           </div>
                         </div>
-                      </a>
-                    </div>
-                  );
-                })}
+                      </div>
+                    </a>
+                  </div>
+                );
+              })}
           </div>
         </div>
       </div>
