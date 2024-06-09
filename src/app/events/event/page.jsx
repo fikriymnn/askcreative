@@ -24,6 +24,7 @@ import { useState, useEffect } from "react";
 import { useLanguage } from "@/context/LanguageContext";
 import "react-quill/dist/quill.snow.css";
 import { format } from "date-fns";
+import X from "../../../../public/x.svg"
 
 function Event() {
   const { language, changeLanguage } = useLanguage();
@@ -31,6 +32,7 @@ function Event() {
   const searchParams = useSearchParams();
   const id = searchParams.get("id");
   const [dataEvents, setDataEvents] = useState([]);
+  const [formReg, setFormReg] = useState(false);
 
   useEffect(() => {
     getDataEventse(id);
@@ -73,7 +75,7 @@ function Event() {
             <>
               <div className="md:flex justify-center items-center ">
                 <div></div>
-                <div className="md:w-4/6 ">
+                <div className="md:w-11/12 ">
                   <div className="py-2 flex gap-1 ">
                     <a href="/events">
                       {language == "en" ? "Events" : "活动 "}
@@ -138,11 +140,110 @@ function Event() {
                             {language == "en" ? " Time: " : " 活动时间: "}{" "}
                             {data.timeFrom} - {data.timeTo}
                           </h3>
-                          <h3 className="mb-3  mt-2">
-                            {language == "en" ? " Fee: " : "费用: "}
-                            {language == "en" ? data.feeRupiah : data.feeYuan}
-                          </h3>
+                          <div className="flex w-full justify-between">
+
+                            <h3 className="mb-3  mt-2">
+                              {language == "en" ? " Fee: " : "费用: "}
+                              {language == "en" ? data.feeRupiah : data.feeYuan}
+                            </h3>
+                            <div>
+
+                              <h2 className=" mt-2">Available Quota: 20</h2>
+                              <button onClick={() => setFormReg(!formReg)} className="mb-3 mt-1 bg-green-600 text-white text-lg  font-semibold px-10 py-1">Registration</button>
+
+                            </div>
+                            {formReg == true && (
+                              <div className="fixed z-50 inset-0 backdrop-blur-sm mx-auto w-full justify-center">
+
+                                <div className=" flex  justify-center mx-auto w-6/12 h-5/6 my-10 bg-white border-2 rounded-md">
+
+
+                                  <div className="w-full">
+                                    <div className="flex justify-end m-2 " onClick={() => setFormReg(!formReg)}>
+
+                                      <svg width="25" height="25" viewBox="0 0 294 294" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <circle cx="147" cy="147" r="147" fill="#FF0000" />
+                                        <path d="M74 75L147.25 147M220.5 219L147.25 147M147.25 147L220.5 75L74 219" stroke="white" stroke-width="38" />
+                                      </svg>
+                                    </div>
+                                    <div className="mx-10">
+
+                                      <div className="justify-center flex w-full">
+
+                                        <p className="font-bold text-2xl mx-auto mb-10 mt-5">Form Registration</p>
+                                      </div>
+                                      <div className="flex flex-col justify-center w-full">
+                                        <p>Name:</p>
+                                        <input type="text" className="bg-slate-200 border-gray-400 rounded-md" />
+                                      </div>
+                                      <div className="flex flex-col justify-center w-full mt-5">
+                                        <p>Email:</p>
+                                        <input type="text" className="bg-slate-200 border-gray-400 rounded-md" />
+                                      </div>
+                                      <div className="flex flex-col justify-center w-full mt-5">
+                                        <p>No. WhatsApp:</p>
+                                        <input type="text" className="bg-slate-200 border-gray-400 rounded-md" />
+                                      </div>
+                                      <div className="mt-5 flex flex-col justify-center">
+                                        <p className="">lorem</p>
+                                        <div className="flex justify-center items-center ">
+                                          <div className="relative z-20 bg-slate-200 rounded-md dark:bg-form-input  w-full mt-2">
+                                            <span className="absolute top-1/2 left-4 z-30 -translate-y-1/2">
+                                              <svg
+                                                width="20"
+                                                height="20"
+                                                viewBox="0 0 20 20"
+                                                fill="none"
+                                                xmlns="http://www.w3.org/2000/svg"
+                                              ></svg>
+                                            </span>
+
+                                            <select
+                                              className={`relative z-20 w-full appearance-none rounded border border-stroke bg-transparent py-2   px-1 outline-none transition focus:border-primary active:border-primary dark:border-form-strokedark dark:bg-form-inputtext-black dark:text-white' 
+                                            }`}
+                                            >
+                                              <option
+                                                value="d"
+                                                className="text-body dark:text-bodydark"
+                                              >
+                                                Select
+                                              </option>
+                                              <option
+                                                value="N"
+                                                className="text-body dark:text-bodydark"
+                                              >
+                                                Mahasiswa
+                                              </option>
+                                              <option
+                                                value="O"
+                                                className="text-body dark:text-bodydark"
+                                              >
+                                                Dosen
+                                              </option>
+                                              <option
+                                                value="O"
+                                                className="text-body dark:text-bodydark"
+                                              >
+                                                Umum
+                                              </option>
+                                            </select>
+
+
+                                          </div>
+                                        </div>
+                                      </div>
+
+                                      <button className="flex justify-center w-full bg-green-600 rounded-md py-2 text-white font-bold text-xl my-10">
+                                        Register
+                                      </button>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            )}
+                          </div>
                         </div>
+
                         <div className="bg-gray-400 h-[2px] "></div>
                         <div className="content   ql-editor  -translate-x-4">
                           <p>
@@ -153,7 +254,6 @@ function Event() {
                             )}
                           </p>
                         </div>
-
                         {data.content.map((data, i) => {
                           return (
                             <>
