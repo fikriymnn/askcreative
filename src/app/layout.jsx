@@ -8,8 +8,8 @@ import { LanguageProvider } from "@/context/LanguageContext";
 const inter = Open_Sans({ subsets: ["latin"] });
 
 export const metadata = {
-  title: "TYS Consultant",
-  description: "TYS Consulting, Business Consultant",
+  title: "ASK CREATIVE",
+  description: "ASK Creative's Website",
 };
 
 export default function RootLayout({ children }) {
