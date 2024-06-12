@@ -25,6 +25,7 @@ import { useLanguage } from "@/context/LanguageContext";
 import "react-quill/dist/quill.snow.css";
 import { format } from "date-fns";
 import X from "../../../../public/x.svg"
+import Navbar from "@/components/newcomps/navbar";
 
 function Event() {
   const { language, changeLanguage } = useLanguage();
@@ -42,16 +43,7 @@ function Event() {
     try {
       const docRef = doc(db, "events", idd);
       const querySnapshot = await getDoc(docRef);
-
-      // if (querySnapshot.exists()) {
-      //   console.log("Document data:", querySnapshot.data());
-      // } else {
-      //   // docSnap.data() will be undefined in this case
-      //   console.log("No such document!");
-      // }
       let data = [];
-
-      // doc.data() is never undefined for query doc snapshots
 
       data.push(querySnapshot.data());
 
@@ -63,8 +55,8 @@ function Event() {
 
   return (
     <>
-      <NavbarWithCTAButton />
-      <div className="bg-gray-200 pt-24 pb-5 ps-5 pe-5">
+      <Navbar />
+      <div className="bg-gray-200 pt-44 pb-5 ps-5 pe-5">
         {dataEvents.map((data, i) => {
           const timestamp = data.createdAt.toDate();
 
@@ -148,8 +140,19 @@ function Event() {
                             </h3>
                             <div>
 
-                              <h2 className=" mt-2">Available Quota: 20</h2>
-                              <button onClick={() => setFormReg(!formReg)} className="mb-3 mt-1 bg-green-600 text-white text-lg  font-semibold px-10 py-1">Registration</button>
+                              <h2 className=" mt-2">Available Quota: {data.quota}</h2>
+                              {
+                                data.quota <= 0 ? (
+                                  <>
+                                    <button className="mb-3 mt-1 bg-gray-600 text-white text-lg  font-semibold px-10 py-1">Sold</button>
+                                  </>
+                                ) : (
+                                  <>
+
+                                    <button onClick={() => setFormReg(!formReg)} className="mb-3 mt-1 bg-green-600 text-white text-lg  font-semibold px-10 py-1">Registration</button>
+                                  </>
+                                )
+                              }
 
                             </div>
                             {formReg == true && (
@@ -259,7 +262,7 @@ function Event() {
                             <>
                               <div className="bg-gray-400 h-[2px]  "></div>
                               <div className="w-100px flex">
-                                <div className="bg-blue-600 py-1 flex items-center">
+                                <div className="bg-[#153045]  py-1 flex items-center">
                                   <h2 className="mx-5 text-xl text-center font-semibold text-white">
                                     {language == "en"
                                       ? data.topicIng
