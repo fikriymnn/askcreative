@@ -220,7 +220,7 @@ const CustomFooter = () => {
     }
   }
   return (
-    <div className=" w-full bg-[#031530] ">
+    <div className=" w-full bg-[#153045] ">
       <div className="w-full md:flex grid p-5 sm:p-8 md:p-12 gap-10 ">
         <div className=" md:w-5/12">
           <img src={logo} width={200} height={75} />
@@ -302,11 +302,11 @@ const CustomFooter = () => {
       <hr className=" w-full bg-white " />
       <div className=" md:flex lg:justify-between md:p-5 pt-5  text-center ">
         <span className=" text-white ">
-          Copyright &copy; 2022 tysconsultant.com
+          Copyright &copy; 2024 ASK Creative
         </span>
         <br />
         <span className=" text-white lg:visible invisible">
-          Powered by tysconsultant.com
+          Powered by Fikri Zaki Aditama
         </span>
       </div>
     </div>
