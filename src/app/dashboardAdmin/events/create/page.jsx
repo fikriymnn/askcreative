@@ -35,16 +35,16 @@ function CreateEvent() {
   };
 
   const [titleIng, setTitleIng] = useState("");
-  const [titleChi, setTitleChi] = useState("");
+
   const [location, setLocation] = useState("");
   const [feeRupiah, setFeeRupiah] = useState("");
-  const [feeYuan, setFeeYuan] = useState("");
+
   const [durationFrom, setDurationFrom] = useState("");
   const [durationTo, setDurationTo] = useState("");
   const [timeFrom, setTimeFrom] = useState("");
   const [timeTo, setTimeTo] = useState("");
   const [desIng, setDesIng] = useState("");
-  const [desChi, setDesChi] = useState("");
+
 
   const [parsedDateFrom, setParsedDateFrom] = useState("");
   const [parsedDateTo, setParsedDateTo] = useState("");
@@ -52,9 +52,8 @@ function CreateEvent() {
   const [data, setData] = useState([
     {
       topicIng: "",
-      topicChi: "",
       contentIng: "",
-      contentChi: "",
+
       img: [{ img: "" }],
     },
   ]);
@@ -150,7 +149,7 @@ function CreateEvent() {
     var date = today.getDate() + " " + format(today, "MMMM yyyy");
     const docRef = await addDoc(collection(db, "events"), {
       titleEnglish: titleIng,
-      titleChinese: titleChi,
+
       durationFrom: parsedDateFrom,
       durationTo: parsedDateTo,
       durationFromValue: durationFrom,
@@ -158,14 +157,14 @@ function CreateEvent() {
       timeFrom: timeFrom,
       timeTo: timeTo,
       descriptionEnglish: desIng,
-      descriptionChinese: desChi,
+
       createdAt: today,
       img: downloadURL,
       date: date,
       content: data,
       location: location,
       feeRupiah: feeRupiah,
-      feeYuan: feeYuan,
+
     });
 
     alert("success");
@@ -351,24 +350,7 @@ function CreateEvent() {
                 />
               </div>
             </div>
-            <div className=" flex py-1 px-20">
-              <div className=" w-2/12 text-end p-3 py-5">
-                <p>
-                  Title
-                  <span className="text-red-600"> Chinese</span> :
-                </p>
-              </div>
-              <div className=" w-10/12 p-3">
-                <input
-                  onChange={(e) => setTitleChi(e.target.value)}
-                  type="text"
-                  required
-                  placeholder="Insert Title"
-                  color=" bg-transparent"
-                  className=" rounded-lg w-full border-slate-300 "
-                />
-              </div>
-            </div>
+
             <div className=" flex py-1 px-20 ">
               <div className=" w-2/12 text-end px-3 text-2xl font-semibold pt-5">
                 <p>Location</p>
@@ -487,21 +469,7 @@ function CreateEvent() {
                 />
               </div>
             </div>
-            <div className=" flex py-1 px-20 ">
-              <div className=" w-2/12 text-end p-3 py-5">
-                <p>Yuan :</p>
-              </div>
-              <div className=" w-10/12 p-3">
-                <input
-                  onChange={(e) => setFeeYuan(e.target.value)}
-                  type="text"
-                  required
-                  placeholder="Insert fee"
-                  color=" bg-transparent"
-                  className=" rounded-lg w-full border-slate-300 "
-                />
-              </div>
-            </div>
+
             <div className=" flex py-1 ps-24 pt-32 ">
               <div className=" w-10/12 px-3 text-2xl font-semibold pt-5">
                 <p>Main Description:</p>
@@ -526,25 +494,7 @@ function CreateEvent() {
                 />
               </div>
             </div>
-            <div className=" flex py-1 px-20">
-              <div className=" w-2/12 text-end p-3 py-5">
-                <p>
-                  Description
-                  <span className="text-red-600"> Chinese</span> :
-                </p>
-              </div>
-              <div className=" w-10/12 p-3">
-                <ReactQuill
-                  modules={modules}
-                  format={formats}
-                  onChange={(e) => setDesChi(e)}
-                  name="contentChi"
-                  placeholder={`Input Description Mandarin For Description ${1}`}
-                  maxLength={1000}
-                  className="h-[200px] my-10 "
-                />
-              </div>
-            </div>
+
             <div className=" flex py-1 px-20 ">
               <div className=" w-10/12 px-3 text-2xl font-semibold pt-5">
                 <p>Content</p>
@@ -576,41 +526,15 @@ function CreateEvent() {
                         id=""
                         cols="20"
                         rows="1"
-                        placeholder={`Input Topic English For Description ${
-                          i + 1
-                        }`}
+                        placeholder={`Input Topic English For Description ${i + 1
+                          }`}
                         color=" bg-transparent"
                         className=" w-full resize-none rounded-lg border-slate-300 "
                         maxLength={1000}
                       ></textarea>
                     </div>
                   </div>
-                  <div className=" flex py-1 px-20">
-                    <div className=" w-2/12 text-end p-3 py-5">
-                      {" "}
-                      <p>
-                        Topic
-                        <span className="text-red-600"> Chinese</span> :
-                      </p>
-                    </div>
-                    <div className=" w-10/12 p-3">
-                      <textarea
-                        name="topicChi"
-                        value={val.topicChi}
-                        required
-                        onChange={(e) => handleChange(e, i)}
-                        id=""
-                        cols="20"
-                        rows="1"
-                        placeholder={`Input Topic Mandarin For Description ${
-                          i + 1
-                        }`}
-                        color=" bg-transparent"
-                        className=" w-full resize-none rounded-lg border-slate-300 "
-                        maxLength={1000}
-                      ></textarea>
-                    </div>
-                  </div>
+
                   <div className=" flex py-1 px-20 ">
                     <div className=" w-2/12 text-end p-3 py-5">
                       <p>
@@ -633,45 +557,14 @@ function CreateEvent() {
                           )
                         }
                         name="contentIng"
-                        placeholder={`Input Description English For Description ${
-                          i + 1
-                        }`}
+                        placeholder={`Input Description English For Description ${i + 1
+                          }`}
                         maxLength={2000}
                         className="h-[200px] "
                       />
                     </div>
                   </div>
-                  <div className=" flex py-1 px-20">
-                    <div className=" w-2/12 text-end p-3 py-5">
-                      {" "}
-                      <p>
-                        Description
-                        <span className="text-red-600"> Chinese</span> :
-                      </p>
-                    </div>
-                    <div className=" w-10/12 p-3">
-                      <ReactQuill
-                        modules={modules}
-                        format={formats}
-                        theme="snow"
-                        value={val.contentChi}
-                        onChange={(e) =>
-                          handleChange(
-                            {
-                              target: { value: e, name: "contentChi" },
-                            },
-                            i
-                          )
-                        }
-                        name="contentChi"
-                        placeholder={`Input Description Mandarin For Description ${
-                          i + 1
-                        }`}
-                        maxLength={2000}
-                        className="h-[200px] my-10 "
-                      />
-                    </div>
-                  </div>
+
                   <div className=" w-10/12 p-3 ps-72">
                     {val.img.map((vall, ii) => {
                       return (

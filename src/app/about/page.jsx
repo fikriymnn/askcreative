@@ -23,7 +23,7 @@ async function getDataAboutPhone() {
   } catch (error) {
     console.log(error);
   }
-  return data[0].no;
+  return data[0].phone;
 }
 
 async function getDataHomeParagraph() {
@@ -36,7 +36,7 @@ async function getDataHomeParagraph() {
   } catch (error) {
     console.log(error);
   }
-  return [{ chi: data[0].chinese, ing: data[0].english }];
+  return data[0].paragraph;
 }
 
 async function getDataHomeHeading() {
@@ -49,7 +49,7 @@ async function getDataHomeHeading() {
   } catch (error) {
     console.log(error);
   }
-  return [{ ing: data[0].english, chi: data[0].chinese }];
+  return data[0].heading;
 }
 
 async function getDataAboutAdress() {
@@ -89,10 +89,10 @@ async function About() {
     <AboutPage
       address={address}
       email={email}
-      chinaHeading={heading[0].chi}
-      inggrisHeading={heading[0].ing}
-      chinaParagraph={paragraf[0].chi}
-      inggrisParagraph={paragraf[0].ing}
+      heading={heading}
+
+      paragraph={paragraf}
+
       phone={phone}
     />
   );
