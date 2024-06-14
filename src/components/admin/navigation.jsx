@@ -84,7 +84,8 @@ function Navigation({
                     <Image
                       key={i}
                       className="mx-5 "
-                      src={data.img}
+                      // src={data.img}
+                      src="/assets/images/tyssquare.png"
                       width={160}
                       height={50}
                     />

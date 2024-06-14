@@ -271,19 +271,7 @@ export default function NavbarWithCTAButton({ height }) {
               </span>
             </Navbar.Link>
           </div>
-          <div className=" my-auto">
-            <Navbar.Link href="/policies">
-              <span
-                className={
-                  navbar
-                    ? "text-white md:text-[16px]"
-                    : "  text-black my-auto md:text-[16px]  "
-                }
-              >
-                {language == "en" ? "Policies & Regulations" : "政策法规"}
-              </span>
-            </Navbar.Link>
-          </div>
+
         </Navbar.Collapse>
       </Navbar>
     </>

@@ -87,38 +87,18 @@ export default function NavbarWithCTAButton({ height }) {
         <a href="/services/basicEstablish?comp=0">
           <div className=" py-3 px-4 hover:bg-blue-500 hover:text-white text-slate-600">
             <p className="">
-              {language == "en" ? "Basic Establishment Services" : "基础服务"}
+              {language == "en" ? "Ask Creative Perfume" : "基础服务"}
             </p>
           </div>
         </a>
         <a href="/services/productCertifications?comp=0">
           <div className=" py-3 px-4 hover:bg-blue-500 hover:text-white text-slate-600">
             <p className="">
-              {language == "en" ? "Product Certification" : "产品认证"}
+              {language == "en" ? "Ask Creative Workshop" : "产品认证"}
             </p>
           </div>
         </a>
-        <a href="/services/financeAccountingTax?comp=0">
-          <div className=" py-3 px-4 hover:bg-blue-500 hover:text-white text-slate-600">
-            <p className="">
-              {language == "en" ? "Finance Accounting Tax" : "财税会计服务"}
-            </p>
-          </div>
-        </a>
-        <a href="/services/TalentRecruitmentHR?comp=0">
-          <div className=" py-3 px-4 hover:bg-blue-500 hover:text-white text-slate-600">
-            <p className="">
-              {language == "en" ? "Talent Recruitment HR" : "人才招聘和人事"}
-            </p>
-          </div>
-        </a>
-        <a href="/services/LegalServices?comp=0">
-          <div className=" py-3 px-4 hover:bg-blue-500 hover:text-white text-slate-600">
-            <p className="">
-              {language == "en" ? "Legal Services" : "法律服务"}
-            </p>
-          </div>
-        </a>
+
       </div>
     );
   };
@@ -272,19 +252,7 @@ export default function NavbarWithCTAButton({ height }) {
               </span>
             </Navbar.Link>
           </div>
-          <div className=" my-auto">
-            <Navbar.Link href="/policies">
-              <span
-                className={
-                  navbar
-                    ? "text-white md:text-[16px]"
-                    : "  text-black my-auto md:text-[16px]  "
-                }
-              >
-                {language == "en" ? "Policies & Regulations" : "政策法规"}
-              </span>
-            </Navbar.Link>
-          </div>
+
         </Navbar.Collapse>
       </Navbar>
     </>
