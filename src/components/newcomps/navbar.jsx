@@ -47,7 +47,7 @@ function Navbar() {
             <img className="h-12" src="/assets/images/asksq.png" alt="" />
             <div className="w-4/6 flex justify-between items-center text-[#0E2233] text-xl font-bold">
               <a className="hover:bg-[#153045] p-2 rounded-md px-3 hover:text-white" href="/">Home</a>
-              <a className="hover:bg-[#153045] p-2 rounded-md px-3 hover:text-white" href="/event">Events</a>
+              <a className="hover:bg-[#153045] p-2 rounded-md px-3 hover:text-white" href="/events">Events</a>
               <a className="hover:bg-[#153045] p-2 rounded-md px-3 hover:text-white" href="/">Services</a>
               <a className="hover:bg-[#153045] p-2 rounded-md px-3 hover:text-white" href="/about">About</a>
               <a className="hover:bg-[#153045] p-2 rounded-md px-3 hover:text-white" href="/">Articles</a>
