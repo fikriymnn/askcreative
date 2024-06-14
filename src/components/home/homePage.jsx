@@ -106,9 +106,7 @@ function HomePage({
       <div className="bg-slate-100 w-full py-4 mt-6">
         <div className="font-semibold text-3xl text-center pt-9 pb-4 ">
           <p>
-            {language == "en"
-              ? "Choose The Best Package You Need"
-              : "选择您需要的服务包"}
+            Newest Eventsnew text
           </p>
         </div>
         <div className="md:hidden sm:hidden visible p-5">
