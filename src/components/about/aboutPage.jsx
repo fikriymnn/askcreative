@@ -58,7 +58,7 @@ function AboutPage({
           <div className="md:grid md:grid-cols-2 py-10 gap-2 text-sm ">
             <div>
               <Iframe
-                url="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d126941.19501629066!2d106.73087!3d-6.142476!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69f7fc6ab10259%3A0x8b5219b3d0af9b39!2sCitra%20Garden%20City%2C%20West%20Jakarta%20City%2C%20Jakarta!5e0!3m2!1sen!2sid!4v1694419390459!5m2!1sen!2sid"
+                url="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d386.0204289215479!2d107.5996643639368!3d-6.861282681385571!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e68e77d124a74eb%3A0xf274d96636b2d4a3!2sAskreatif!5e0!3m2!1sen!2sid!4v1718340514789!5m2!1sen!2sid"
                 width=""
                 height=""
                 id=""
@@ -66,6 +66,8 @@ function AboutPage({
                 display="block"
                 position=""
               />
+
+            
 
               <div className="flex items-center space-x-3 pt-6">
                 <div>

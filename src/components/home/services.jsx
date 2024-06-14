@@ -41,7 +41,7 @@ function Services() {
           <hr className="" />
          
         </div>
-   <div className="group block md:rounded-lg sm:rounded-lg rounded-none md:px-7 md:py-4 p-0 md:bg-white sm:bg-white bg-blue-600 shadow-lg  md:hover:bg-blue-600 sm:hover:bg-blue-600 group-hover:text-white first-linexport service-list hover:bg-primary md:hover:text-white sm:hover:text-white cursor-pointer transition-all  border-2">
+   {/* <div className="group block md:rounded-lg sm:rounded-lg rounded-none md:px-7 md:py-4 p-0 md:bg-white sm:bg-white bg-blue-600 shadow-lg  md:hover:bg-blue-600 sm:hover:bg-blue-600 group-hover:text-white first-linexport service-list hover:bg-primary md:hover:text-white sm:hover:text-white cursor-pointer transition-all  border-2">
           <div
             className="flex items-baseline text-gray-900 md:text-[#007aff]  
                       pl-[1px] pr-0 py-5"
@@ -69,7 +69,7 @@ function Services() {
             </a>
           </div>
           <hr className="" />
-        </div>
+        </div> */}
       </div>
     </>
   )
