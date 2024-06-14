@@ -27,6 +27,10 @@
   }
 }
 
+body {
+  overflow-x: hidden;
+}
+
 .box-effect:hover .icon-effect {
   color: white;
 }
