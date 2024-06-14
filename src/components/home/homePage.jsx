@@ -106,7 +106,7 @@ function HomePage({
       <div className="bg-slate-100 w-full py-4 mt-6">
         <div className="font-semibold text-3xl text-center pt-9 pb-4 ">
           <p>
-            Newest Eventsnew text
+            Newest Events
           </p>
         </div>
         <div className="md:hidden sm:hidden visible p-5">
