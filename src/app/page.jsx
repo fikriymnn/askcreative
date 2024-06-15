@@ -80,7 +80,7 @@ async function getDataArticles4() {
 async function getDataPackage() {
   let data = [];
   try {
-    const ordersRef = collection(db, "package");
+    const ordersRef = collection(db, "events");
     const q = query(ordersRef, orderBy("createdAt", "desc"), limit(3));
     const querySnapshot = await getDocs(q);
 

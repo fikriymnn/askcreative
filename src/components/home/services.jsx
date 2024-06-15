@@ -12,9 +12,7 @@ function Services() {
         id="getstart"
         className="w-full"
       >
-        <CardHoverEffectDemo/>
-        
-        
+        <CardHoverEffectDemo/> 
       </div>
       
     </>

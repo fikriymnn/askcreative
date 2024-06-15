@@ -106,7 +106,7 @@ function HomePage({
       <div className="bg-slate-100 w-full py-4 mt-6">
         <div className="font-semibold text-3xl text-center pt-9 pb-4 ">
           <p>
-            Newest Events
+            Recent Events
           </p>
         </div>
         <div className="md:hidden sm:hidden visible p-5">
@@ -118,11 +118,7 @@ function HomePage({
             arrows="true"
           >
             {dataPackage.map((data, i) => {
-              const le = data;
-              const firsPriceRp = data.price[0].priceRupiah;
-              const lastPriceRp = data.price[data.price.length - 1].priceRupiah;
-              const firsPriceYuan = data.price[0].priceYuan;
-              const lastPriceYuan = data.price[data.price.length - 1].priceYuan;
+            
 
               return (
                 <div
@@ -133,9 +129,7 @@ function HomePage({
                     {language == "en" ? data.titleEnglish : data.titleChinese}
                   </h5>
                   <p className="mb-4 text-base font-medium text-blue-500 text-center">
-                    {language == "en"
-                      ? "Rp" + firsPriceRp + "-" + lastPriceRp
-                      : firsPriceYuan + "-" + lastPriceYuan + "元"}
+                    {data.quota}
                   </p>
 
                   <div className="mb-auto pb-3 ">
@@ -146,7 +140,7 @@ function HomePage({
                         </span>
                       </p>
                     </div>
-                    {data.services.map((data, i) => {
+                    {/* {data.services.map((data, i) => {
                       return (
                         <div key={i} className="flex space-x-3 my-3 ">
                           <p className="text-base font-normal leading-[24px] text-black line-clamp-1 ">
@@ -157,7 +151,7 @@ function HomePage({
                           </p>
                         </div>
                       );
-                    })}
+                    })} */}
                   </div>
 
                   <a
@@ -176,11 +170,7 @@ function HomePage({
         {/* desktop */}
         <div className="md:visible sm:hidden hidden bg-slate-100 w-full pt-4  md:grid md:grid-cols-3 gap-5 px-12">
           {dataPackage.map((data, i) => {
-            const le = data;
-            const firsPriceRp = data.price[0].priceRupiah;
-            const lastPriceRp = data.price[data.price.length - 1].priceRupiah;
-            const firsPriceYuan = data.price[0].priceYuan;
-            const lastPriceYuan = data.price[data.price.length - 1].priceYuan;
+          
             return (
               <div
                 key={i}
@@ -190,9 +180,7 @@ function HomePage({
                   {language == "en" ? data.titleEnglish : data.titleChinese}
                 </h5>
                 <p className="mb-4 text-[18px] leading-[28px] font-medium text-[#1e70ea] text-center">
-                  {language == "en"
-                    ? "Rp" + firsPriceRp + "-" + lastPriceRp
-                    : firsPriceYuan + "-" + lastPriceYuan + "元"}
+                  {data.quota}
                 </p>
 
                 <div className="mb-auto pb-3 ">
@@ -203,7 +191,7 @@ function HomePage({
                       </span>
                     </p>
                   </div>
-                  {data.services.map((data, i) => {
+                  {/* {data.services.map((data, i) => {
                     return (
                       <div key={i} className="flex space-x-3 my-3 ">
                         <p className="text-base font-normal leading-[24px] text-black line-clamp-1 ">
@@ -214,7 +202,7 @@ function HomePage({
                         </p>
                       </div>
                     );
-                  })}
+                  })} */}
                 </div>
 
                 <a
