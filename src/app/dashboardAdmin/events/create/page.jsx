@@ -44,6 +44,7 @@ function CreateEvent() {
   const [timeFrom, setTimeFrom] = useState("");
   const [timeTo, setTimeTo] = useState("");
   const [desIng, setDesIng] = useState("");
+  const [quota, setQuota] = useState();
 
 
   const [parsedDateFrom, setParsedDateFrom] = useState("");
@@ -143,28 +144,52 @@ function CreateEvent() {
     }
   };
 
-  const addData = async (e) => {
+ const addData = async (e) => {
+    e.preventDefault();
+    
+    var today = new Date();
+    var date = today.getDate() + " " + format(today, "MMMM yyyy");
+     const numericalQuota = Number(quota);
+    // Add full data to the 'events' collection
+    const eventDocRef = await addDoc(collection(db, "events"), {
+        titleEnglish: titleIng,
+        durationFrom: parsedDateFrom,
+        durationTo: parsedDateTo,
+        durationFromValue: durationFrom,
+        durationToValue: durationTo,
+        timeFrom: timeFrom,
+        timeTo: timeTo,
+        descriptionEnglish: desIng,
+        createdAt: today,
+        img: downloadURL,
+        date: date,
+        content: data,
+        location: location,
+        feeRupiah: feeRupiah,
+        quota:numericalQuota,
+    });
+
+    // Add subset data to the 'galleries' collection
+    const galleryDocRef = await addDoc(collection(db, "galleries"), {
+        title: titleIng,  // Assuming titleEnglish should be used for galleries too
+        img: downloadURL,
+        date: date,
+    });
+
+    alert("success");
+};
+
+
+
+  const addGallery = async (e) => {
     e.preventDefault();
     var today = new Date();
     var date = today.getDate() + " " + format(today, "MMMM yyyy");
-    const docRef = await addDoc(collection(db, "events"), {
+    const docRef = await addDoc(collection(db, "galleries"), {
       titleEnglish: titleIng,
-
-      durationFrom: parsedDateFrom,
-      durationTo: parsedDateTo,
-      durationFromValue: durationFrom,
-      durationToValue: durationTo,
-      timeFrom: timeFrom,
-      timeTo: timeTo,
-      descriptionEnglish: desIng,
-
       createdAt: today,
       img: downloadURL,
       date: date,
-      content: data,
-      location: location,
-      feeRupiah: feeRupiah,
-
     });
 
     alert("success");
@@ -343,6 +368,23 @@ function CreateEvent() {
                 <input
                   onChange={(e) => setTitleIng(e.target.value)}
                   type="text"
+                  required
+                  placeholder="Insert Title"
+                  color=" bg-transparent"
+                  className=" rounded-lg w-full border-slate-300 "
+                />
+              </div>
+            </div>
+            <div className=" flex py-1 px-20 ">
+              <div className=" w-2/12 text-end p-3 py-5">
+                <p>
+                  Quota
+                </p>
+              </div>
+              <div className=" w-10/12 p-3">
+                <input
+                  onChange={(e) => setQuota(e.target.value)}
+                  type="number"
                   required
                   placeholder="Insert Title"
                   color=" bg-transparent"
