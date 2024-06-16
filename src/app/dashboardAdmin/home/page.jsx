@@ -255,11 +255,7 @@ function HomeAdmin() {
                     </div>
                     <div className="w-8/12 border-s-2  flex justify-start items-center p-2">
                       <div className="flex flex-col">
-                        {dataLogoWhite.length > 0 &&
-                          dataLogoWhite.map((data, i) => {
-                            return <>
-                              <Image width={220} height={100} src={data.img} alt="" /></>;
-                          })}
+                        
                       </div>
                     </div>
                   </div>
