@@ -167,6 +167,7 @@ function CreateEvent() {
         location: location,
         feeRupiah: feeRupiah,
         quota:numericalQuota,
+        capacities:numericalQuota,
     });
 
     // Add subset data to the 'galleries' collection

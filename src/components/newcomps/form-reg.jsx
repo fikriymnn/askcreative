@@ -1,6 +1,6 @@
 'use client'
 import React, { useState } from "react";
-import { doc, addDoc, collection,runTransaction } from "firebase/firestore";
+import { doc, addDoc, collection,runTransaction, query, where, getDocs } from "firebase/firestore";
 import { db } from "../../../firebase/page"; // Make sure this path is correct
 import { useSearchParams } from "next/navigation";
 
@@ -12,7 +12,55 @@ const FormReg = ({ formregx, docId }) => {
   const [number, setNumber] = useState("");
   const [role, setRole] = useState("");
 
- const handleSubmit = async (e) => {
+//  const handleSubmit = async (e) => {
+//     e.preventDefault();
+
+//     if (!id) {
+//       alert("Invalid event ID");
+//       return;
+//     }
+
+//     try {
+//       const eventDocRef = doc(db, "events", id);
+
+//       await runTransaction(db, async (transaction) => {
+//         // Add the new registran
+//         await addDoc(collection(eventDocRef, "registran"), {
+//           name: name,
+//           email: email,
+//           number: number,
+//           role: role,
+//         });
+
+//         const eventDoc = await transaction.get(eventDocRef);
+//         if (!eventDoc.exists()) {
+//           throw new Error("Document does not exist!");
+//         }
+
+//         // Decrement the quota field
+//         const newQuota = eventDoc.data().quota - 1;
+//         transaction.update(eventDocRef, { quota: newQuota });
+//       });
+
+//       alert("Registration successful");
+//       // Clear the form inputs
+//       setName("");
+//       setEmail("");
+//       setNumber("");
+//       setRole("");
+//     } catch (error) {
+//       alert(error.message);
+//     }
+//   };
+
+const [isEmail, setIsEmail] = useState(false);
+
+ const handleChangeEmail = async (e) => {
+        const emailValue = e.target.value;
+        setIsEmail(false);
+    };
+
+const handleSubmit = async (e) => {
     e.preventDefault();
 
     if (!id) {
@@ -22,10 +70,20 @@ const FormReg = ({ formregx, docId }) => {
 
     try {
       const eventDocRef = doc(db, "events", id);
+      const registranCollectionRef = collection(eventDocRef, "registran");
+
+      // Check if the email is already registered
+      const q = query(registranCollectionRef, where("email", "==", email));
+      const querySnapshot = await getDocs(q);
+
+      if (!querySnapshot.empty) {
+        setIsEmail(true);
+        return;
+      }
 
       await runTransaction(db, async (transaction) => {
         // Add the new registran
-        await addDoc(collection(eventDocRef, "registran"), {
+        await addDoc(registranCollectionRef, {
           name: name,
           email: email,
           number: number,
@@ -43,11 +101,11 @@ const FormReg = ({ formregx, docId }) => {
       });
 
       alert("Registration successful");
-      // Clear the form inputs
-      setName("");
-      setEmail("");
-      setNumber("");
-      setRole("");
+      // setName("");
+      // setEmail("");
+      // setNumber("");
+      // setRole("");
+      window.location.reload();
     } catch (error) {
       alert(error.message);
     }
@@ -75,11 +133,17 @@ const FormReg = ({ formregx, docId }) => {
               <label>Email:</label>
               <input
                 type="email"
-                className="bg-slate-200 border-gray-400 rounded-md"
+                className={`bg-slate-200  rounded-md ${isEmail?'border-red-500':'border-gray-400'}`}
                 value={email}
-                onChange={(e) => setEmail(e.target.value)}
+                onChange={(e) => {
+                    setEmail(e.target.value);
+                    setIsEmail(false); // Reset to false whenever email changes
+                }}
                 required
               />
+              {isEmail? <>
+              <p className="text-red-500">Email Already Registered</p>
+              </>:null}
             </div>
             <div className="flex flex-col justify-center w-full mt-5">
               <label>No. WhatsApp:</label>
