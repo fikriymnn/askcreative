@@ -7,12 +7,30 @@ import { db } from "../../../../firebase/page";
 import parse from "html-react-parser";
 import Image from "next/image";
 import "@/components/admin/editor.css";
+import ViewReg from '@/components/newcomps/view-reg'
+import DetailQuotaEvent from '@/components/newcomps/detail-quota-event'
+
 
 function EventsAdminPage({ data }) {
+  const [selectedId, setSelectedId] = useState("");
+  
+  const [isRegView, setIsRegView] = useState(false);
+   const handleButtonReg = (id) => {
+     setSelectedId(id);
+     setIsRegView(true);
+   };
+
+  //  function handleRegView(){
+  //   setIsRegView(true)
+  //  }
+   function handleRegViewX(){
+    setIsRegView(false)
+   }
   const dataEvents = data;
 
   const [dataEventsResult, setDataEventsResult] = useState([]);
   const [search, setSearch] = useState("");
+
 
   const handleSearch = (e) => {
     setSearch(e);
@@ -28,9 +46,14 @@ function EventsAdminPage({ data }) {
       <div className="flex">
         <Navigation events="ps-3 text-[#0d3064] bg-white rounded-sm" />
         <div className="p-5 w-full h-screen overflow-y-scroll">
+          {isRegView? <>
+          <ViewReg selectedId={selectedId} key={selectedId} available={data.quota} capacity={data.capacities}>
+            <button onClick={handleRegViewX}>Back</button>
+          </ViewReg>
+          </>:null}
           <div className="w-full bg-[#0d3064] ">
             <p className="pt-5 text-center font-bold text-3xl text-white">
-              Events
+              Events 
             </p>
 
             <div className="p-5 w-full">
@@ -84,7 +107,7 @@ function EventsAdminPage({ data }) {
                       <p>Title</p>
                     </div>
                     <div className="w-[250px] border-s-2  flex justify-start items-center p-2">
-                      <p>Content</p>
+                      <p>Available/Capacity</p>
                     </div>
                     <div className=" border-x-2 w-[200px] flex justify-start items-center p-2">
                       <p>Date</p>
@@ -121,12 +144,13 @@ function EventsAdminPage({ data }) {
 
                                 </div>
                               </div>
-                              <div className="w-[250px] border-s-2  flex justify-start items-center p-2">
+                              <div className="w-[250px] border-s-2  flex justify-between items-center p-2">
                                 <div className="flex flex-col">
-                                  <div className="line-clamp-3 ">
-                                    {parse(data.content[0].contentIng)}
-                                  </div>
-
+                                  <DetailQuotaEvent capacities={data.capacities} quota={data.quota}/>
+                                 
+                                </div>
+                                <div className="w-2/6">
+                                  <button  onClick={() => handleButtonReg(data.id)} className="bg-blue-500 p-1 rounded-md uppercase hover:bg-blue-400 hover:text-stone-300 text-xs text-white">View Registered</button>
                                 </div>
                               </div>
                               <div className=" border-x-2 w-[200px] flex justify-start items-center p-2">
@@ -204,14 +228,19 @@ function EventsAdminPage({ data }) {
 
                                 </div>
                               </div>
-                              <div className="w-[250px] border-s-2  flex justify-start items-center p-2">
+                             <div className="w-[250px] border-s-2  flex justify-between items-center p-2">
                                 <div className="flex flex-col">
-                                  <div className="line-clamp-3">
-                                    {parse(data.content[0].contentIng)}
+                                  <div className="flex-flex-col">
+                                     <div>Capacity: {data.capacities}</div>
+                                    <div>Available: {data.quota}</div>
                                   </div>
 
                                 </div>
+                                <div className="w-2/6">
+                                  <button  onClick={() => handleButtonReg(data.id)} className="bg-blue-500 p-1 rounded-md uppercase hover:bg-blue-400 hover:text-stone-300 text-xs text-white">View Registered</button>
+                                </div>
                               </div>
+                             
                               <div className=" border-x-2 w-[200px] flex justify-start items-center p-2">
                                 <p>{data.date}</p>
                               </div>
