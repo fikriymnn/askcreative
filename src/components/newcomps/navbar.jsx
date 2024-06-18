@@ -49,8 +49,9 @@ function Navbar() {
               <a className="hover:bg-[#153045] p-2 rounded-md px-3 hover:text-white" href="/">Home</a>
               <a className="hover:bg-[#153045] p-2 rounded-md px-3 hover:text-white" href="/events">Events</a>
               <a className="hover:bg-[#153045] p-2 rounded-md px-3 hover:text-white" href="/">Services</a>
+              <a className="hover:bg-[#153045] p-2 rounded-md px-3 hover:text-white" href="/articles">Articles</a>
+              <a className="hover:bg-[#153045] p-2 rounded-md px-3 hover:text-white" href="/galeri">Galleries</a>
               <a className="hover:bg-[#153045] p-2 rounded-md px-3 hover:text-white" href="/about">About</a>
-              <a className="hover:bg-[#153045] p-2 rounded-md px-3 hover:text-white" href="/">Articles</a>
             </div>
           </div>
           <div>
