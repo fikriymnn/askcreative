@@ -12,6 +12,7 @@ import parser from "html-react-parser";
 import { useLanguage } from "@/context/LanguageContext";
 import "react-quill/dist/quill.snow.css";
 import { format } from "date-fns";
+import Navbar from "@/components/newcomps/navbar";
 function Article() {
   const { language, changeLanguage } = useLanguage();
 
@@ -38,8 +39,8 @@ function Article() {
   }
   return (
     <>
-      <NavbarWithCTAButton />
-      <div className="bg-gray-200 pt-24 pb-5 ps-5 pe-5">
+      <Navbar />
+      <div className="bg-gray-200 pt-44 pb-5 ps-5 pe-5">
         {dataArticle.map((data, i) => {
           const timestamp = data.createdAt.toDate();
 
@@ -50,7 +51,7 @@ function Article() {
             <>
               <div className="md:flex justify-center items-center ">
                 <div></div>
-                <div className="md:w-4/6">
+                <div className="md:w-5/6">
                   <div className="py-2 flex gap-1">
                     <a href="/articles">
                       {language == "en" ? "Articles" : "文章"}
@@ -104,8 +105,8 @@ function Article() {
                           return (
                             <>
                               <div className="bg-gray-400 h-[2px]   "></div>
-                              <div className="w-100px flex items-center justify-center">
-                                <div className="bg-blue-600 py-1 px-2 flex justify-center items-center">
+                              <div className="w-100px flex items-center ">
+                                <div className="bg-[#153045] py-1 px-2 flex r items-center">
                                   <h2 className="mx-5 text-xl text-center font-semibold text-white ">
                                     {language == "en"
                                       ? data.topicIng

@@ -7,6 +7,7 @@ import NavbarWithCTAButton from "@/components/NavbarWithCTAButton";
 import { useEffect, useState } from "react";
 import { format } from "date-fns";
 import { useLanguage } from "@/context/LanguageContext";
+import Navbar from "../newcomps/navbar";
 
 function ArticlePage({ dataArticle }) {
   const { language, changeLanguage } = useLanguage();
@@ -25,16 +26,17 @@ function ArticlePage({ dataArticle }) {
   };
   return (
     <>
-      <NavbarWithCTAButton />
+      <Navbar />
       <div className="bg-gray-200 pt-24 pb-5 ps-5 pe-5 min-h-[700px]">
-        <div className="bg-white ">
-          <div className="relative p-5 pt-10">
-            <div className="relative">
+        <div className="bg-white rounded-ss-[100px]">
+          <div className="flex justify-between   z-10 p-5 pt-8  px-10 mt-20 mx-5">
+            <h1 className="text-[#0E2233] text-3xl font-bold">Artikel</h1>
+            <div className="relative z-10 ">
               <input
                 type="text"
                 onChange={(e) => handleSearch(e.target.value)}
                 placeholder="Search by title..."
-                className="w-full h-12 pl-4 pr-10 rounded-md border-none bg-gray-200 focus:outline-none !important"
+                className="w-12/12 z-10 h-12 pl-4 pr-10 rounded-md border-none bg-gray-200 focus:outline-none !important"
               />
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -58,40 +60,40 @@ function ArticlePage({ dataArticle }) {
           <div className="grid grid-cols-1 md:grid-cols-5 gap-5 px-5 pb-5">
             {search == ""
               ? dataArticle.map((data, i) => {
-                  const secon = data.createdAt.seconds;
-                  const date = new Date(secon * 1000);
-                  // Format tanggal
-                  const formattedDate = format(date, "yyyy-MM-dd");
+                const secon = data.createdAt.seconds;
+                const date = new Date(secon * 1000);
+                // Format tanggal
+                const formattedDate = format(date, "yyyy-MM-dd");
 
-                  return (
-                    <ArticleCard
-                      key={i}
-                      date={language == "en" ? data.date : formattedDate}
-                      id={data.id}
-                      img={data.img}
-                      title={
-                        language == "en" ? data.titleEnglish : data.titleChinese
-                      }
-                    />
-                  );
-                })
+                return (
+                  <ArticleCard
+                    key={i}
+                    date={language == "en" ? data.date : formattedDate}
+                    id={data.id}
+                    img={data.img}
+                    title={
+                      language == "en" ? data.titleEnglish : data.titleChinese
+                    }
+                  />
+                );
+              })
               : dataArticleResult.map((data, i) => {
-                  const secon = data.createdAt.seconds;
-                  const date = new Date(secon * 1000);
-                  // Format tanggal
-                  const formattedDate = format(date, "yyyy-MM-dd");
-                  return (
-                    <ArticleCard
-                      key={i}
-                      date={language == "en" ? data.date : formattedDate}
-                      id={data.id}
-                      img={data.img}
-                      title={
-                        language == "en" ? data.titleEnglish : data.titleChinese
-                      }
-                    />
-                  );
-                })}
+                const secon = data.createdAt.seconds;
+                const date = new Date(secon * 1000);
+                // Format tanggal
+                const formattedDate = format(date, "yyyy-MM-dd");
+                return (
+                  <ArticleCard
+                    key={i}
+                    date={language == "en" ? data.date : formattedDate}
+                    id={data.id}
+                    img={data.img}
+                    title={
+                      language == "en" ? data.titleEnglish : data.titleChinese
+                    }
+                  />
+                );
+              })}
           </div>
         </div>
       </div>
