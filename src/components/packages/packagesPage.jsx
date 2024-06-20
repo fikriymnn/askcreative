@@ -39,9 +39,7 @@ function PackagesPage({ dataPackage }) {
                     <li className="flex space-x-3">
                       <p className="leading-[24px] text-base my-2 font-normal  text-black ">
                         <span className="">
-                          {language == "en"
-                            ? "Package Includes :"
-                            : "套餐包括:"}
+                          {data.description}
                         </span>
                       </p>
                     </li>
@@ -63,7 +61,7 @@ function PackagesPage({ dataPackage }) {
                   </ol>
 
                   <a
-                    className=" inline-flex w-full justify-center  bg-primary px-5 py-2.5 text-center text-sm font-medium text-white  focus:outline-none focus:ring-4 focus:ring-cyan-200 "
+                    className=" inline-flex w-full justify-center  bg-[#184737] px-5 py-2.5 text-center text-sm font-medium text-white  focus:outline-none focus:ring-4 focus:ring-cyan-200 "
                     href={`/packages/details?id=${data.id}`}
                   >
                     <p>{language == "en" ? "DETAILS" : "更详细"}</p>

@@ -118,7 +118,7 @@ function DetailPackages() {
                         <>
                           <div className=" md:flex ">
                             <div className="md:w-64 pt-3 " key={i}>
-                              <a href={`/services/detail?id=${data.id}`}>
+                              <a href={`/events/event?id=${data.id}`}>
                                 <div className="bg-white shadow-xl md:hover:translate-y-[-10px] duration-300 md:block sm:block grid grid-cols-2  ">
                                   <div
                                     className=" h-48 bg-cover bg-center"

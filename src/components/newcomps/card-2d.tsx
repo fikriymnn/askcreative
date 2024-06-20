@@ -11,7 +11,7 @@ export const projects = [
   {
     title: "Aromatherapy Workshop",
 
-    link: "https://stripe.com",
+    link: "/packages",
   },
   {
     title: "Perfume Workshop",
@@ -24,7 +24,7 @@ export const projects = [
     link: "https://google.com",
   },
   {
-    title: "Our Product",
+    title: "Alat Labolatorium Skala Mikro",
 
     link: "https://google.com",
   },
