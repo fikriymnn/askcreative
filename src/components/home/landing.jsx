@@ -7,7 +7,7 @@ function Landing({dataHeading, dataParagraph}) {
           <div
             className="w-full h-full flex items-center bakg  p-5 lg:px-[10%] py-[20vh] lg:py-[30vh]  "
           >
-            <div className="flex flex-col text-left lg:max-w-[60%]">
+            <div className="flex flex-col text-left lg:max-w-[55%]">
               <div className="font-semibold text-[2.5rem] lg:text-[3rem]">
                 {dataHeading.map((data, i) => {
                   return (
