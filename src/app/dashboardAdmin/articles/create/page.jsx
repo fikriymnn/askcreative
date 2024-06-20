@@ -32,17 +32,17 @@ function CreateArticle() {
     setIsAlert(false);
   };
 
-  const [titleIng, setTitleIng] = useState("");
-  const [titleChi, setTitleChi] = useState("");
+  const [title, setTitle] = useState("");
+  const [author, setAuthor] = useState("");
   const [desIng, setDesIng] = useState("");
   const [desChi, setDesChi] = useState("");
 
   const [data, setData] = useState([
     {
       topicIng: "",
-      topicChi: "",
+     
       contentIng: "",
-      contentChi: "",
+      
       img: [{ img: "" }],
     },
   ]);
@@ -137,11 +137,11 @@ function CreateArticle() {
     var today = new Date();
     var date = today.getDate() + " " + format(today, "MMMM yyyy");
     const docRef = await addDoc(collection(db, "articles"), {
-      titleEnglish: titleIng,
-      titleChinese: titleChi,
-      descriptionEnglish: desIng,
-      descriptionChinese: desChi,
+      title: title,
+      description: desIng,
+     
       createdAt: today,
+      author: author,
 
       img: downloadURL,
       date: date,
@@ -169,9 +169,9 @@ function CreateArticle() {
       ...data,
       {
         topicIng: "",
-        topicChi: "",
+        
         contentIng: "",
-        contentChi: "",
+       
         img: [{ img: "" }],
       },
     ]);
@@ -250,17 +250,17 @@ function CreateArticle() {
             </div>
             <div className=" flex py-1 px-20 ">
               <div className=" w-2/12 text-end px-3 text-2xl font-semibold pt-5">
-                <p>Title</p>
+                <p>Details</p>
               </div>
               <div className=" w-10/12 "></div>
             </div>
             <div className=" flex py-1 px-20 ">
               <div className=" w-2/12 text-end p-3 py-5">
-                <p>English :</p>
+                <p> Article Title:</p>
               </div>
               <div className=" w-10/12 p-3">
                 <input
-                  onChange={(e) => setTitleIng(e.target.value)}
+                  onChange={(e) => setTitle(e.target.value)}
                   type="text"
                   required
                   placeholder="Insert Title"
@@ -269,7 +269,22 @@ function CreateArticle() {
                 />
               </div>
             </div>
-            <div className=" flex py-1 px-20">
+             <div className=" flex py-1 px-20 ">
+              <div className=" w-2/12 text-end p-3 py-5">
+                <p> Author:</p>
+              </div>
+              <div className=" w-10/12 p-3">
+                <input
+                  onChange={(e) => setAuthor(e.target.value)}
+                  type="text"
+                  required
+                  placeholder="Insert Title"
+                  color=" bg-transparent"
+                  className=" rounded-lg w-full border-slate-300 "
+                />
+              </div>
+            </div>
+            {/* <div className=" flex py-1 px-20">
               <div className=" w-2/12 text-end p-3 py-5">
                 <p>Chinese :</p>
               </div>
@@ -283,7 +298,7 @@ function CreateArticle() {
                   className=" rounded-lg w-full border-slate-300 "
                 />
               </div>
-            </div>
+            </div> */}
             <div className=" flex py-1 ps-40 pt-32 ">
               <div className=" w-10/12 px-3 text-2xl font-semibold pt-5">
                 <p>Main Description:</p>
@@ -293,18 +308,18 @@ function CreateArticle() {
               <div className=" w-2/12 text-end p-3 py-5">
                 <p>
                   Description
-                  <span className="text-red-600"> English</span> :
+                  <span className="text-red-600"> </span> :
                 </p>
               </div>
               <div className=" w-10/12 p-3">
                 <Quilltext
                   onChange={(e) => setDesIng(e)}
                   name="contentIng"
-                  placeholder={`Input Description English For Description ${1}`}
+                  placeholder={`Input Description ${1}`}
                 />
               </div>
             </div>
-            <div className=" flex py-1 px-20">
+            {/* <div className=" flex py-1 px-20">
               <div className=" w-2/12 text-end p-3 py-5">
                 <p>
                   Description
@@ -315,10 +330,10 @@ function CreateArticle() {
                 <Quilltext
                   onChange={(e) => setDesChi(e)}
                   name="contentChi"
-                  placeholder={`Input Description Mandarin For Description ${1}`}
+                  placeholder={`Input Description Mandarin ${1}`}
                 />
               </div>
-            </div>
+            </div> */}
             {data.map((val, i) => {
               return (
                 <>
@@ -338,7 +353,7 @@ function CreateArticle() {
                     <div className=" w-2/12 text-end p-3 py-5">
                       <p>
                         Topic
-                        <span className="text-red-600"> English</span> :
+                        <span className="text-red-600"> </span> :
                       </p>
                     </div>
                     <div className=" w-10/12 p-3">
@@ -353,7 +368,7 @@ function CreateArticle() {
                       />
                     </div>
                   </div>
-                  <div className=" flex py-1 px-20">
+                  {/* <div className=" flex py-1 px-20">
                     <div className=" w-2/12 text-end p-3 py-5">
                       <p>
                         Topic
@@ -371,7 +386,7 @@ function CreateArticle() {
                         className=" rounded-lg w-full border-slate-300 "
                       />
                     </div>
-                  </div>
+                  </div> */}
                   <div className=" flex py-1 px-20 ">
                     <div className=" w-2/12 "></div>
                     <div className=" w-10/12 "></div>
@@ -384,7 +399,7 @@ function CreateArticle() {
                     <div className=" w-2/12 text-end p-3 py-5">
                       <p>
                         Description
-                        <span className="text-red-600"> English</span> :
+                        <span className="text-red-600"> </span> :
                       </p>
                     </div>
                     <div className=" w-10/12 p-3">
@@ -400,13 +415,13 @@ function CreateArticle() {
                           )
                         }
                         name="contentIng"
-                        placeholder={`Input Description English For Description ${
+                        placeholder={`Input Description  ${
                           i + 1
                         }`}
                       />
                     </div>
                   </div>
-                  <div className=" flex py-1 px-20">
+                  {/* <div className=" flex py-1 px-20">
                     <div className=" w-2/12 text-end p-3 py-5">
                       <p>
                         Description
@@ -425,12 +440,12 @@ function CreateArticle() {
                           )
                         }
                         name="contentChi"
-                        placeholder={`Input Description Mandarin For Description ${
+                        placeholder={`Input Description Mandarin ${
                           i + 1
                         }`}
                       />
                     </div>
-                  </div>
+                  </div> */}
 
                   <div className=" w-10/12 p-3 ps-72">
                     {val.img.map((vall, ii) => {
