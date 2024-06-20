@@ -84,7 +84,7 @@ function ArticlesAdminPage({ data }) {
                       <p>Title</p>
                     </div>
                     <div className="w-[250px] border-s-2  flex justify-start items-center p-2">
-                      <p>Content</p>
+                      <p>Author</p>
                     </div>
                     <div className=" border-x-2 w-[200px] flex justify-start items-center p-2">
                       <p>Date</p>
@@ -114,18 +114,18 @@ function ArticlesAdminPage({ data }) {
                             <div className="w-full flex ">
                               <div className="w-[200px] border-s-2  flex justify-start items-center p-2">
                                 <div className="flex flex-col">
-                                  <p>{data.titleEnglish}</p>
-                                  <p>{data.titleChinese}</p>
+                                  <p>{data.title}</p>
+                                  {/* <p>{data.titleChinese}</p> */}
                                 </div>
                               </div>
                               <div className="w-[250px] border-s-2  flex justify-start items-center p-2">
                                 <div className="flex flex-col content">
                                   <div className="line-clamp-2">
-                                    {parse(data.content[0].contentIng)}
+                                    {data.author}
                                   </div>
-                                  <div className="line-clamp-2">
+                                  {/* <div className="line-clamp-2">
                                     {parse(data.content[0].contentChi)}
-                                  </div>
+                                  </div> */}
                                 </div>
                               </div>
                               <div className=" border-x-2 w-[200px] flex justify-start items-center p-2">
@@ -195,17 +195,17 @@ function ArticlesAdminPage({ data }) {
                                 <div className="w-[200px] border-s-2  flex justify-start items-center p-2">
                                   <div className="flex flex-col">
                                     <p>{data.titleEnglish}</p>
-                                    <p>{data.titleChinese}</p>
+                                    {/* <p>{data.titleChinese}</p> */}
                                   </div>
                                 </div>
                                 <div className="w-[250px] border-s-2  flex justify-start items-center p-2">
                                   <div className="flex flex-col content">
                                     <div className="line-clamp-2">
-                                      {parse(data.content[0].contentIng)}
+                                      {data.author}
                                     </div>
-                                    <div className="line-clamp-2">
+                                    {/* <div className="line-clamp-2">
                                       {parse(data.content[0].contentChi)}
-                                    </div>
+                                    </div> */}
                                   </div>
                                 </div>
                                 <div className=" border-x-2 w-[200px] flex justify-start items-center p-2">
