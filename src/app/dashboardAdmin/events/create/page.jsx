@@ -168,6 +168,7 @@ function CreateEvent() {
         feeRupiah: feeRupiah,
         quota:numericalQuota,
         capacities:numericalQuota,
+        roles:role,
     });
 
     // Add subset data to the 'galleries' collection
@@ -292,6 +293,25 @@ function CreateEvent() {
 
     "background",
   ];
+
+  const [role, setRole] = useState([{ header: '' }]);
+
+  const handleChanger = (e, index) => {
+    const { name, value } = e.target;
+    const newRole = [...role];
+    newRole[index][name] = value;
+    setRole(newRole);
+  };
+
+  const handleClickr = () => {
+    setRole([...role, { header: '' }]);
+  };
+
+  const handleDeleter = (index) => {
+    const newRole = role.filter((_, i) => i !== index);
+    setRole(newRole);
+  };
+
   return (
     <>
       {isAlert && (
@@ -513,12 +533,67 @@ function CreateEvent() {
                 />
               </div>
             </div>
+             <div className=" flex py-1 px-20 ">
+              <div className=" w-2/12 text-end px-3 text-2xl font-semibold pt-5">
+                <p>Participant </p>
+              </div>
+              <div className=" w-10/12 "></div>
+            </div>
+            {role.map((val, i) => (
+        <div key={i} className="px-20">
+          <div className="flex py-1 gap-2">
+            <div className="w-2/12 text-end  text-2xl font-bold text-blue-600">
+              <p>{i + 1}</p>
+            </div>
+            <div className="w-10/12 flex">
+              <input
+                type="text"
+                name="header"
+                value={val.header}
+                onChange={(e) => handleChanger(e, i)}
+                placeholder={`Participant role ${i + 1} ex: Mahasiswa`}
+                className="w-full  border rounded-lg "
+                />
+                </div>
+              {role.length !== 1 && (
+                <div className="  text-center rounded-sm text-white">
+                  <button
+                    type="button"
+                    onClick={() => handleDeleter(i)}
+                    className="font-light bg-red-700 h-full rounded-md px-3"
+                  >
+                    Delete
+                  </button>
+                </div>
+              )}
+          </div>
+        </div>
+      ))}
             <div className=" flex py-1 px-20 ">
               <div className=" w-10/12 px-3 text-2xl font-semibold pt-5">
                 <p>Content</p>
               </div>
               <div className=" w-10/12 "></div>
             </div>
+            <div>
+
+
+
+      
+      <div className="flex justify-center items-center gap-10 mb-20">
+        <div className="w-32 bg-blue-950 text-center rounded-xl text-white">
+          <button
+            type="button"
+            onClick={handleClickr}
+            className="font-light"
+          >
+            Add Role
+          </button>
+        </div>
+      </div>
+    </div>
+
+
             {data.map((val, i) => {
               return (
                 <div key={i}>
