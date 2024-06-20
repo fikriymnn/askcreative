@@ -18,7 +18,7 @@ import PackagesPage from "@/components/packages/packagesPage";
 async function getDataPackage() {
   let data = [];
   try {
-    const ordersRef = collection(db, "package");
+    const ordersRef = collection(db, "workshop");
     const q = query(ordersRef, orderBy("createdAt", "desc"));
     const querySnapshot = await getDocs(q);
 

@@ -72,7 +72,7 @@ function ArticlePage({ dataArticle }) {
                     id={data.id}
                     img={data.img}
                     title={
-                      language == "en" ? data.titleEnglish : data.titleChinese
+                      data.title
                     }
                   />
                 );

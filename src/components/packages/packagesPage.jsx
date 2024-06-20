@@ -5,25 +5,22 @@ import NavbarWithCTAButton from "@/components/NavbarWithCTAButton";
 import CustomFooter from "@/components/CustomFooter";
 import { useEffect, useState } from "react";
 import { useLanguage } from "@/context/LanguageContext";
+import Navbar from "../newcomps/navbar";
 
 function PackagesPage({ dataPackage }) {
   const { language, changeLanguage } = useLanguage();
   return (
     <>
-      <NavbarWithCTAButton />
-      <div className="bg-slate-100 w-full py-4 mt-20">
-        <p className="font-semibold text-3xl text-center pt-10 ">
-          {language == "en"
-            ? "Choose The Best Package You Need"
-            : "选择您需要的服务包"}
-        </p>
+      <Navbar />
+      <div className="bg-slate-100 pt-36   w-full py-4 ">
+
         <div className="bg-slate-100 w-full pt-4 mt-6 md:grid md:grid-cols-3 grid grid-cols-1  gap-3 px-12 h-full ">
           {dataPackage.map((data, i) => {
             const le = data;
-            const firsPriceRp = data.price[0].priceRupiah;
-            const lastPriceRp = data.price[data.price.length - 1].priceRupiah;
-            const firsPriceYuan = data.price[0].priceYuan;
-            const lastPriceYuan = data.price[data.price.length - 1].priceYuan;
+            // const firsPriceRp = data.price[0].priceRupiah;
+            // const lastPriceRp = data.price[data.price.length - 1].priceRupiah;
+            // const firsPriceYuan = data.price[0].priceYuan;
+            // const lastPriceYuan = data.price[data.price.length - 1].priceYuan;
 
             return (
               <>
@@ -32,12 +29,10 @@ function PackagesPage({ dataPackage }) {
                   className="bg-white p-[50px] rounded-lg shadow-lg h-full flex flex-col justify-between"
                 >
                   <h5 className="mb-4 bg- text-[20px]  text-black font-semibold text-center  h-[55px] line-clamp-2">
-                    {data.titleEnglish}
+                    {data.title}
                   </h5>
                   <p className="mb-4 text-[18px] font-medium leading-[28px] text-[#1e70ea] text-center">
-                    {language == "en"
-                      ? "Rp" + firsPriceRp + "-" + lastPriceRp
-                      : firsPriceYuan + "-" + lastPriceYuan + "元"}
+                    {data.price}
                   </p>
 
                   <ol className="mb-auto pb-3 ">
@@ -50,7 +45,7 @@ function PackagesPage({ dataPackage }) {
                         </span>
                       </p>
                     </li>
-                    {data.services.map((data, i) => {
+                    {/* {data.workshop.map((data, i) => {
                       return (
                         <>
                           <div
@@ -59,12 +54,12 @@ function PackagesPage({ dataPackage }) {
                           >
                             <p className="text-base font-normal leading-tight text-black line-clamp-1 ">
                               &bull;{" "}
-                              <span className="px-2">{data.nameIng}</span>
+                              <span className="px-2">{data.name}</span>
                             </p>
                           </div>
                         </>
                       );
-                    })}
+                    })} */}
                   </ol>
 
                   <a

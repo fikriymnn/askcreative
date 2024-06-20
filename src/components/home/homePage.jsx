@@ -27,12 +27,12 @@ function HomePage({
   return (
     <>
       <div className="z-40">
-       <Navbar/>
+        <Navbar />
       </div>
-      <Landing dataHeading={dataHeading} dataParagraph={dataParagraph}/>
+      <Landing dataHeading={dataHeading} dataParagraph={dataParagraph} />
 
       {/* ==== SERVICES ==== */}
-      <Services/>
+      <Services />
       <p className="font-semibold text-3xl text-center pt-3 pb-6 ">
         {language == "en" ? "Latest Articles" : "最新文章"}
       </p>
@@ -47,7 +47,7 @@ function HomePage({
           return (
             <div key={i}>
               <CustomCard
-                text={language == "en" ? data.titleEnglish : data.titleChinese}
+                text={language == "en" ? data.title : data.titleChinese}
                 isi={language == "en" ? data.date : formattedDate}
                 isi2={
                   language == "en"
@@ -70,7 +70,7 @@ function HomePage({
               <a key={i} href={`/articles/article?id=${data.id}`}>
                 <div className="cursor-pointer border-b-[2px] border-[#031530]  my-4 md:mb-3 md:mt-0">
                   <div className="font-semibold text-xl leading-[30px] hover:underline line-clamp-2">
-                    {language == "en" ? data.titleEnglish : data.titleChinese}
+                    {language == "en" ? data.title : data.title}
                   </div>
                   <h1 className="text-[#6b7280]">
                     {language == "en" ? data.date : formattedDate}
@@ -118,7 +118,7 @@ function HomePage({
             arrows="true"
           >
             {dataPackage.map((data, i) => {
-            
+
 
               return (
                 <div
@@ -170,7 +170,7 @@ function HomePage({
         {/* desktop */}
         <div className="md:visible sm:hidden hidden bg-slate-100 w-full pt-4  md:grid md:grid-cols-3 gap-5 px-12">
           {dataPackage.map((data, i) => {
-          
+
             return (
               <div
                 key={i}
