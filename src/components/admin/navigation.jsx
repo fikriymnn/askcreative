@@ -71,7 +71,7 @@ function Navigation({
           <button className="w-full h-full" onClick={toggleBar}>
             {bar === 0 ? (
               <Image
-                src="/assets/images/tyssquare.png"
+                src="/assets/images/ask.png"
                 alt=""
                 className="mx-5  opacity-100"
                 width={40}
@@ -85,7 +85,7 @@ function Navigation({
                       key={i}
                       className="mx-5 "
                       // src={data.img}
-                      src="/assets/images/tyssquare.png"
+                      src="/assets/images/ask.png"
                       width={160}
                       height={50}
                     />
