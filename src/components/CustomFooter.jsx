@@ -220,7 +220,7 @@ const CustomFooter = () => {
     }
   }
   return (
-    <div className=" w-full bg-[#153045] ">
+    <div className=" w-full bg-[#184737] ">
       <div className="w-full md:flex grid p-5 sm:p-8 md:p-12 gap-10 ">
         <div className=" md:w-5/12">
           <img src={logo} width={200} height={75} />
