@@ -152,9 +152,9 @@ function HomeAdmin() {
   return (
     <>
       <div className="flex">
-        <Navigation homepage="ps-3 text-[#0d3064] bg-white rounded-sm" />
+        <Navigation homepage="ps-3 text-[#184737] bg-white rounded-sm" />
         <div className="p-5 w-full h-screen overflow-y-scroll">
-          <div className="w-full bg-[#0d3064] ">
+          <div className="w-full bg-[#184737] ">
             <p className="pt-5 text-center font-bold text-3xl text-white ">
               Homepage
             </p>
@@ -248,7 +248,7 @@ function HomeAdmin() {
                   </div>
                 </div>
 
-                <div className="flex bg-slate-300 rounded-md">
+                {/* <div className="flex bg-slate-300 rounded-md">
                   <div className="w-full flex h-20">
                     <div className="w-2/12 font-semibold flex justify-start items-center p-2">
                       <p>Logo navbar white</p>
@@ -275,9 +275,9 @@ function HomeAdmin() {
                       </button>
                     </a>
                   </div>
-                </div>
+                </div> */}
 
-                <div className="flex bg-slate-300 rounded-md">
+                {/* <div className="flex bg-slate-300 rounded-md">
                   <div className="w-full flex h-20">
                     <div className="w-2/12 font-semibold flex justify-start items-center p-2">
                       <p>Logo navbar</p>
@@ -308,7 +308,7 @@ function HomeAdmin() {
                       </button>
                     </a>
                   </div>
-                </div>
+                </div> */}
 
                 <div className="flex bg-slate-300 rounded-md">
                   <div className="w-full h-20 flex">
@@ -319,7 +319,7 @@ function HomeAdmin() {
                       <div className="flex flex-col">
                         {dataLogoFoot.length > 0 &&
                           dataLogoFoot.map((data, i) => {
-                            return <><Image width={220} height={100} className="h-14" src={data.img} alt="" /></>;
+                            return <><Image width={220} height={100} className="h-14 w-full" src={data.img} alt="" /></>;
                           })}
                       </div>
                     </div>
