@@ -31,7 +31,7 @@ function MultipleCarousel() {
     let data = [];
 
     try {
-      const querySnapshot = await getDocs(collection(db, "clients"));
+      const querySnapshot = await getDocs(collection(db, "galleries"));
 
       console.log(querySnapshot);
       querySnapshot.forEach((doc) => {

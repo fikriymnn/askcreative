@@ -72,17 +72,24 @@ function Article() {
                       ></path>
                     </svg>
                     <p className="text-blue-500">
-                      {language == "en" ? data.titleEnglish : data.titleChinese}
+                      {data.title}
                     </p>
                   </div>
                   <div className="bg-white ">
                     <div className="relative p-5 pb-0">
                       <div className="w-full h-1000px">
                         <h3>{language == "en" ? data.date : formattedDate}</h3>
+                        <p>
+                          Author: <span > {parser(
+
+                            data.author
+
+                          )}</span>
+
+                        </p>
                         <h1 className="md:text-4xl sm:text-2xl text-xl text-center p-5 font-semibold">
-                          {language == "en"
-                            ? data.titleEnglish
-                            : data.titleChinese}
+                          {
+                            data.title}
                         </h1>
                         <div className="">
                           <Image
@@ -93,11 +100,12 @@ function Article() {
                           />
                         </div>
                         <div className=" pt-10 pb-10 ql-editor  -translate-x-4">
+
                           <p>
                             {parser(
-                              language == "en"
-                                ? data.descriptionEnglish
-                                : data.descriptionChinese
+
+                              data.description
+
                             )}
                           </p>
                         </div>
@@ -108,18 +116,17 @@ function Article() {
                               <div className="w-100px flex items-center ">
                                 <div className="bg-[#153045] py-1 px-2 flex r items-center">
                                   <h2 className="mx-5 text-xl text-center font-semibold text-white ">
-                                    {language == "en"
-                                      ? data.topicIng
-                                      : data.topicChi}
+                                    {
+                                      data.topicIng
+                                    }
                                   </h2>
                                 </div>
                               </div>
 
                               <div className="py-5 ql-editor  -translate-x-4">
                                 {parser(
-                                  language == "en"
-                                    ? data.contentIng
-                                    : data.contentChi
+                                  data.contentIng
+
                                 )}
                               </div>
                               {
