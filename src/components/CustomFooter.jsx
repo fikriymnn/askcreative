@@ -220,7 +220,7 @@ const CustomFooter = () => {
     }
   }
   return (
-    <div className=" w-full bg-[#153045] ">
+    <div className=" w-full bg-[#184737] ">
       <div className="w-full md:flex grid p-5 sm:p-8 md:p-12 gap-10 ">
         <div className=" md:w-5/12">
           <img src={logo} width={200} height={75} />
@@ -231,8 +231,7 @@ const CustomFooter = () => {
         </div>
         <div className="md:w-4/12 ">
           <p className=" uppercase font-bold text-white">
-            {" "}
-            {language == "en" ? "Contact Us" : "联系我们"}
+           Kontak Kami
           </p>
           <a href={`https://www.google.com/maps/search/${address}`}>
             <p className=" text-white pt-3 pb-2 hover:translate-x-1 duration-100 hover:text-blue-200 ">
@@ -261,26 +260,26 @@ const CustomFooter = () => {
           </div>
         </div>
         <div className=" py-4 md:py-0 ">
-          <p className=" text-white font-bold">
-            {language == "en" ? "Our Social Media" : "我们的社交媒体"}
+          <p className=" text-white font-bold mb-4">
+            Sosial Media Kami
           </p>
           <div className=" flex gap-4">
-            <img src={barcode} alt="" className=" w-40" />
-            <div className=" ">
-              <a href={`https://wa.me/${fb}`}>
+          
+            
+              {/* <a href={`https://wa.me/${fb}`}>
                 <img
                   src="/assets/images/wa.svg"
                   alt=""
                   className=" w-6 h-6 hover:scale-110"
                 />
-              </a>
-              <a href={linkedin}>
+              </a> */}
+              {/* <a href={linkedin}>
                 <img
                   src="/assets/images/linkedin.png"
                   alt=""
                   className=" w-6 h-6 hover:scale-110 my-5"
                 />
-              </a>
+              </a> */}
               <a href={`https://www.instagram.com/${ig}`}>
                 <img
                   src="/assets/images/instagram (2).png"
@@ -288,14 +287,8 @@ const CustomFooter = () => {
                   className=" w-6 h-6 hover:scale-110 mb-5"
                 />
               </a>
-              <a href={wechat}>
-                <img
-                  src="/assets/images/we.png"
-                  alt=""
-                  className=" h-6 hover:scale-110"
-                />
-              </a>
-            </div>
+              
+            
           </div>
         </div>
       </div>

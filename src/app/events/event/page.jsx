@@ -68,8 +68,8 @@ function Event() {
             <>
               <div className="md:flex justify-center items-center ">
                 <div></div>
-                <div className="md:w-11/12 ">
-                  <div className="py-2 flex gap-1 ">
+                <div className="md:w-11/12 flex flex-col items-center ">
+                  <div className="py-2  gap-1 w-10/12 flex justify-start">
                     <a href="/events">
                       {language == "en" ? "Events" : "活动 "}
                     </a>
@@ -89,10 +89,10 @@ function Event() {
                       ></path>
                     </svg>
                     <p className="text-blue-500">
-                      {language == "en" ? data.titleEnglish : data.titleChinese}
+                      {data.titleEnglish}
                     </p>
                   </div>
-                  <div className="bg-white ">
+                  <div className="bg-white md:w-10/12">
                     <div className="relative px-5">
                       <div className="w-full">
                         <div className="pt-3">
@@ -158,6 +158,7 @@ function Event() {
                             </div>
                             {formReg == true && (
                              <FormReg
+                             roles={data.roles}
                              formregx={
                               <div className="flex justify-end m-2 " onClick={() => setFormReg(!formReg)}>
                                       <svg width="25" height="25" viewBox="0 0 294 294" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -182,6 +183,7 @@ function Event() {
                             )}
                           </p>
                         </div>
+                        
                         {data.content.map((data, i) => {
                           return (
                             <>

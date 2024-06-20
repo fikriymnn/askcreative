@@ -44,14 +44,14 @@ function EventsAdminPage({ data }) {
   return (
     <>
       <div className="flex">
-        <Navigation events="ps-3 text-[#0d3064] bg-white rounded-sm" />
+        <Navigation events="ps-3 text-[#184737] bg-white rounded-sm" />
         <div className="p-5 w-full h-screen overflow-y-scroll">
           {isRegView? <>
           <ViewReg selectedId={selectedId} key={selectedId} available={data.quota} capacity={data.capacities}>
-            <button onClick={handleRegViewX}>Back</button>
+            <div className="py-2"><button className="bg-red-500 text-white uppercase px-2 py-1 rounded-sm" onClick={handleRegViewX}>Back</button></div>
           </ViewReg>
           </>:null}
-          <div className="w-full bg-[#0d3064] ">
+          <div className="w-full bg-[#184737] ">
             <p className="pt-5 text-center font-bold text-3xl text-white">
               Events 
             </p>
