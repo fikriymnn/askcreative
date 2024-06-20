@@ -4,7 +4,7 @@ import { doc, addDoc, collection,runTransaction, query, where, getDocs } from "f
 import { db } from "../../../firebase/page"; // Make sure this path is correct
 import { useSearchParams } from "next/navigation";
 
-const FormReg = ({ formregx, docId }) => {
+const FormReg = ({ formregx, docId, roles }) => {
   const searchParams = useSearchParams();
   const id = searchParams.get("id");
   const [name, setName] = useState("");
@@ -157,6 +157,7 @@ const handleSubmit = async (e) => {
             </div>
             <div className="mt-5 flex flex-col justify-center">
               <label>Role:</label>
+              
               <div className="flex justify-center items-center">
                 <div className="relative z-20 bg-slate-200 rounded-md dark:bg-form-input w-full mt-2">
                   <select
@@ -166,9 +167,15 @@ const handleSubmit = async (e) => {
                     required
                   >
                     <option value="" className="text-body dark:text-bodydark">Select</option>
-                    <option value="Mahasiswa" className="text-body dark:text-bodydark">Mahasiswa</option>
-                    <option value="Dosen" className="text-body dark:text-bodydark">Dosen</option>
-                    <option value="Umum" className="text-body dark:text-bodydark">Umum</option>
+                    {roles.map((data, i) => {
+                          return(
+                            <>
+                           <option value={data.header} className="text-body dark:text-bodydark">{data.header}</option>
+                            </>
+                          )
+                        })}
+                    
+                   
                   </select>
                 </div>
               </div>
