@@ -21,7 +21,7 @@ function GaleriPage({ dataGaleri }) {
             <div className="bg-gray-200 min-h-[700px]  pt-24 pb-5 ps-5 pe-5 ">
                 <div className="bg-white rounded-ss-[100px]">
                     <div className="flex justify-between   z-10 p-5 pt-8 mb-10 px-10 mt-20 mx-5">
-                        <h1 className="text-[#0E2233] text-4xl font-bold">Galeri</h1>
+                        <h1 className="text-[#184737] text-4xl font-bold">Galeri</h1>
 
                     </div>
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-5 px-5 pb-5">
