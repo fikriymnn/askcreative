@@ -35,24 +35,24 @@ function Navbar() {
   return (
     <div className={`relative z-50 `}>
       <div className={`w-screen flex flex-col  fixed ${scrollDirection == 'down' ? '-translate-y-[88px]' : ''} duration-300`}>
-        <div className='h-14 bg-[#153045] pt-2 flex justify-center'>
-          <img className="h-full" src="/assets/images/ask.png" alt="" />
+        <div className='h-14 bg-[#184737] pt-2 flex justify-center'>
+          <img className="h-full" src="/assets/images/asklogo2.png" alt="" />
         </div>
-        <div className=' h-8 flex justify-center bg-[#0E2233] text-[7px] p-1 text-white text-center'>
+        <div className=' h-8 flex justify-center bg-[#123227] text-[7px] p-1 text-white text-center'>
           <p className='flex flex-col'><span>Essential Oil</span> <span>Health and Beauty</span></p>
         </div>
         <div className='flex flex-col '>
 
           <div className='h-16 bg-white flex justify-between ps-3 pe-20 items-center'>
-            <img className="h-12" src="/assets/images/asksq.png" alt="" />
-            <div className="w-4/6 flex justify-between items-center text-[#0E2233] text-xl font-bold">
-              <a className="hover:bg-[#153045] p-2 rounded-md px-3 hover:text-white" href="/">Home</a>
-              <a className="hover:bg-[#153045] p-2 rounded-md px-3 hover:text-white" href="/events">Events</a>
-              <a className="hover:bg-[#153045] p-2 rounded-md px-3 hover:text-white" href="/">Services</a>
-              <a className="hover:bg-[#153045] p-2 rounded-md px-3 hover:text-white" href="/articles">Articles</a>
-              <a className="hover:bg-[#153045] p-2 rounded-md px-3 hover:text-white" href="/galeri">Galleries</a>
-              <a className="hover:bg-[#153045] p-2 rounded-md px-3 hover:text-white" href="/about">About</a>
-              <a className="hover:bg-[#153045] p-2 rounded-md px-3 hover:text-white" href="/">Articles</a>
+            <img className="h-12 rounded-md" src="/assets/images/asklogo2.png" alt="" />
+            <div className="w-4/6 flex justify-between items-center text-[#123227] text-xl font-bold">
+              <a className="hover:bg-[#184737] p-2 rounded-md px-3 hover:text-white" href="/">Home</a>
+              <a className="hover:bg-[#184737] p-2 rounded-md px-3 hover:text-white" href="/events">Events</a>
+              <a className="hover:bg-[#184737] p-2 rounded-md px-3 hover:text-white" href="/">Services</a>
+              <a className="hover:bg-[#184737] p-2 rounded-md px-3 hover:text-white" href="/articles">Articles</a>
+              <a className="hover:bg-[#184737] p-2 rounded-md px-3 hover:text-white" href="/galeri">Galleries</a>
+              <a className="hover:bg-[#184737] p-2 rounded-md px-3 hover:text-white" href="/about">About</a>
+              <a className="hover:bg-[#184737] p-2 rounded-md px-3 hover:text-white" href="/">Articles</a>
              <div className="flex gap-2">
               <button className="border border-slate-300">
                 <img
