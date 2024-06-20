@@ -65,13 +65,13 @@ function Navigation({
         className={`${bar == 1
           ? " w-[200px] duration-100 ease-in-out"
           : " w-[80px] duration-100 ease-in-out"
-          } h-screen shadow-md flex-col text-[#ffffff] bg-[#0d3064]`}
+          } h-screen shadow-md flex-col text-[#ffffff] bg-[#184737]`}
       >
         <div className="w-full h-[80px] mb-5 shadow-md  ">
           <button className="w-full h-full" onClick={toggleBar}>
             {bar === 0 ? (
               <Image
-                src="/assets/images/tyssquare.png"
+                src="/assets/images/ask.png"
                 alt=""
                 className="mx-5  opacity-100"
                 width={40}
@@ -83,10 +83,10 @@ function Navigation({
                   return (
                     <Image
                       key={i}
-                      className="mx-5 "
+                      className="mx-auto "
                       // src={data.img}
-                      src="/assets/images/tyssquare.png"
-                      width={160}
+                      src="/assets/images/asklogo2.png"
+                      width={120}
                       height={50}
                     />
                   );
@@ -125,6 +125,79 @@ function Navigation({
                 </div>
                 <div className="flex items-center justify-center font-semibold">
                   <p>Homepage</p>
+                </div>
+              </div>
+            )}
+          </button>
+        </a>
+         <a href="/dashboardAdmin/events">
+          <button
+            className={`${bar == 1
+              ? "ms-5 justify-start items-center"
+              : " justify-center items-center"
+              } w-full h-10 flex my-3 hover:text-[#0d3064] hover:ps-3 hover:bg-white rounded-sm duration-200 ease-in-out ${events}`}
+          >
+            {bar === 0 ? (
+              <div className="w-10">
+                <svg
+                  className="fill-current"
+                  xmlns="http://www.w3.org/2000/svg"
+                  data-name="Layer 1"
+                  viewBox="0 0 24 24"
+                >
+                  <path d="M19.99121,2.002a.99943.99943,0,0,0-1,1v.63672a9.03617,9.03617,0,0,1-7,3.36328h-6a3.00328,3.00328,0,0,0-3,3v2a3.00328,3.00328,0,0,0,3,3H6.475L4.07227,20.6084A.99931.99931,0,0,0,4.99121,22.002h4a.99857.99857,0,0,0,.91895-.60644L12.63391,15.04a9.02805,9.02805,0,0,1,6.3573,3.32507V19.002a1,1,0,0,0,2,0v-16A.99942.99942,0,0,0,19.99121,2.002Zm-14,11a1.00067,1.00067,0,0,1-1-1v-2a1.00068,1.00068,0,0,1,1-1h1v4Zm2.34082,7H6.50781l2.14258-5h1.82422ZM18.99121,15.5238a11.052,11.052,0,0,0-7-2.52185h-3v-4h3a11.05281,11.05281,0,0,0,7-2.52234Z" />
+                </svg>
+              </div>
+            ) : (
+              <div className="flex gap-2 currentColor">
+                <div className="w-8">
+                  <svg
+                    className="fill-current"
+                    xmlns="http://www.w3.org/2000/svg"
+                    data-name="Layer 1"
+                    viewBox="0 0 24 24"
+                  >
+                    <path d="M19.99121,2.002a.99943.99943,0,0,0-1,1v.63672a9.03617,9.03617,0,0,1-7,3.36328h-6a3.00328,3.00328,0,0,0-3,3v2a3.00328,3.00328,0,0,0,3,3H6.475L4.07227,20.6084A.99931.99931,0,0,0,4.99121,22.002h4a.99857.99857,0,0,0,.91895-.60644L12.63391,15.04a9.02805,9.02805,0,0,1,6.3573,3.32507V19.002a1,1,0,0,0,2,0v-16A.99942.99942,0,0,0,19.99121,2.002Zm-14,11a1.00067,1.00067,0,0,1-1-1v-2a1.00068,1.00068,0,0,1,1-1h1v4Zm2.34082,7H6.50781l2.14258-5h1.82422ZM18.99121,15.5238a11.052,11.052,0,0,0-7-2.52185h-3v-4h3a11.05281,11.05281,0,0,0,7-2.52234Z" />
+                  </svg>
+                </div>
+                <div className="flex items-center justify-center font-semibold">
+                  <p>Events</p>
+                </div>
+              </div>
+            )}
+          </button>
+        </a>
+         <a href="/dashboardAdmin/packages">
+          <button
+            className={`${bar == 1
+              ? "ms-5 justify-start items-center"
+              : " justify-center items-center"
+              } w-full h-10 flex my-3 hover:text-[#0d3064] hover:ps-3 hover:bg-white rounded-sm duration-200 ease-in-out ${packages}`}
+          >
+            {bar === 0 ? (
+              <div className="w-10">
+                <svg
+                  className="fill-current"
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 24 24"
+                >
+                  <path d="M20.49,7.52a.19.19,0,0,1,0-.08.17.17,0,0,1,0-.07l0-.09-.06-.15,0,0h0l0,0,0,0a.48.48,0,0,0-.09-.11l-.09-.08h0l-.05,0,0,0L16.26,4.45h0l-3.72-2.3A.85.85,0,0,0,12.25,2h-.08a.82.82,0,0,0-.27,0h-.1a1.13,1.13,0,0,0-.33.13L4,6.78l-.09.07-.09.08L3.72,7l-.05.06,0,0-.06.15,0,.09v.06a.69.69,0,0,0,0,.2v8.73a1,1,0,0,0,.47.85l7.5,4.64h0l0,0,.15.06.08,0a.86.86,0,0,0,.52,0l.08,0,.15-.06,0,0h0L20,17.21a1,1,0,0,0,.47-.85V7.63S20.49,7.56,20.49,7.52ZM12,4.17l1.78,1.1L8.19,8.73,6.4,7.63Zm-1,15L5.5,15.81V9.42l5.5,3.4Zm1-8.11L10.09,9.91l5.59-3.47L17.6,7.63Zm6.5,4.72L13,19.2V12.82l5.5-3.4Z" />
+                </svg>
+              </div>
+            ) : (
+              <div className="flex gap-2">
+                <div className="w-8">
+                  <svg
+                    className="fill-current"
+                    xmlns="http://www.w3.org/2000/svg"
+                    data-name="Layer 1"
+                    viewBox="0 0 24 24"
+                  >
+                    <path d="M21.71,15.58l-4.52-4.51a6.85,6.85,0,0,0,.14-1.4A7.67,7.67,0,0,0,6.42,2.72a1,1,0,0,0-.57.74,1,1,0,0,0,.28.88l4.35,4.34-1.8,1.8L4.34,6.13a1,1,0,0,0-.88-.27,1,1,0,0,0-.74.56,7.67,7.67,0,0,0,7,10.91,6.85,6.85,0,0,0,1.4-.14l4.51,4.52a1,1,0,0,0,1.42,0,1,1,0,0,0,0-1.42l-4.9-4.9a1,1,0,0,0-.95-.26,5.88,5.88,0,0,1-1.48.2A5.67,5.67,0,0,1,4,9.67a6,6,0,0,1,.08-1L8,12.6a1,1,0,0,0,1.42,0L12.6,9.39A1,1,0,0,0,12.6,8L8.71,4.08a6.12,6.12,0,0,1,1-.08,5.67,5.67,0,0,1,5.66,5.67,5.88,5.88,0,0,1-.2,1.48,1,1,0,0,0,.26.95l4.9,4.9a1,1,0,0,0,1.42-1.42Z" />
+                  </svg>
+                </div>
+                <div className="flex items-center justify-center font-semibold">
+                  <p>Workshop</p>
                 </div>
               </div>
             )}
@@ -206,41 +279,7 @@ function Navigation({
             )}
           </button>
         </a>
-        <a href="/dashboardAdmin/packages">
-          <button
-            className={`${bar == 1
-              ? "ms-5 justify-start items-center"
-              : " justify-center items-center"
-              } w-full h-10 flex my-3 hover:text-[#0d3064] hover:ps-3 hover:bg-white rounded-sm duration-200 ease-in-out ${packages}`}
-          >
-            {bar === 0 ? (
-              <div className="w-10">
-                <svg
-                  className="fill-current"
-                  xmlns="http://www.w3.org/2000/svg"
-                  viewBox="0 0 24 24"
-                >
-                  <path d="M20.49,7.52a.19.19,0,0,1,0-.08.17.17,0,0,1,0-.07l0-.09-.06-.15,0,0h0l0,0,0,0a.48.48,0,0,0-.09-.11l-.09-.08h0l-.05,0,0,0L16.26,4.45h0l-3.72-2.3A.85.85,0,0,0,12.25,2h-.08a.82.82,0,0,0-.27,0h-.1a1.13,1.13,0,0,0-.33.13L4,6.78l-.09.07-.09.08L3.72,7l-.05.06,0,0-.06.15,0,.09v.06a.69.69,0,0,0,0,.2v8.73a1,1,0,0,0,.47.85l7.5,4.64h0l0,0,.15.06.08,0a.86.86,0,0,0,.52,0l.08,0,.15-.06,0,0h0L20,17.21a1,1,0,0,0,.47-.85V7.63S20.49,7.56,20.49,7.52ZM12,4.17l1.78,1.1L8.19,8.73,6.4,7.63Zm-1,15L5.5,15.81V9.42l5.5,3.4Zm1-8.11L10.09,9.91l5.59-3.47L17.6,7.63Zm6.5,4.72L13,19.2V12.82l5.5-3.4Z" />
-                </svg>
-              </div>
-            ) : (
-              <div className="flex gap-2">
-                <div className="w-8">
-                  <svg
-                    className="fill-current"
-                    xmlns="http://www.w3.org/2000/svg"
-                    viewBox="0 0 24 24"
-                  >
-                    <path d="M20.49,7.52a.19.19,0,0,1,0-.08.17.17,0,0,1,0-.07l0-.09-.06-.15,0,0h0l0,0,0,0a.48.48,0,0,0-.09-.11l-.09-.08h0l-.05,0,0,0L16.26,4.45h0l-3.72-2.3A.85.85,0,0,0,12.25,2h-.08a.82.82,0,0,0-.27,0h-.1a1.13,1.13,0,0,0-.33.13L4,6.78l-.09.07-.09.08L3.72,7l-.05.06,0,0-.06.15,0,.09v.06a.69.69,0,0,0,0,.2v8.73a1,1,0,0,0,.47.85l7.5,4.64h0l0,0,.15.06.08,0a.86.86,0,0,0,.52,0l.08,0,.15-.06,0,0h0L20,17.21a1,1,0,0,0,.47-.85V7.63S20.49,7.56,20.49,7.52ZM12,4.17l1.78,1.1L8.19,8.73,6.4,7.63Zm-1,15L5.5,15.81V9.42l5.5,3.4Zm1-8.11L10.09,9.91l5.59-3.47L17.6,7.63Zm6.5,4.72L13,19.2V12.82l5.5-3.4Z" />
-                  </svg>
-                </div>
-                <div className="flex items-center justify-center font-semibold">
-                  <p>Packages</p>
-                </div>
-              </div>
-            )}
-          </button>
-        </a>
+       
         <a href="/dashboardAdmin/articles">
           <button
             className={`${bar == 1
@@ -276,44 +315,8 @@ function Navigation({
             )}
           </button>
         </a>
-        <a href="/dashboardAdmin/events">
-          <button
-            className={`${bar == 1
-              ? "ms-5 justify-start items-center"
-              : " justify-center items-center"
-              } w-full h-10 flex my-3 hover:text-[#0d3064] hover:ps-3 hover:bg-white rounded-sm duration-200 ease-in-out ${events}`}
-          >
-            {bar === 0 ? (
-              <div className="w-10">
-                <svg
-                  className="fill-current"
-                  xmlns="http://www.w3.org/2000/svg"
-                  data-name="Layer 1"
-                  viewBox="0 0 24 24"
-                >
-                  <path d="M19.99121,2.002a.99943.99943,0,0,0-1,1v.63672a9.03617,9.03617,0,0,1-7,3.36328h-6a3.00328,3.00328,0,0,0-3,3v2a3.00328,3.00328,0,0,0,3,3H6.475L4.07227,20.6084A.99931.99931,0,0,0,4.99121,22.002h4a.99857.99857,0,0,0,.91895-.60644L12.63391,15.04a9.02805,9.02805,0,0,1,6.3573,3.32507V19.002a1,1,0,0,0,2,0v-16A.99942.99942,0,0,0,19.99121,2.002Zm-14,11a1.00067,1.00067,0,0,1-1-1v-2a1.00068,1.00068,0,0,1,1-1h1v4Zm2.34082,7H6.50781l2.14258-5h1.82422ZM18.99121,15.5238a11.052,11.052,0,0,0-7-2.52185h-3v-4h3a11.05281,11.05281,0,0,0,7-2.52234Z" />
-                </svg>
-              </div>
-            ) : (
-              <div className="flex gap-2 currentColor">
-                <div className="w-8">
-                  <svg
-                    className="fill-current"
-                    xmlns="http://www.w3.org/2000/svg"
-                    data-name="Layer 1"
-                    viewBox="0 0 24 24"
-                  >
-                    <path d="M19.99121,2.002a.99943.99943,0,0,0-1,1v.63672a9.03617,9.03617,0,0,1-7,3.36328h-6a3.00328,3.00328,0,0,0-3,3v2a3.00328,3.00328,0,0,0,3,3H6.475L4.07227,20.6084A.99931.99931,0,0,0,4.99121,22.002h4a.99857.99857,0,0,0,.91895-.60644L12.63391,15.04a9.02805,9.02805,0,0,1,6.3573,3.32507V19.002a1,1,0,0,0,2,0v-16A.99942.99942,0,0,0,19.99121,2.002Zm-14,11a1.00067,1.00067,0,0,1-1-1v-2a1.00068,1.00068,0,0,1,1-1h1v4Zm2.34082,7H6.50781l2.14258-5h1.82422ZM18.99121,15.5238a11.052,11.052,0,0,0-7-2.52185h-3v-4h3a11.05281,11.05281,0,0,0,7-2.52234Z" />
-                  </svg>
-                </div>
-                <div className="flex items-center justify-center font-semibold">
-                  <p>Events</p>
-                </div>
-              </div>
-            )}
-          </button>
-        </a>
-        <a href="/dashboardAdmin/policies">
+       
+        {/* <a href="/dashboardAdmin/policies">
           <button
             className={`${bar == 1
               ? "ms-5 justify-start items-center"
@@ -346,8 +349,8 @@ function Navigation({
                 </div>
               </div>
             )}
-          </button>
-        </a>
+          </button> 
+        </a>*/}
         <a href="/dashboardAdmin/clients">
           <button
             className={`${bar == 1
