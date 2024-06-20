@@ -51,6 +51,24 @@ function Navbar() {
               <a className="hover:bg-[#153045] p-2 rounded-md px-3 hover:text-white" href="/">Services</a>
               <a className="hover:bg-[#153045] p-2 rounded-md px-3 hover:text-white" href="/about">About</a>
               <a className="hover:bg-[#153045] p-2 rounded-md px-3 hover:text-white" href="/">Articles</a>
+             <div className="flex gap-2">
+              <button className="border border-slate-300">
+                <img
+                  src="https://flagcdn.com/h20/id.png"
+                  srcset="https://flagcdn.com/h40/id.png 2x,
+                    https://flagcdn.com/h60/id.png 3x"
+                  height="20"
+                  alt="ID"/>
+              </button>
+               <button className="border border-slate-300">
+                <img
+                  src="https://flagcdn.com/h20/gb.png"
+                  srcset="https://flagcdn.com/h40/gb.png 2x,
+                    https://flagcdn.com/h60/gb.png 3x"
+                  height="20"
+                  alt="EN"/>
+              </button>
+             </div>
             </div>
           </div>
           <div>
