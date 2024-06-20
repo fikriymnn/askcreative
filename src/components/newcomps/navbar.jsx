@@ -46,13 +46,13 @@ function Navbar() {
           <div className='h-16 bg-white flex justify-between ps-3 pe-20 items-center'>
             <img className="h-12 rounded-md" src="/assets/images/asklogo2.png" alt="" />
             <div className="w-4/6 flex justify-between items-center text-[#123227] text-xl font-bold">
-              <a className="hover:bg-[#184737] p-2 rounded-md px-3 hover:text-white" href="/">Home</a>
-              <a className="hover:bg-[#184737] p-2 rounded-md px-3 hover:text-white" href="/events">Events</a>
-              <a className="hover:bg-[#184737] p-2 rounded-md px-3 hover:text-white" href="/">Services</a>
-              <a className="hover:bg-[#184737] p-2 rounded-md px-3 hover:text-white" href="/articles">Articles</a>
-              <a className="hover:bg-[#184737] p-2 rounded-md px-3 hover:text-white" href="/galeri">Galleries</a>
-              <a className="hover:bg-[#184737] p-2 rounded-md px-3 hover:text-white" href="/about">About</a>
-              <a className="hover:bg-[#184737] p-2 rounded-md px-3 hover:text-white" href="/">Articles</a>
+              <a className="hover:bg-[#184737] p-2 rounded-md px-3 hover:text-white" href="/">Beranda</a>
+              <a className="hover:bg-[#184737] p-2 rounded-md px-3 hover:text-white" href="/events">Kegiatan</a>
+              <a className="hover:bg-[#184737] p-2 rounded-md px-3 hover:text-white" href="/services">Layanan</a>
+              <a className="hover:bg-[#184737] p-2 rounded-md px-3 hover:text-white" href="/articles">Artikel</a>
+              <a className="hover:bg-[#184737] p-2 rounded-md px-3 hover:text-white" href="/galeri">Galeri</a>
+              <a className="hover:bg-[#184737] p-2 rounded-md px-3 hover:text-white" href="/about">Tentang</a>
+              
              <div className="flex gap-2">
               <button className="border border-slate-300">
                 <img
