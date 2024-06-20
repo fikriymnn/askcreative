@@ -46,11 +46,24 @@ const RegistrantsList = ({ id }) => {
   }, [id]);
 
   return (
-    <div>
+    <div className="bg-slate-200 p-1 w-[70%] rounded-md text-md">
+      <div className="flex gap-2 w-full text-start justify-start border-b border-slate-700">
+              <div className="line-clamp-1 w-1/12">No</div>
+              <div className="line-clamp-1 w-5/12">Name</div>
+              <div className="line-clamp-1 w-5/12">Email</div>
+              <div className="line-clamp-1 w-5/12">Phone</div>
+              <div className="line-clamp-1 w-5/12">Registered as</div>
+            </div>
       {registrants.length > 0 ? (
         registrants.map((registrant, index) => (
-          <div key={registrant.id} className="registrant">
-            <p>{index + 1}. {registrant.name} - {registrant.email} - {registrant.role} - {registrant.number}</p>
+          <div key={registrant.id} className="registrant flex gap-2 border-b border-slate-300 line-clamp-1 w-full text-start justify-start">
+             <div className="line-clamp-1 w-1/12">{index + 1}</div>
+              <div className="line-clamp-1 w-5/12">{registrant.name}</div>
+              <div className="line-clamp-1 w-5/12">{registrant.email}</div>
+              <div className="line-clamp-1 w-5/12">{registrant.number}</div>
+              <div className="line-clamp-1 w-5/12">{registrant.role}</div>
+
+          
           </div>
         ))
       ) : (
@@ -63,9 +76,9 @@ const RegistrantsList = ({ id }) => {
 const ViewReg = ({ selectedId,children, available,capacity }) => {
 
   return (
-    <div className="bg-white flex-flex-col absolute w-full h-full z-40">
+    <div className="bg-white flex-flex-col absolute w-full h-full z-40 top-0">
       {children}
-        <h1>Registered People</h1>
+        <h1 className="text-xl font-semibold">Registered People</h1>
       <RegistrantsList id={selectedId} />
 
     </div>
