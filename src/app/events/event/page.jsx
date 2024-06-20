@@ -158,6 +158,7 @@ function Event() {
                             </div>
                             {formReg == true && (
                              <FormReg
+                             roles={data.roles}
                              formregx={
                               <div className="flex justify-end m-2 " onClick={() => setFormReg(!formReg)}>
                                       <svg width="25" height="25" viewBox="0 0 294 294" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -182,6 +183,7 @@ function Event() {
                             )}
                           </p>
                         </div>
+                        
                         {data.content.map((data, i) => {
                           return (
                             <>
