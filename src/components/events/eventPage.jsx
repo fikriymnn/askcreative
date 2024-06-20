@@ -28,16 +28,16 @@ function EventPage({ dataEvents }) {
       <div className="z-50">
         <Navbar />
       </div>
-      <div className="bg-gray-200 min-h-[700px]  pt-24 pb-5 ps-5 pe-5 ">
-        <div className="bg-white rounded-ss-[100px]">
-          <div className="flex justify-between   z-10 p-5 pt-8  px-10 mt-20 mx-5">
-            <h1 className="text-[#0E2233] text-3xl font-bold">Upcomming Events</h1>
+      <div className="bg-[#b5c7c1] min-h-[700px]  pt-24 pb-5 ps-5 pe-5 ">
+        <div className="">
+          <div className="flex justify-between mb-5  z-10  pt-8   mt-20 mx-5">
+            <h1 className="text-[#0E2233] text-3xl font-bold">Daftar Kegiatan</h1>
             <div className="relative z-10 ">
               <input
                 type="text"
                 onChange={(e) => handleSearch(e.target.value)}
-                placeholder="Search by title..."
-                className="w-12/12 z-10 h-12 pl-4 pr-10 rounded-md border-none bg-gray-200 focus:outline-none !important"
+                placeholder="Cari Judul..."
+                className="w-12/12 z-10 h-12 pl-4 pr-10 rounded-md border-none bg-white focus:outline-none !important"
               />
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -100,7 +100,7 @@ function EventPage({ dataEvents }) {
                                   data.feeRupiah
                                 }
                               </h2>
-                              <h2 className="lg:text-base md:text-xs sm:text-sm text-xs">Available Quota : {data.quota}</h2>
+                              <h2 className="lg:text-base md:text-xs sm:text-sm text-xs">Kuota Tersedia : {data.quota}</h2>
 
                             </div>
                           </div>
@@ -150,7 +150,7 @@ function EventPage({ dataEvents }) {
                                   data.feeRupiah
                                 }
                               </h2>
-                              <h2 className="lg:text-base md:text-xs sm:text-sm text-xs">Available Quota : 20</h2>
+                              <h2 className="lg:text-base md:text-xs sm:text-sm text-xs">Kuota Tersedia : 20</h2>
 
                             </div>
                           </div>
