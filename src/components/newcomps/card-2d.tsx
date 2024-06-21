@@ -9,24 +9,24 @@ function CardHoverEffectDemo() {
 }
 export const projects = [
   {
-    title: "Aromatherapy Workshop",
+    title: "Workshop Aromaterapi",
 
     link: "/packages",
   },
   {
-    title: "Perfume Workshop",
+    title: "Workshop Parfum",
 
-    link: "https://netflix.com",
+    link: "/",
   },
   {
-    title: "Make your own Perfume and Aromatherapy",
+    title: "Buat Parfum dan Aromaterapi kamu sendiri",
 
-    link: "https://google.com",
+    link: "/",
   },
   {
     title: "Alat Labolatorium Skala Mikro",
 
-    link: "https://google.com",
+    link: "/",
   },
 ];
 
