@@ -29,6 +29,7 @@ function HomePage({
       <div className="z-40">
         <Navbar />
       </div>
+      
       <Landing dataHeading={dataHeading} dataParagraph={dataParagraph} />
 
       {/* ==== SERVICES ==== */}
