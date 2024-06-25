@@ -15,7 +15,6 @@ import { format } from "date-fns";
 import Navbar from "@/components/newcomps/navbar";
 function Article() {
   const { language, changeLanguage } = useLanguage();
-
   const searchParams = useSearchParams();
   const id = searchParams.get("id");
   const [dataArticle, setDataArticle] = useState([]);
