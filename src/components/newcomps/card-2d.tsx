@@ -28,6 +28,16 @@ export const projects = [
 
     link: "/",
   },
+  {
+    title: "Bahan Parfum dan Aromaterapi",
+
+    link: "/",
+  },
+  {
+    title: "Produk Parfum dan Aromaterapi",
+
+    link: "/",
+  },
 ];
 
 export default CardHoverEffectDemo;
