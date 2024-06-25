@@ -351,7 +351,7 @@ function Navigation({
             )}
           </button> 
         </a>*/}
-        <a href="/dashboardAdmin/clients">
+        <a href="/dashboardAdmin/gallery">
           <button
             className={`${bar == 1
               ? "ms-5 justify-start items-center"
@@ -380,7 +380,7 @@ function Navigation({
                   </svg>
                 </div>
                 <div className="flex items-center justify-center font-semibold">
-                  <p>Clients</p>
+                  <p>Gallery</p>
                 </div>
               </div>
             )}
