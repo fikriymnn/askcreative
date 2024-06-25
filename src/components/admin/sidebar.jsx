@@ -95,7 +95,7 @@ function Sidebar() {
             : " justify-center items-center"
         } w-full h-10 flex `}
       >
-        {bar === 0 ? <p>C</p> : <p>Clients</p>}
+        {bar === 0 ? <p>C</p> : <p>Gallery</p>}
       </button>
     </div>
   );
