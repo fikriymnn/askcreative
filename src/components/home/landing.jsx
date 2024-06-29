@@ -1,7 +1,23 @@
-import React, {useState} from 'react'
+'use client'
+import React from 'react'
+import { useState, useEffect } from "react";
 import LandingCarousel from '@/components/home/landing-carousels'
 import Carousel from "react-multi-carousel"
 import "react-multi-carousel/lib/styles.css"
+
+import {
+  collection,
+  addDoc,
+  getDocs,
+  where,
+  query,
+  getDoc,
+  deleteDoc,
+  updateDoc,
+  doc,
+  Firestore,
+} from "firebase/firestore";
+import { db, storage, firebaseAnalytics } from "../../../firebase/page";
 
 function Landing() {const responsive = {
     superLargeDesktop: {
@@ -25,41 +41,33 @@ function Landing() {const responsive = {
 
   const [hide, setHide] = useState(false);
 
+  const [dataHeading, setDataHeading] = useState([]);
+  useEffect(() => {
+    
+    getDataHeading();
+  }, []);
+
+  const getDataHeading = async () => {
+    try {
+      try {
+        const querySnapshot = await getDocs(collection(db, "heading"));
+        let data = [];
+        console.log(querySnapshot);
+        querySnapshot.forEach((doc) => {
+          // doc.data() is never undefined for query doc snapshots
+          console.log(doc.id, " => ", doc.data());
+          data.push({ ...doc.data(), id: doc.id });
+        });
+        setDataHeading(data);
+      } catch (error) {
+        alert(error);
+      }
+    } catch (error) {
+      alert(error);
+    }
+  };
+
   return (
-  //  <div className="bg-black">
-  //       <div className='flex items-center justify-center bg-left bg-cover bg-[url("/assets/images/bgtwo.png")] text-white'>
-  //         <div
-  //           className="w-full h-full flex items-center bakg  p-5 lg:px-[10%] py-[20vh] lg:py-[30vh]  "
-  //         >
-  //           <div className="flex flex-col text-left lg:max-w-[55%]">
-  //             <div className="font-semibold text-[2.5rem] lg:text-[3rem]">
-  //               {dataHeading.map((data, i) => {
-  //                 return (
-  //                   <p key={i}>
-  //                    {data.english}
-  //                   </p>
-  //                 );
-  //               })}
-  //             </div>
-  //             <div className="mt-2 lg:text-[1.2rem]">
-  //               {dataParagraph.map((data, i) => {
-  //                 return (
-  //                   <div key={i}>
-  //                     {data.english}
-  //                   </div>
-  //                 );
-  //               })}
-  //             </div>
-  //             {/* <a
-  //               href="#about"
-  //               className="bg-primary w-fit px-5 font-semibold py-3 mt-6 flex items-center space-x-2 cursor-pointer hover:brightness-110 transition-all"
-  //             >
-  //               <div>GET STARTED</div>
-  //             </a> */}
-  //           </div>
-  //         </div>
-  //       </div>
-  //     </div>
   <div>
     <div onMouseEnter={() => setHide(true)} onMouseLeave={() => setHide(false)}>
       <Carousel
@@ -71,9 +79,14 @@ function Landing() {const responsive = {
         autoPlaySpeed={1700}
         arrows={hide == true ? true : false}
       >
-        <LandingCarousel/>
-        <LandingCarousel/>
-        <LandingCarousel/>
+         {dataHeading.map((data,i) => {
+                            return(
+                              <>
+                               <LandingCarousel heading={data.heading} key={i} paragraph={data.paragraph} img={data.img}/>
+                              </>)
+})}
+       
+      
       </Carousel>
     </div>
     
