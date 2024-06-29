@@ -26,19 +26,11 @@ import parse from "html-react-parser";
 import { useLanguage } from "@/context/LanguageContext";
 import Navbar from "@/components/newcomps/navbar";
 
-function DetailPackages() {
+function DetailAromaterapi() {
   const searchParams = useSearchParams();
   const { language, changeLanguage } = useLanguage();
   const [search, setSearch] = useState("");
-  const handleSearch = (e) => {
-    setSearch(e);
-    const results = dataEvents.filter((item) =>
-      language == "en"
-        ? item.titleEnglish.toLowerCase().includes(search.toLowerCase())
-        : item.titleChinese.toLowerCase().includes(search.toLowerCase())
-    );
-    setDataEventsResult(results);
-  };
+
   const [dataPackage, setDataPackage] = useState([]);
   const [Index, setIndex] = useState();
   const [currency, setCurrency] = useState(1);
@@ -55,7 +47,7 @@ function DetailPackages() {
   //get data about
   async function getDataPackage(idd) {
     try {
-      const docRef = doc(db, "workshop", idd);
+      const docRef = doc(db, "aromaterapi_workshop", idd);
       const querySnapshot = await getDoc(docRef);
 
       // if (querySnapshot.exists()) {
@@ -178,9 +170,9 @@ function DetailPackages() {
                   <div className=" ql-editor pb-0 mb-0 -translate-x-4">
                     <p>
                       {parse(
-                        language == "en"
-                          ? data.description
-                          : data.descriptionChinese
+
+                        data.description
+
                       )}
                     </p>
                   </div>
@@ -232,4 +224,4 @@ function DetailPackages() {
   );
 }
 
-export default DetailPackages;
+export default DetailAromaterapi;

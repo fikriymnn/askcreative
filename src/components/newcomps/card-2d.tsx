@@ -11,12 +11,12 @@ export const projects = [
   {
     title: "Workshop Aromaterapi",
 
-    link: "/packages",
+    link: "/workshop_aromaterapi",
   },
   {
     title: "Workshop Parfum",
 
-    link: "/",
+    link: "/packages",
   },
   {
     title: "Buat Parfum dan Aromaterapi kamu sendiri",

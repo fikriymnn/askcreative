@@ -17,10 +17,7 @@ function PackagesPage({ dataPackage }) {
         <div className="bg-slate-100 w-full pt-4 mt-6 md:grid md:grid-cols-3 grid grid-cols-1  gap-3 px-12 h-full ">
           {dataPackage.map((data, i) => {
             const le = data;
-            // const firsPriceRp = data.price[0].priceRupiah;
-            // const lastPriceRp = data.price[data.price.length - 1].priceRupiah;
-            // const firsPriceYuan = data.price[0].priceYuan;
-            // const lastPriceYuan = data.price[data.price.length - 1].priceYuan;
+
 
             return (
               <>
