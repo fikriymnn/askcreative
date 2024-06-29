@@ -13,71 +13,73 @@ import {
   doc,
   Firestore,
 } from "firebase/firestore";
+import {
+  getStorage,
+  ref,
+  uploadBytesResumable,
+  getDownloadURL,
+} from "firebase/storage";
 import { db, storage, firebaseAnalytics } from "../../../../../firebase/page";
 
 function EditHeading() {
   const [isAlert, setIsAlert] = useState(false);
+  const [downloadURL, setDownloadURL] = useState("");
 
-  const [china, setChina] = useState("");
-  const [inggris, setInggris] = useState("");
+  // progress
+  const [percent, setPercent] = useState(0);
+  const [loading, setLoading] = useState(false);
 
-  useEffect(() => {
-    getDataHomeHeading();
-  }, []);
+  const [heading, setHeading] = useState("");
+  const [paragraph, setParagraph] = useState("");
 
-  const getDataHomeHeading = async () => {
+  const handleUpload = async (filess) => {
+    const files = filess;
     try {
-      const docRef = doc(db, "editHomePage", "heading");
-      const querySnapshot = await getDoc(docRef);
+      setLoading(true);
+      const storageRef = ref(storage, `/header/${files.name}`);
 
-      // if (querySnapshot.exists()) {
-      //   console.log("Document data:", querySnapshot.data());
-      // } else {
-      //   // docSnap.data() will be undefined in this case
-      //   console.log("No such document!");
-      // }
-      let data = [];
+      // progress can be paused and resumed. It also exposes progress updates.
+      // Receives the storage reference and the file to upload.
+      const uploadTask = uploadBytesResumable(storageRef, files);
 
-      // doc.data() is never undefined for query doc snapshots
+      uploadTask.on(
+        "state_changed",
+        (snapshot) => {
+          const percent = Math.round(
+            (snapshot.bytesTransferred / snapshot.totalBytes) * 100
+          );
 
-      data.push(querySnapshot.data());
+          // update progress
+          setPercent(percent);
+        },
+        (err) => console.log(err),
+        () => {
+          // download url
 
-      setChina(data[0].chinese);
-      setInggris(data[0].english);
+          getDownloadURL(uploadTask.snapshot.ref).then((url) => {
+            console.log(url);
+            setDownloadURL(url);
+            setLoading(false);
+          });
+        }
+      );
     } catch (error) {
       alert(error);
+      setLoading(false);
     }
   };
 
-  const update = async (e) => {
+
+   const addData = async (e) => {
     e.preventDefault();
-
-    try {
-      const todoRef = doc(db, "editHomePage", "heading");
-
-      await updateDoc(todoRef, {
-        chinese: china,
-        english: inggris,
-      });
-
-      alert("Success");
-
-      // Update the "completed" field of the todo document to the value of the "checked" property of the event target.
-
-      // Get a reference to the todo document with the given ID in the "todos" collection in Firestore.
-
-      // After updating the todo, fetch all todos for the current user and update the state with the new data.
-    } catch (error) {
-      alert(error);
-    }
-  };
-
-  const openAlert = () => {
-    setIsAlert(true);
-  };
-  const closeAlert = () => {
-    setIsAlert(false);
-  };
+    
+    const eventDocRef = await addDoc(collection(db, "heading"), {
+        heading:heading,
+        paragraph:paragraph,
+        img: downloadURL,
+    });
+    alert("success");
+};
   return (
     <>
       {isAlert && (
@@ -107,7 +109,7 @@ function EditHeading() {
         <div className=" bg-[#007aff] flex  text-2xl font-semibold py-7 rounded-t-xl text-white ">
           <div className="w-1/12"></div>
           <div className=" w-10/12 flex justify-center items-center">
-            <p>Edit Heading</p>
+            <p>Add Landing Heading</p>
           </div>
           <div className="w-1/12 flex items-center justify-center">
             <a href="/dashboardAdmin/home">
@@ -122,14 +124,25 @@ function EditHeading() {
         </div>
 
         <div className="max-h-[500px] overflow-y-auto">
+          <div className=" flex py-1 px-20 ">
+          <div className=" w-2/12 text-end px-3 text-2xl font-semibold pt-5">
+            <p>Image</p>
+          </div>
+          <div className=" w-10/12 p-3">
+            <input
+              type="file"
+              onChange={(event) => handleUpload(event.target.files[0])}
+            />
+          </div>
+        </div>
           <div className=" flex p-5 px-20 ">
             <div className=" w-2/12 text-end p-3 py-5">
-              <p>English :</p>
+              <p>Heading :</p>
             </div>
             <div className=" w-10/12 p-3">
               <textarea
-                value={inggris || ""}
-                onChange={(e) => setInggris(e.target.value)}
+                value={heading || ""}
+                onChange={(e) => setHeading(e.target.value)}
                 name=""
                 id=""
                 cols="20"
@@ -141,14 +154,14 @@ function EditHeading() {
               ></textarea>
             </div>
           </div>
-          <div className=" flex p-5 px-20">
+          <div className=" flex p-5 px-20 ">
             <div className=" w-2/12 text-end p-3 py-5">
-              <p>Chinese :</p>
+              <p>Paragraph :</p>
             </div>
             <div className=" w-10/12 p-3">
               <textarea
-                value={china || ""}
-                onChange={(e) => setChina(e.target.value)}
+                value={paragraph || ""}
+                onChange={(e) => setParagraph(e.target.value)}
                 name=""
                 id=""
                 cols="20"
@@ -160,15 +173,21 @@ function EditHeading() {
               ></textarea>
             </div>
           </div>
+          
 
           <div className="mx-20">
             <div className=" flex items-end justify-end mx-3">
-              <button
-                onClick={(e) => update(e)}
+                {loading ? (
+              <p>Loading</p>
+            ) : (
+             <button
+                onClick={(e) => addData(e)}
                 className="p-3 px-7 hover:bg-blue-500 rounded-lg mb-5 text-white bg-[#007aff]"
               >
                 Save
               </button>
+            )}
+              
             </div>
           </div>
         </div>
