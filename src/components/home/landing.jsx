@@ -71,7 +71,7 @@ function Landing() {const responsive = {
   <div>
     <div onMouseEnter={() => setHide(true)} onMouseLeave={() => setHide(false)}>
       <Carousel
-        className="pb-8 mb-10 md:w-full "
+        className="pb-8 mb-10 md:w-full z-0"
         responsive={responsive}
         autoPlay={true}
         infinite={"true"}

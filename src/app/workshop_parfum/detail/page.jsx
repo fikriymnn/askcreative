@@ -26,19 +26,11 @@ import parse from "html-react-parser";
 import { useLanguage } from "@/context/LanguageContext";
 import Navbar from "@/components/newcomps/navbar";
 
-function DetailPackages() {
+function DetailAromaterapi() {
   const searchParams = useSearchParams();
   const { language, changeLanguage } = useLanguage();
   const [search, setSearch] = useState("");
-  const handleSearch = (e) => {
-    setSearch(e);
-    const results = dataEvents.filter((item) =>
-      language == "en"
-        ? item.titleEnglish.toLowerCase().includes(search.toLowerCase())
-        : item.titleChinese.toLowerCase().includes(search.toLowerCase())
-    );
-    setDataEventsResult(results);
-  };
+
   const [dataPackage, setDataPackage] = useState([]);
   const [Index, setIndex] = useState();
   const [currency, setCurrency] = useState(1);
@@ -55,7 +47,7 @@ function DetailPackages() {
   //get data about
   async function getDataPackage(idd) {
     try {
-      const docRef = doc(db, "workshop", idd);
+      const docRef = doc(db, "aromaterapi_parfum", idd);
       const querySnapshot = await getDoc(docRef);
 
       // if (querySnapshot.exists()) {
@@ -109,9 +101,6 @@ function DetailPackages() {
                         {data.title}
                       </p>
                       <div className="flex gap-1 pb-6">
-                        {data.price}
-                      </div>
-                      <div className="flex gap-1 pb-6">
                         {data.description}
                       </div>
 
@@ -120,7 +109,7 @@ function DetailPackages() {
                     </div>
                   </div>
                   <div className="text-2xl font-medium">
-                    <p> {language == "en" ? "Layanan: " : "服务: "}</p>
+                    <p> {language == "en" ? "Kegiatan: " : "服务: "}</p>
                   </div>
 
                   {/* ======== */}
@@ -177,18 +166,8 @@ function DetailPackages() {
 
 
                   </div>
-                  <div className="h-[2px] w-full bg-gray-300 mt-5 "></div>
-                  <div className=" ql-editor pb-0 mb-0 -translate-x-4">
-                    <p>
-                      {parse(
-                        language == "en"
-                          ? data.description
-                          : data.descriptionChinese
-                      )}
-                    </p>
-                  </div>
-
-                 
+                  
+                
                 </div>
               </div>
             </div>
@@ -201,4 +180,4 @@ function DetailPackages() {
   );
 }
 
-export default DetailPackages;
+export default DetailAromaterapi;
