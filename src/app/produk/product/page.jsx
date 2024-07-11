@@ -91,6 +91,7 @@ function ProdukDetail() {
 
                               <p><span className="font-semibold">Harga:</span> {data.price}</p>
                               <p><span className="font-semibold">Kategori:</span> {data.kategori}</p>
+                            
 </div>
                           <p>
                             {parser(
@@ -100,9 +101,15 @@ function ProdukDetail() {
                             )}
                           </p>
                         </div>
-                        </div>
                         
                       </div>
+                  
+                          <div className="w-full text-white flex gap-20 justify-end items-end  h-full pb-10">
+
+<button className="bg-orange-500 p-2 rounded-md"> Link to Shopee</button>
+<button className="bg-green-500 p-2 rounded-md"> Link to Tokopedia</button>
+</div>
+                        </div>
                     </div>
                   </div>
                 </div>

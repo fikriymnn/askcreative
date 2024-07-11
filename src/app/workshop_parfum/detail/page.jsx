@@ -47,7 +47,7 @@ function DetailAromaterapi() {
   //get data about
   async function getDataPackage(idd) {
     try {
-      const docRef = doc(db, "aromaterapi_workshop", idd);
+      const docRef = doc(db, "aromaterapi_parfum", idd);
       const querySnapshot = await getDoc(docRef);
 
       // if (querySnapshot.exists()) {
@@ -82,7 +82,7 @@ function DetailAromaterapi() {
           <>
             <div className="bg-gray-200 pt-44 pb-5 ps-5 pe-5 flex flex-col items-center">
               <div className="flex pb-5 gap-1 w-10/12 justify-start">
-                <p>Aromaterapi</p> <p>&gt;</p>
+                <p>Packages </p> <p>&gt;</p>
                 <p className="text-blue-600">
                   {data.title}
                 </p>
@@ -101,7 +101,7 @@ function DetailAromaterapi() {
                         {data.title}
                       </p>
                       <div className="flex gap-1 pb-6">
-                        {data.description}sss
+                        {data.description}
                       </div>
 
 
@@ -109,7 +109,7 @@ function DetailAromaterapi() {
                     </div>
                   </div>
                   <div className="text-2xl font-medium">
-                    <p> {language == "en" ? "Kegiatan: " : "Kegiatan: "}</p>
+                    <p> {language == "en" ? "Kegiatan: " : "服务: "}</p>
                   </div>
 
                   {/* ======== */}

@@ -18,9 +18,9 @@ function Aromaterapi({ title,description, layanan, images }: { title: String, de
           <>
             <div  className="bg-gray-200 pt-44 pb-5 ps-5 pe-5 flex flex-col items-center">
               <div className="flex pb-5 gap-1 w-10/12 justify-start">
-                <p>Packages </p> <p>&gt;</p>
+                <p>Workshop </p> <p>&gt;</p>
                 <p className="text-blue-600">
-                  {title}sss
+                  {title}
                 </p>
               </div>
               <div className="bg-white w-10/12">
@@ -45,14 +45,16 @@ function Aromaterapi({ title,description, layanan, images }: { title: String, de
                     </div>
                   </div>
                   <div className="text-2xl font-medium">
-                    <p> {language == "en" ? "Layanan: " : "服务: "}</p>
+                    <p> {language == "en" ? "Kegiatan: " : "服务: "}</p>
                   </div>
 
                   {/* ======== */}
                   <div className="flex flex-wrap pb-5 pt-2 scale-95 gap-5">
 
                     <div  className="rounded-md">
-                      <a href={`/events/event?id=s`}>
+                      <a href={`/events/event?id=M9T3vkTC3WVN0boZee4u
+
+`}>
                         <div className="bg-white rounded-3xl shadow-xl md:hover:translate-y-[-10px] transition-transform duration-50 ease-in-out grid grid-cols-2 md:flex md:flex-col h-full ">
                           <div
                             className="bg-blue-700 md:mb-5 md:rounded-t-3xl rounded-s-3xl md:grid grid-cols-1  bg-cover bg-no-repeat bg-center"
@@ -66,7 +68,7 @@ function Aromaterapi({ title,description, layanan, images }: { title: String, de
                             <p className="lg:text-base md:text-xs sm:text-sm text-xs h-12 font-semibold text-black line-clamp-2  ">
 
                               {/* {data.titleEnglish} */}
-                              ksdjlfdfjlksfnkl
+                              Workshop Parfum
 
                             </p>
                             <div>
@@ -75,18 +77,18 @@ function Aromaterapi({ title,description, layanan, images }: { title: String, de
                                   {/* {language == "en"
                                     ? data.durationFrom
                                     : data.durationFromValue}{" "} */}
-                                    ksdjlfdfjlksfnkl
+                                     23 July 2024 
                                 </div>
                                 <p className="lg:text-base md:text-xs sm:text-sm text-xs translate-y-[1px] md:translate-y-[4px]">
                                   &#8226;
                                 </p>
                                 <div className="lg:mt-2">
                                   {/* {data.timeFrom} */}
-                                  ksdjlfdfjlksfnkl</div>
+                                  23 July 2024</div>
                               </div>
                               <h2 className="text-gray-500 lg:text-base md:text-xs sm:text-sm text-xs">
                                 {/* {data.location} */}
-                                ksdjlfdfjlksfnkl
+                                FAB LAB, Universitas Pendidikan Indonesia
                               </h2>
                               <div className=" w-full justify-between">
                                 <h2 className="font-medium text-gray-800 lg:text-base md:text-xs sm:text-sm text-xs">

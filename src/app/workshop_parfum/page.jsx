@@ -14,13 +14,13 @@ import {
 } from "firebase/firestore";
 import { db, storage, firebaseAnalytics } from "../../../firebase/page";
 import PackagesPage from "@/components/packages/packagesPage";
-import Aromaterapi from "@/components/workshop/aromaterapi";
+import Parfum from "@/components/workshop/parfum";
 
 
 async function getDataTitle() {
   let data = [];
   try {
-    const docRef = doc(db, "aromaterapi_workshop", "title");
+    const docRef = doc(db, "parfum_workshop", "title");
     const querySnapshot = await getDoc(docRef);
 
     data.push(querySnapshot.data());
@@ -32,7 +32,7 @@ async function getDataTitle() {
 async function getDataDescription() {
   let data = [];
   try {
-    const docRef = doc(db, "aromaterapi_workshop", "description");
+    const docRef = doc(db, "parfum_workshop", "description");
     const querySnapshot = await getDoc(docRef);
 
     data.push(querySnapshot.data());
@@ -44,7 +44,7 @@ async function getDataDescription() {
 async function getDataImages() {
   let data = [];
   try {
-    const docRef = doc(db, "aromaterapi_workshop", "thumbnail");
+    const docRef = doc(db, "parfum_workshop", "thumbnail");
     const querySnapshot = await getDoc(docRef);
 
     data.push(querySnapshot.data());
@@ -56,7 +56,7 @@ async function getDataImages() {
 // async function getDataLayanan() {
 //   let data = [];
 //   try {
-//     const ordersRef = collection(db,'aromaterapi_workshop', "Layanan");
+//     const ordersRef = collection(db,'parfum_workshop', "Layanan");
    
 //     const querySnapshot = await getDocs(q);
 
@@ -79,7 +79,7 @@ async function AromaterapiWorkshop() {
     
     
 
-    return <Aromaterapi  images={images}  /*layanan={JSON.parse(JSON.stringify(layanan))}*/  description={description} title={title}  />;
+    return <Parfum  images={images}  /*layanan={JSON.parse(JSON.stringify(layanan))}*/  description={description} title={title}  />;
 }
 
 export default AromaterapiWorkshop;

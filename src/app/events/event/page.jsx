@@ -133,6 +133,19 @@ function Event() {
                             {language == "en" ? " Time: " : " 活动时间: "}{" "}
                             {data.timeFrom} - {data.timeTo}
                           </h3>
+                          <h3 className="mt-2">
+                            {language == "en" ? " Kategori: " : " 活动时间: "}{" "}
+                            {data.kategori}
+                          </h3>
+                          <h3 className="mt-2">
+                          {language == "en" ? " Peserta: " : " 活动时间: "}{" "}
+                            {data.roles.map((role, index) => (
+        <div key={index} className="flex">
+          <h3 className="flex">- {role.header}</h3>
+         
+        </div>
+      ))}
+                          </h3>
                           <div className="flex w-full justify-between">
 
                             <h3 className="mb-3  mt-2">

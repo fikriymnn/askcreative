@@ -50,13 +50,17 @@ const [dropdown, setDropdown] = useState(false)
               <a className="hover:bg-[#184737] p-2 rounded-md px-3 hover:text-white" href="/">Beranda</a>
               <a className="hover:bg-[#184737] p-2 rounded-md px-3 hover:text-white" href="/events">Kegiatan</a>
               <div className="flex flex-col items-start justify-start">
-              <button onClick={()=> setDropdown(!dropdown)} className="hover:bg-[#184737] p-2 rounded-md px-3 hover:text-white cursor-pointer"> Layanan <span className="-rotate-45">{">"}</span></button>
+              <button onClick={()=> setDropdown(!dropdown)} className="hover:bg-[#184737] p-2 rounded-md px-3 hover:text-white cursor-pointer"> Layanan</button>
 {dropdown == true && (
   <>
-  <div className="fixed flex flex-col translate-y-12 bg-white text-[#184737] py-2">
+  <div className="fixed flex flex-col translate-y-12 bg-white rounded-md text-[#184737] py-2">
     
-  <Link href={'/workshop_aromaterapi'} className="hover:bg-[#184737] hover:text-white px-2"> Workshop Aromaterapi</Link>
-  <Link href={'/packages'} className="hover:bg-[#184737] hover:text-white px-2"> Workshop Parfum</Link>
+  <Link href={'/workshop_aromaterapi'} className="hover:bg-[#184737] hover:text-white px-2 text-base font-normal"> Workshop Aromaterapi</Link>
+  <Link href={'/workshop_parfum'} className="hover:bg-[#184737] hover:text-white px-2 text-base font-normal"> Workshop Parfum</Link>
+  <Link href={'/'} className="hover:bg-[#184737] hover:text-white px-2 text-base font-normal"> Buat Parfum dan Aromaterapi Kamu Sendiri</Link>
+  <Link href={'/'} className="hover:bg-[#184737] hover:text-white px-2 text-base font-normal"> Alat Labolatorium Skala Mikro</Link>
+  <Link href={'/'} className="hover:bg-[#184737] hover:text-white px-2 text-base font-normal"> Bahan Parfum dan Aromaterapi</Link>
+  <Link href={'/produk'} className="hover:bg-[#184737] hover:text-white px-2 text-base font-normal"> Produk Parfum dan Aromaterapi</Link>
   </div>
   
   </>
