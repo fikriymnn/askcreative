@@ -26,6 +26,64 @@ function PackagesPage({ dataPackage }) {
                   className="bg-white p-[50px] rounded-lg shadow-lg h-full flex flex-col justify-between"
                 >
                   <h5 className="mb-4 bg- text-[20px]  text-black font-semibold text-center  h-[55px] line-clamp-2">
+                    {data.title} #1
+                  </h5>
+                  <p className="mb-4 text-[18px] font-medium leading-[28px] text-[#1e70ea] text-center">
+                    {data.price}
+                  </p>
+
+                  <ol className="mb-auto pb-3 ">
+                    <li className="flex space-x-3">
+                      <p className="leading-[24px] text-base my-2 font-normal  text-black ">
+                        <span className="">
+                          {data.description}
+                        </span>
+                      </p>
+                    </li>
+                    
+                  </ol>
+
+                  <a
+                    className=" inline-flex w-full justify-center  bg-[#184737] px-5 py-2.5 text-center text-sm font-medium text-white  focus:outline-none focus:ring-4 focus:ring-cyan-200 "
+                    href={`/packages/details?id=${data.id}`}
+                  >
+                    <p>{language == "en" ? "DETAILS" : "更详细"}</p>
+                  </a>
+                </div>
+                <div
+                  key={i}
+                  className="bg-white p-[50px] rounded-lg shadow-lg h-full flex flex-col justify-between"
+                >
+                  <h5 className="mb-4 bg- text-[20px]  text-black font-semibold text-center  h-[55px] line-clamp-2">
+                    {data.title} #2
+                  </h5>
+                  <p className="mb-4 text-[18px] font-medium leading-[28px] text-[#1e70ea] text-center">
+                    {data.price}
+                  </p>
+
+                  <ol className="mb-auto pb-3 ">
+                    <li className="flex space-x-3">
+                      <p className="leading-[24px] text-base my-2 font-normal  text-black ">
+                        <span className="">
+                          {data.description}
+                        </span>
+                      </p>
+                    </li>
+                    
+                  </ol>
+
+                  <a
+                    className=" inline-flex w-full justify-center  bg-[#184737] px-5 py-2.5 text-center text-sm font-medium text-white  focus:outline-none focus:ring-4 focus:ring-cyan-200 "
+                    href={`/packages/details?id=${data.id}`}
+                  >
+                    <p>{language == "en" ? "DETAILS" : "更详细"}</p>
+                  </a>
+                </div>
+                <div
+                  key={i}
+                  className="bg-white p-[50px] rounded-lg shadow-lg h-full flex flex-col justify-between"
+                >
+                  <h5 className="mb-4 bg- text-[20px]  text-black font-semibold text-center  h-[55px] line-clamp-2">
                     {data.title}
                   </h5>
                   <p className="mb-4 text-[18px] font-medium leading-[28px] text-[#1e70ea] text-center">
@@ -40,21 +98,7 @@ function PackagesPage({ dataPackage }) {
                         </span>
                       </p>
                     </li>
-                    {/* {data.workshop.map((data, i) => {
-                      return (
-                        <>
-                          <div
-                            key={i}
-                            className="flex space-x-3 my-3 leading-[24px]"
-                          >
-                            <p className="text-base font-normal leading-tight text-black line-clamp-1 ">
-                              &bull;{" "}
-                              <span className="px-2">{data.name}</span>
-                            </p>
-                          </div>
-                        </>
-                      );
-                    })} */}
+                    
                   </ol>
 
                   <a

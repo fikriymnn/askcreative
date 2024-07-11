@@ -36,7 +36,7 @@
     "src/app/layout.jsx",
     "src/app/page.jsx",
     "src/app/workshop_aromaterapi/detail/page.jsx"
-  ],
+, "src/app/workshop_aromaterapi/page.jsx", "src/app/workshop_aromaterapi/page.jsx"  ],
   "exclude": [
     "node_modules"
   ]

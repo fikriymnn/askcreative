@@ -101,7 +101,7 @@ function DetailAromaterapi() {
                         {data.title}
                       </p>
                       <div className="flex gap-1 pb-6">
-                        {data.price}
+                        {data.description}
                       </div>
 
 
@@ -166,52 +166,8 @@ function DetailAromaterapi() {
 
 
                   </div>
-                  <div className="h-[2px] w-full bg-gray-300 mt-5 "></div>
-                  <div className=" ql-editor pb-0 mb-0 -translate-x-4">
-                    <p>
-                      {parse(
-
-                        data.description
-
-                      )}
-                    </p>
-                  </div>
-
-                  {data.content.map((data, i) => {
-                    return (
-                      <>
-                        <div className="h-[2px] w-full bg-gray-300 "></div>
-                        <div className=" flex ">
-                          <p className="bg-blue-600 text-white text-base font-semibold py-2 px-4">
-                            {language == "en" ? data.topic : data.topicChi}
-                          </p>
-                          <div className=""></div>
-                        </div>
-                        <div className="ql-editor -translate-x-4">
-                          {parse(
-                            language == "en" ? data.content : data.contentChi
-                          )}
-                        </div>
-                        {
-                          <>
-                            {data.img.map((data, ii) => {
-                              return data.img == "" ? (
-                                <></>
-                              ) : (
-                                <div className="pb-5 w-[60%] ">
-                                  <img
-                                    alt="error"
-                                    className="w-full "
-                                    src={data.img}
-                                  ></img>
-                                </div>
-                              );
-                            })}
-                          </>
-                        }
-                      </>
-                    );
-                  })}
+                  
+                
                 </div>
               </div>
             </div>

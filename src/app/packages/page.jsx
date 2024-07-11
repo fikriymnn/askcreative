@@ -36,7 +36,11 @@ async function getDataPackage() {
 async function Packages() {
   const dataPackage = await getDataPackage();
 
-  return <PackagesPage dataPackage={JSON.parse(JSON.stringify(dataPackage))} />;
+  return(
+    <>
+    <PackagesPage dataPackage={JSON.parse(JSON.stringify(dataPackage))} />;
+    </>
+  ) 
 }
 
 export default Packages;

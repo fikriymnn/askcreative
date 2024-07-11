@@ -1,11 +1,12 @@
 'use client'
+import Link from "next/link";
 import React, { useState, useEffect } from "react";
 
 function Navbar() {
   const [scrollLocation, setScrollLocation] = useState(0);
   const [prevScrollLocation, setPrevScrollLocation] = useState(0);
   const [scrollDirection, setScrollDirection] = useState();
-
+const [dropdown, setDropdown] = useState(false)
   useEffect(() => {
     const handleScroll = () => {
       const currentScrollLocation = window.scrollY;
@@ -48,7 +49,19 @@ function Navbar() {
             <div className="w-4/6 flex justify-between items-center text-[#123227] text-xl font-bold">
               <a className="hover:bg-[#184737] p-2 rounded-md px-3 hover:text-white" href="/">Beranda</a>
               <a className="hover:bg-[#184737] p-2 rounded-md px-3 hover:text-white" href="/events">Kegiatan</a>
-              <a className="hover:bg-[#184737] p-2 rounded-md px-3 hover:text-white" href="/packages">Layanan</a>
+              <div className="flex flex-col items-start justify-start">
+              <button onClick={()=> setDropdown(!dropdown)} className="hover:bg-[#184737] p-2 rounded-md px-3 hover:text-white cursor-pointer"> Layanan <span className="-rotate-45">{">"}</span></button>
+{dropdown == true && (
+  <>
+  <div className="fixed flex flex-col translate-y-12 bg-white text-[#184737] py-2">
+    
+  <Link href={'/workshop_aromaterapi'} className="hover:bg-[#184737] hover:text-white px-2"> Workshop Aromaterapi</Link>
+  <Link href={'/packages'} className="hover:bg-[#184737] hover:text-white px-2"> Workshop Parfum</Link>
+  </div>
+  
+  </>
+)}
+              </div>
               <a className="hover:bg-[#184737] p-2 rounded-md px-3 hover:text-white" href="/articles">Artikel</a>
               <a className="hover:bg-[#184737] p-2 rounded-md px-3 hover:text-white" href="/galeri">Galeri</a>
               <a className="hover:bg-[#184737] p-2 rounded-md px-3 hover:text-white" href="/about">Tentang</a>
@@ -57,7 +70,7 @@ function Navbar() {
                 <button className="border border-slate-300">
                   <img
                     src="https://flagcdn.com/h20/id.png"
-                    srcset="https://flagcdn.com/h40/id.png 2x,
+                    srcSet="https://flagcdn.com/h40/id.png 2x,
                     https://flagcdn.com/h60/id.png 3x"
                     height="20"
                     alt="ID" />
@@ -65,7 +78,7 @@ function Navbar() {
                 <button className="border border-slate-300">
                   <img
                     src="https://flagcdn.com/h20/gb.png"
-                    srcset="https://flagcdn.com/h40/gb.png 2x,
+                    srcSet="https://flagcdn.com/h40/gb.png 2x,
                     https://flagcdn.com/h60/gb.png 3x"
                     height="20"
                     alt="EN" />

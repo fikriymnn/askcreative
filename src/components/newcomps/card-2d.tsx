@@ -36,7 +36,7 @@ export const projects = [
   {
     title: "Produk Parfum dan Aromaterapi",
 
-    link: "/",
+    link: "/produk",
   },
 ];
 

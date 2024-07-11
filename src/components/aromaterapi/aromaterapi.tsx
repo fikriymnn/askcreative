@@ -6,69 +6,116 @@ import CustomFooter from "@/components/CustomFooter";
 import { useEffect, useState } from "react";
 import { useLanguage } from "@/context/LanguageContext";
 import Navbar from "../newcomps/navbar";
+import Image from "next/image";
 
-function Aromaterapi({ dataAromaterapi }: { dataAromaterapi: any }) {
+function Aromaterapi({ title,description, layanan, images }: { title: String, description:String , layanan:any, images:any}) {
     const { language, changeLanguage } = useLanguage();
     return (
         <>
             <Navbar />
-            <div className="bg-slate-100 pt-36   w-full py-4 ">
+            
+     
+          <>
+            <div  className="bg-gray-200 pt-44 pb-5 ps-5 pe-5 flex flex-col items-center">
+              <div className="flex pb-5 gap-1 w-10/12 justify-start">
+                <p>Packages </p> <p>&gt;</p>
+                <p className="text-blue-600">
+                  {title}sss
+                </p>
+              </div>
+              <div className="bg-white w-10/12">
+                <div className="relative px-5 pt-5">
+                  <div className="md:flex sm:grid sm:grid-cols-1 grid grid-cols-1 mb-5">
+                    <div
+                      className="bg-gray-100 md:w-[500px] md:h-[300px]  mt-2 bg-cover bg-center"
+                      style={{
+                        backgroundImage: `url(${images})`,
+                      }}
+                    ></div>
+                    <div className="md:ps-5 ps-">
+                      <p className="md:text-2xl text-2xl pb-4">
+                        {title}
+                      </p>
+                      <div className="flex gap-1 pb-6">
+                        {description}
+                      </div>
 
-                <div className="bg-slate-100 w-full pt-4 mt-6 md:grid md:grid-cols-3 grid grid-cols-1  gap-3 px-12 h-full ">
-                    {dataAromaterapi.map((data: { title: string | number | boolean | React.ReactElement<any, string | React.JSXElementConstructor<any>> | Iterable<React.ReactNode> | React.ReactPortal | React.PromiseLikeOfReactNode | Iterable<React.ReactNode> | null | undefined; price: string | number | boolean | React.ReactElement<any, string | React.JSXElementConstructor<any>> | Iterable<React.ReactNode> | React.ReactPortal | React.PromiseLikeOfReactNode | Iterable<React.ReactNode> | null | undefined; description: string | number | boolean | React.ReactElement<any, string | React.JSXElementConstructor<any>> | Iterable<React.ReactNode> | React.ReactPortal | React.PromiseLikeOfReactNode | Iterable<React.ReactNode> | null | undefined; id: any; }, i: React.Key | null | undefined) => {
-                        const le = data;
 
 
-                        return (
-                            <>
-                                <div
-                                    key={i}
-                                    className="bg-white p-[50px] rounded-lg shadow-lg h-full flex flex-col justify-between"
-                                >
-                                    <h5 className="mb-4 bg- text-[20px]  text-black font-semibold text-center  h-[55px] line-clamp-2">
-                                        {data.title}
-                                    </h5>
-                                    <p className="mb-4 text-[18px] font-medium leading-[28px] text-[#1e70ea] text-center">
-                                        {data.price}
-                                    </p>
+                    </div>
+                  </div>
+                  <div className="text-2xl font-medium">
+                    <p> {language == "en" ? "Layanan: " : "服务: "}</p>
+                  </div>
 
-                                    <ol className="mb-auto pb-3 ">
-                                        <li className="flex space-x-3">
-                                            <p className="leading-[24px] text-base my-2 font-normal  text-black ">
-                                                <span className="">
-                                                    {data.description}
-                                                </span>
-                                            </p>
-                                        </li>
-                                        {/* {data.workshop.map((data, i) => {
-                      return (
-                        <>
+                  {/* ======== */}
+                  <div className="flex flex-wrap pb-5 pt-2 scale-95 gap-5">
+
+                    <div  className="rounded-md">
+                      <a href={`/events/event?id=s`}>
+                        <div className="bg-white rounded-3xl shadow-xl md:hover:translate-y-[-10px] transition-transform duration-50 ease-in-out grid grid-cols-2 md:flex md:flex-col h-full ">
                           <div
-                            key={i}
-                            className="flex space-x-3 my-3 leading-[24px]"
+                            className="bg-blue-700 md:mb-5 md:rounded-t-3xl rounded-s-3xl md:grid grid-cols-1  bg-cover bg-no-repeat bg-center"
+                            style={{ backgroundImage: `url(${'https://firebasestorage.googleapis.com/v0/b/askcreative-1d7c7.appspot.com/o/galleries%2FIMG-20231109-WA0000.jpg?alt=media&token=30f72647-8ae8-41fb-9c7a-0b9d5e2c8963'})` }}
                           >
-                            <p className="text-base font-normal leading-tight text-black line-clamp-1 ">
-                              &bull;{" "}
-                              <span className="px-2">{data.name}</span>
-                            </p>
-                          </div>
-                        </>
-                      );
-                    })} */}
-                                    </ol>
+                            <Image alt="" src={'https://firebasestorage.googleapis.com/v0/b/askcreative-1d7c7.appspot.com/o/galleries%2FIMG-20231109-WA0000.jpg?alt=media&token=30f72647-8ae8-41fb-9c7a-0b9d5e2c8963'} width={100} height={100} className="w-full h-full md:rounded-t-3xl rounded-s-3xl" />
 
-                                    <a
-                                        className=" inline-flex w-full justify-center  bg-[#184737] px-5 py-2.5 text-center text-sm font-medium text-white  focus:outline-none focus:ring-4 focus:ring-cyan-200 "
-                                        href={`/workshop_aromaterapi/detail?id=${data.id}`}
-                                    >
-                                        <p>{language == "en" ? "DETAILS" : "更详细"}</p>
-                                    </a>
+                          </div>
+
+                          <div className="px-3 pb-3 flex flex-col justify-between ">
+                            <p className="lg:text-base md:text-xs sm:text-sm text-xs h-12 font-semibold text-black line-clamp-2  ">
+
+                              {/* {data.titleEnglish} */}
+                              ksdjlfdfjlksfnkl
+
+                            </p>
+                            <div>
+                              <div className="lg:flex text-[11px] lg:text-base md:text-xs sm:text-sm text-xs md:gap-1 font-medium text-gray-800">
+                                <div className="lg:mt-2">
+                                  {/* {language == "en"
+                                    ? data.durationFrom
+                                    : data.durationFromValue}{" "} */}
+                                    ksdjlfdfjlksfnkl
                                 </div>
-                            </>
-                        );
-                    })}
+                                <p className="lg:text-base md:text-xs sm:text-sm text-xs translate-y-[1px] md:translate-y-[4px]">
+                                  &#8226;
+                                </p>
+                                <div className="lg:mt-2">
+                                  {/* {data.timeFrom} */}
+                                  ksdjlfdfjlksfnkl</div>
+                              </div>
+                              <h2 className="text-gray-500 lg:text-base md:text-xs sm:text-sm text-xs">
+                                {/* {data.location} */}
+                                ksdjlfdfjlksfnkl
+                              </h2>
+                              <div className=" w-full justify-between">
+                                <h2 className="font-medium text-gray-800 lg:text-base md:text-xs sm:text-sm text-xs">
+                                  {/* {
+                                    data.feeRupiahksdjlfdfjlksfnkl
+                                  } */}
+                                  200.000
+                                </h2>
+                                <h2 className="lg:text-base md:text-xs sm:text-sm text-xs">Kuota Tersedia : 1</h2>
+
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </a>
+                    </div>
+
+
+
+
+                  </div>
+                  
+                
                 </div>
+              </div>
             </div>
+          </>
+      
+     
             <CustomFooter />
         </>
     );
