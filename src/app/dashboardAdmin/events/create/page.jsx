@@ -430,7 +430,7 @@ function CreateEvent() {
             </div>
             <div className=" flex py-1 px-20 ">
               <div className=" w-2/12 text-end p-3 py-5">
-                <p>Fee :</p>
+                <p>Fee : </p>
               </div>
               <div className=" w-10/12 p-3">
                 <input

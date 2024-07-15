@@ -64,9 +64,17 @@ function PackageAdmin() {
         <div className="p-5 w-full h-screen overflow-y-scroll">
           <div className="w-full bg-[#184737] ">
             <p className="pt-5 text-center font-bold text-3xl text-white">
-              Packages
+              Workshop
             </p>
-            <div className="p-5">
+            <div className="p-5 flex flex-col gap-5">
+              <a href="/dashboardAdmin/packages/perfume" className="bg-white rounded-md p-5 text-2xl font-semibold">
+                <h2>Perfume Workshop</h2>
+              </a>
+               <a href="/dashboardAdmin/packages/aromatheraphy" className="bg-white rounded-md p-5 text-2xl font-semibold">
+                <h2>Aromatheraphy Workshop</h2>
+              </a>
+            </div>
+            {/* <div className="p-5">
               <div className="flex py-5">
                 <a
                   className="bg-blue-500 py-3 px-5 rounded-md text-white font-bold"
@@ -281,7 +289,7 @@ function PackageAdmin() {
                     })}
                 </div>
               </div>
-            </div>
+            </div> */}
           </div>
         </div>
       </div>
