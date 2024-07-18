@@ -5,7 +5,7 @@ import CustomFooter from "@/components/CustomFooter";
 import Navbar from "../newcomps/navbar";
 import { useLanguage } from "@/context/LanguageContext";
 
-function ProdukPage({ dataProduk }) {
+function ProdukBahanPage({ dataProduk }) {
   const { language } = useLanguage();
   const [filteredProduk, setFilteredProduk] = useState(dataProduk);
   const [displayedProduk, setDisplayedProduk] = useState([]);
@@ -61,7 +61,7 @@ function ProdukPage({ dataProduk }) {
       <div className="bg-gray-200 pt-24 pb-5 ps-5 pe-5 min-h-[700px]">
         <div className="bg-white rounded-ss-[100px]">
           <div className="flex justify-between z-10 p-5 pt-8 px-10 mt-20 mx-5">
-            <h1 className="text-[#0E2233] text-3xl font-bold">Produk</h1>
+            <h1 className="text-[#0E2233] text-3xl font-bold">Bahan Parfum dan Aromaterapi</h1>
             <div className="relative z-10">
               <input
                 type="text"
@@ -140,4 +140,4 @@ function ProdukPage({ dataProduk }) {
   );
 }
 
-export default ProdukPage;
+export default ProdukBahanPage;

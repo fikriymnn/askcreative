@@ -141,7 +141,7 @@ function Event() {
                           {language == "en" ? " Peserta: " : " 活动时间: "}{" "}
                             {data.roles.map((role, index) => (
         <div key={index} className="flex">
-          <h3 className="flex">- {role.header}</h3>
+          <h3 className="flex">-  {role.header}</h3>
          
         </div>
       ))}
