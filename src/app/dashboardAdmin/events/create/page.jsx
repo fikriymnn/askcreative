@@ -172,11 +172,11 @@ function CreateEvent() {
     });
 
     // Add subset data to the 'galleries' collection
-    const galleryDocRef = await addDoc(collection(db, "galleries"), {
-        title: titleIng,  // Assuming titleEnglish should be used for galleries too
-        img: downloadURL,
-        date: date,
-    });
+    // const galleryDocRef = await addDoc(collection(db, "galleries"), {
+    //     title: titleIng,  // Assuming titleEnglish should be used for galleries too
+    //     img: downloadURL,
+    //     date: date,
+    // });
 
     alert("success");
 };
