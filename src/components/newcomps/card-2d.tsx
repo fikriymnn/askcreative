@@ -16,7 +16,7 @@ export const projects = [
   {
     title: "Workshop Parfum",
 
-    link: "/packages",
+    link: "/workshop_parfum",
   },
   {
     title: "Buat Parfum dan Aromaterapi kamu sendiri",
