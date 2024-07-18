@@ -58,8 +58,8 @@ const [dropdown, setDropdown] = useState(false)
   <Link href={'/workshop_aromaterapi'} className="hover:bg-[#184737] hover:text-white px-2 text-base font-normal"> Workshop Aromaterapi</Link>
   <Link href={'/workshop_parfum'} className="hover:bg-[#184737] hover:text-white px-2 text-base font-normal"> Workshop Parfum</Link>
   <Link href={'/'} className="hover:bg-[#184737] hover:text-white px-2 text-base font-normal"> Buat Parfum dan Aromaterapi Kamu Sendiri</Link>
-  <Link href={'/'} className="hover:bg-[#184737] hover:text-white px-2 text-base font-normal"> Alat Labolatorium Skala Mikro</Link>
-  <Link href={'/'} className="hover:bg-[#184737] hover:text-white px-2 text-base font-normal"> Bahan Parfum dan Aromaterapi</Link>
+  <Link href={'/produk_labtool'} className="hover:bg-[#184737] hover:text-white px-2 text-base font-normal"> Alat Labolatorium Skala Mikro</Link>
+  <Link href={'/produk_bahan'} className="hover:bg-[#184737] hover:text-white px-2 text-base font-normal"> Bahan Parfum dan Aromaterapi</Link>
   <Link href={'/produk'} className="hover:bg-[#184737] hover:text-white px-2 text-base font-normal"> Produk Parfum dan Aromaterapi</Link>
   </div>
   

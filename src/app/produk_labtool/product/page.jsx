@@ -24,7 +24,7 @@ function ProdukDetail() {
 
   async function getDataProduks(idd) {
     try {
-      const docRef = doc(db, "produk", idd);
+      const docRef = doc(db, "produk_labtool", idd);
       const querySnapshot = await getDoc(docRef);
 
       let data = [];

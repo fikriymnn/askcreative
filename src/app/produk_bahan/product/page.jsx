@@ -24,7 +24,7 @@ function ProdukDetail() {
 
   async function getDataProduks(idd) {
     try {
-      const docRef = doc(db, "produk", idd);
+      const docRef = doc(db, "produk_bahan", idd);
       const querySnapshot = await getDoc(docRef);
 
       let data = [];
@@ -49,7 +49,7 @@ function ProdukDetail() {
                 <div className="md:w-5/6">
                   <div className="py-2 flex gap-1">
                     <a href="/produk">
-                      {language == "en" ? "produk" : "文章"}
+                      {language == "en" ? "produk bahan" : "文章"}
                     </a>
                     <svg
                       xmlns="http://www.w3.org/2000/svg"

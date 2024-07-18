@@ -26,12 +26,12 @@ export const projects = [
   {
     title: "Alat Labolatorium Skala Mikro",
 
-    link: "/",
+    link: "/produk_labtool",
   },
   {
     title: "Bahan Parfum dan Aromaterapi",
 
-    link: "/",
+    link: "/produk_bahan",  
   },
   {
     title: "Produk Parfum dan Aromaterapi",
