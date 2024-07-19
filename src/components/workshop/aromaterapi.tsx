@@ -171,7 +171,7 @@ function Aromaterapi({
                       >
                         <button>
                           <div
-                            className={` rounded-3xl shadow-xl  transition-transform duration-50 ease-in-out grid grid-cols-2 md:flex md:flex-col h-full `}
+                            className={` rounded-3xl shadow-xl  w-64 transition-transform duration-50 ease-in-out grid grid-cols-2 md:flex md:flex-col h-full `}
                           >
                             <div
                               className="bg-blue-700 md:mb-5 md:rounded-t-3xl rounded-s-3xl md:grid grid-cols-1  bg-cover bg-no-repeat bg-center"
@@ -186,16 +186,16 @@ function Aromaterapi({
                               />
                             </div>
 
-                            <div className="px-3 pb-3 flex flex-col justify-between ">
-                              <p className="lg:text-base md:text-xs sm:text-sm text-xs h-12 font-semibold text-black line-clamp-2  ">
+                            <div className="px-1 pb-1 flex flex-col justify-between ">
+                              <p className="lg:text-base md:text-xs sm:text-sm text-xs h-8 font-semibold text-black line-clamp-2  ">
                                 {event.titleEnglish}
                               </p>
                               <div>
-                                <div className="lg:flex text-[11px] lg:text-base md:text-xs sm:text-sm text-xs md:gap-1 font-medium text-gray-800">
+                                <div className="lg:flex text-[11px]  justify-center  lg:text-base md:text-xs sm:text-sm text-xs md:gap-1 font-medium text-gray-800">
                                   <div className="lg:mt-2">
                                     {event.durationFrom}{" "}
                                   </div>
-                                  <p className="lg:text-base md:text-xs sm:text-sm text-xs translate-y-[1px] md:translate-y-[4px]">
+                                  <p className="lg:text-base md:text-xssm:text-sm text-xs translate-y-[1px] md:translate-y-[4px]">
                                     &#8226;
                                   </p>
                                   <div className="lg:mt-2">
