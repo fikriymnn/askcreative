@@ -1,6 +1,6 @@
 "use client";
 import React, { useEffect, useState, useRef } from "react";
-import ProdukCard from "@/components/ProdukCard";
+import ProdukBahanCard from "@/components/ProdukBahanCard";
 import CustomFooter from "@/components/CustomFooter";
 import Navbar from "../newcomps/navbar";
 import { useLanguage } from "@/context/LanguageContext";
@@ -111,7 +111,7 @@ function ProdukBahanPage({ dataProduk }) {
           <div className="grid grid-cols-1 md:grid-cols-5 gap-5 px-5 pb-5">
             {displayedProduk.length > 0 ? (
               displayedProduk.map((data, i) => (
-                <ProdukCard
+                <ProdukBahanCard
                   key={i}
                   price={data.price}
                   id={data.id}

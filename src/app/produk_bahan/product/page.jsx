@@ -76,13 +76,17 @@ function ProdukDetail() {
                         
                         
                         
-                        <div className="flex gap-10  py-10 px-5">
+                        <div className="flex  gap-10  py-10 px-5">
+                          <div className="">
+
                           <Image
                             src={data.img}
                             width={500}
                             height={10}
                             alt=""
+                            className=""
                           />
+                          </div>
                         <div className=" pt-10 pb-10 ql-editor  -translate-x-4">
 <div className="mb-10">
 <h1 className="md:text-4xl sm:text-2xl text-xl  font-semibold">
