@@ -48,7 +48,7 @@ function EditEvent() {
   const [timeFrom, setTimeFrom] = useState("");
   const [timeTo, setTimeTo] = useState("");
   const [desIng, setDesIng] = useState("");
-    const [roles, setRoles] = useState("");
+  const [roles, setRoles] = useState("");
 
   const [parsedDateFrom, setParsedDateFrom] = useState("");
   const [parsedDateTo, setParsedDateTo] = useState("");
@@ -83,15 +83,7 @@ function EditEvent() {
       const docRef = doc(db, "events", idd);
       const querySnapshot = await getDoc(docRef);
 
-      // if (querySnapshot.exists()) {
-      //   console.log("Document data:", querySnapshot.data());
-      // } else {
-      //   // docSnap.data() will be undefined in this case
-      //   console.log("No such document!");
-      // }
       let data = [];
-
-      // doc.data() is never undefined for query doc snapshots
 
       data.push(querySnapshot.data());
 
@@ -104,7 +96,7 @@ function EditEvent() {
       setDurationTo(data[0].durationToValue);
       setTimeFrom(data[0].timeFrom);
       setTimeTo(data[0].timeTo);
-     setQuota(data[0].quota);
+      setQuota(data[0].quota);
       setDesIng(data[0].descriptionEnglish);
       setLocation(data[0].location);
       setFeeRupiah(data[0].feeRupiah);

@@ -29,8 +29,10 @@ function AboutAdmin() {
   const [dataAboutFacebook, setDataAboutFacebook] = useState([]);
   const [dataAboutWechat, setDataAboutWechat] = useState([]);
   const [dataAboutLinkedin, setDataAboutLinkedin] = useState([]);
+  const [dataAbout, setDataAbout] = useState([]);
 
   useEffect(() => {
+    getDataAbout();
     getDataAboutHeading();
     getDataAboutParagraph();
     getDataAboutAdrress();
@@ -271,6 +273,29 @@ function AboutAdmin() {
       alert(error);
     }
   };
+  const getDataAbout = async () => {
+    try {
+      const docRef = doc(db, "editAbout", "paragraph");
+      const querySnapshot = await getDoc(docRef);
+
+      if (querySnapshot.exists()) {
+        console.log("Document data:", querySnapshot.data());
+      } else {
+        // docSnap.data() will be undefined in this case
+        console.log("No such document!");
+      }
+      let data = [];
+
+      // doc.data() is never undefined for query doc snapshots
+
+      data.push(querySnapshot.data());
+
+      setDataAbout(data);
+    } catch (error) {
+      alert(error);
+    }
+  };
+
 
   return (
     <>
@@ -296,7 +321,39 @@ function AboutAdmin() {
                     <p>Edit</p>
                   </div>
                 </div>
-              
+               <div className="flex bg-slate-300 w-full rounded-md">
+                  <div className="w-full flex">
+                    <div className="w-2/12 font-semibold flex justify-start items-center p-2">
+                      <p>About</p>
+                    </div>
+                    <div className="w-8/12 border-s-2 flex justify-start items-center p-2">
+                      {dataAbout.length > 0 &&
+                        dataAbout.map((data, i) => {
+                          return (
+                            <>
+                              <p>{data.paragraph}</p>
+                            </>
+                          );
+                        })}
+                    </div>
+                  </div>
+                  <div className="w-14  flex gap-3 m-3 my-auto">
+                    <a
+                      className="bg-yellow-400 w-full h-10 rounded-md flex items-center justify-center m-auto"
+                      href="/dashboardAdmin/about/editAbout"
+                    >
+                      <button>
+                        <Image
+                          width={35}
+                          height={35}
+                          className="w-8"
+                          src="/assets/images/edit-svgrepo-com.svg"
+                          alt=""
+                        />
+                      </button>
+                    </a>
+                  </div>
+                </div>
                 <div className="flex bg-slate-300 w-full rounded-md">
                   <div className="w-full flex h-20">
                     <div className="w-2/12 font-semibold flex justify-start items-center p-2">
@@ -330,6 +387,8 @@ function AboutAdmin() {
                     </a>
                   </div>
                 </div>
+
+               
 
                 <div className="flex bg-slate-300 w-full rounded-md">
                   <div className="w-full flex h-20">

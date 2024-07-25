@@ -34,14 +34,39 @@ function AddPerfCat() {
   const [title, setTitle] = useState("");
   const [desIng, setDesIng] = useState("");
   const [price, setPrice] = useState("");
-  const [sopi, setSopi] = useState("");
-  const [toped, setToped] = useState("");
   const [category, setCategory] = useState("");
   const [downloadURL, setDownloadURL] = useState("");
 
   // progress
   const [percent, setPercent] = useState(0);
   const [loading, setLoading] = useState(false);
+
+
+   useEffect(() => {
+    getDataEvents(id);
+  }, [id]);
+
+  const getDataEvents = async (idd) => {
+    try {
+      const docRef = doc(db, "produk", idd);
+      const querySnapshot = await getDoc(docRef);
+
+      let data = [];
+
+      data.push(querySnapshot.data());
+
+      setTitle(data[0].title);
+      
+      setDesIng(data[0].desc);
+      setPrice(data[0].price);
+      setToped(data[0].tokped);
+      setSopi(data[0].shopee);
+      setCategory(data[0].kategori);
+      
+    } catch (error) {
+      alert(error);
+    }
+  };
 
   const handleUpload = async (filess) => {
     const files = filess;
@@ -89,8 +114,6 @@ function AddPerfCat() {
         title:title,
         desc:desIng,
         price:price,
-        tokped:toped,
-        shopee:sopi,
         kategori:category,
         img:downloadURL,
     });
@@ -207,14 +230,6 @@ const modules = {
              <div className="flex flex-col">
                 <p>Category</p>
                 <input value={category} onChange={(e) => setCategory(e.target.value)} type="text" name="img" className="w-full resize-none rounded-lg border-slate-300 "/>
-            </div>
-            <div className="flex flex-col">
-                <p>Link Tokopedia</p>
-                <input value={toped} onChange={(e) => setToped(e.target.value)} type="text" name="img" className="w-full resize-none rounded-lg border-slate-300 "/>
-            </div>
-            <div className="flex flex-col">
-                <p>Link Shopee</p>
-                <input value={sopi} onChange={(e) => setSopi(e.target.value)} type="text" name="img" className="w-full resize-none rounded-lg border-slate-300 "/>
             </div>
             
             {loading? <></>:<>
