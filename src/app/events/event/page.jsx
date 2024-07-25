@@ -69,7 +69,7 @@ function Event() {
               <div className="md:flex justify-center items-center ">
                 <div></div>
                 <div className="md:w-11/12 flex flex-col items-center ">
-                  <div className="py-2  gap-1 w-10/12 flex justify-start">
+                  <div className="py-2  gap-1 w-10/12 md:flex hidden justify-start">
                     <a href="/events">
                       {language == "en" ? "Events" : "活动 "}
                     </a>
@@ -92,16 +92,16 @@ function Event() {
                       {data.titleEnglish}
                     </p>
                   </div>
-                  <div className="bg-white md:w-10/12">
+                  <div className="bg-white md:w-10/12 md:mt-0 mt-7">
                     <div className="relative px-5">
                       <div className="w-full">
-                        <div className="pt-3">
+                        <div className="pt-3 md:text-base text-sm">
                           <p>
                             {language == "en" ? " Posted at: " : "发表日期: "}
                             {language == "en" ? data.date : formattedDate}
                           </p>
                         </div>
-                        <h1 className="md:text-4xl sm:text-2xl text-2xl text-center p-5 font-semibold">
+                        <h1 className="md:text-4xl sm:text-2xl text-xl text-center p-5 font-semibold">
                           {language == "en"
                             ? data.titleEnglish
                             : data.titleChinese}
@@ -114,7 +114,7 @@ function Event() {
                             alt=""
                           />
                         </div>
-                        <div className="font-semibold">
+                        <div className="font-semibold md:text-base text-xs">
                           <h3 className="mt-2">
                             {language == "en" ? " Location: " : "活动地点: "}
                             {data.location}
@@ -163,7 +163,7 @@ function Event() {
                                 ) : (
                                   <>
 
-                                    <button onClick={() => setFormReg(!formReg)} className="mb-3 mt-1 bg-green-600 text-white text-lg  font-semibold px-10 py-1">Registration</button>
+                                    <button onClick={() => setFormReg(!formReg)} className="mb-3 mt-1 bg-green-600 text-white md:text-lg text-md  font-semibold px-10 py-1">Registration</button>
                                   </>
                                 )
                               }
@@ -187,7 +187,7 @@ function Event() {
                         </div>
 
                         <div className="bg-gray-400 h-[2px] "></div>
-                        <div className="content   ql-editor  -translate-x-4">
+                        <div className="content   ql-editor  -translate-x-4 md:text-base text-sm">
                           <p>
                             {parse(
                               language == "en"

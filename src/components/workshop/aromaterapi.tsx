@@ -137,15 +137,15 @@ function Aromaterapi({
 
       <>
         <div className="bg-gray-200 pt-44 pb-5 ps-5 pe-5 flex flex-col items-center">
-          <div className="flex pb-5 gap-1 w-10/12 justify-start">
+          <div className="md:flex hidden pb-5 gap-1 w-10/12 justify-start">
             <p>Workshop </p> <p>&gt;</p>
             <p className="text-blue-600">{title}</p>
           </div>
-          <div className="bg-white w-10/12">
+          <div className="bg-white md:w-10/12 w-12/12 md:mt-0 mt-7">
             <div className="relative px-5 pt-5">
               <div className="md:flex sm:grid sm:grid-cols-1 grid grid-cols-1 mb-5">
                 <div
-                  className="bg-gray-100 md:w-[500px] md:h-[300px]  mt-2 bg-cover bg-center"
+                  className="bg-gray-100 md:w-[500px] md:h-[300px] w-full h-[300px]  mt-2 bg-cover bg-center"
                   style={{
                     backgroundImage: `url(${images})`,
                   }}
@@ -160,67 +160,61 @@ function Aromaterapi({
               </div>
 
               {/* ======== */}
-              <div className="flex flex-wrap pb-5 pt-2 scale-95 gap-5">
-                <div className="rounded-md">
-                  <div className="grid grid-cols-5 gap-3">
-                    {events.map((event) => (
-                      <a
-                        href={`/events/event?id=${event.id}`}
-                        key={event.id}
-                        className="rounded-md "
-                      >
-                        <button>
-                          <div
-                            className={` rounded-3xl shadow-xl  w-64 transition-transform duration-50 ease-in-out grid grid-cols-2 md:flex md:flex-col h-full `}
-                          >
-                            <div
-                              className="bg-blue-700 md:mb-5 md:rounded-t-3xl rounded-s-3xl md:grid grid-cols-1  bg-cover bg-no-repeat bg-center"
-                              style={{ backgroundImage: `url(${event.img})` }}
-                            >
-                              <Image
-                                alt=""
-                                src={event.img}
-                                width={100}
-                                height={100}
-                                className="w-full h-full md:rounded-t-3xl rounded-s-3xl"
-                              />
-                            </div>
+              <div className="">
+              <div className="grid grid-cols-2 md:grid-cols-3 md:gap-10 gap-2  px-0 mt-10 pb-5 md:w-11/12 w-full">
 
-                            <div className="px-1 pb-1 flex flex-col justify-between ">
-                              <p className="lg:text-base md:text-xs sm:text-sm text-xs h-8 font-semibold text-black line-clamp-2  ">
-                                {event.titleEnglish}
-                              </p>
-                              <div>
-                                <div className="lg:flex text-[11px]  justify-center  lg:text-base md:text-xs sm:text-sm text-xs md:gap-1 font-medium text-gray-800">
-                                  <div className="lg:mt-2">
-                                    {event.durationFrom}{" "}
-                                  </div>
-                                  <p className="lg:text-base md:text-xssm:text-sm text-xs translate-y-[1px] md:translate-y-[4px]">
-                                    &#8226;
-                                  </p>
-                                  <div className="lg:mt-2">
-                                    {event.timeFrom}
-                                  </div>
-                                </div>
-                                <h2 className="text-gray-500 lg:text-base md:text-xs sm:text-sm text-xs">
-                                  {event.location}
-                                </h2>
-                                <div className=" w-full justify-between">
-                                  <h2 className="font-medium text-gray-800 lg:text-base md:text-xs sm:text-sm text-xs">
-                                    {event.feeRupiah}
-                                  </h2>
-                                  <h2 className="lg:text-base md:text-xs sm:text-sm text-xs">
-                                    Kuota Tersedia : {event.quota}
-                                  </h2>
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-                        </button>
-                      </a>
-                    ))}
-                  </div>
+{events.map((event, i) => {
+  return (
+    <div key={i} className="rounded-md">
+      <a href={`/events/event?id=${event.id}`}>
+        <div className="bg-white rounded-3xl shadow-xl md:hover:translate-y-[-10px] transition-transform duration-50 ease-in-out  md:flex md:flex-col h-full ">
+          <div
+            className="bg-blue-700 md:mb-5 md:rounded-t-3xl rounded-s-3xl md:grid grid-cols-1  bg-cover bg-no-repeat bg-center"
+            style={{ backgroundImage: `url(${event.img})` }}
+          >
+            <Image alt="" src={event.img} width={100} height={100} className="w-full h-full md:rounded-t-3xl rounded-s-3xl" />
+
+          </div>
+
+          <div className="px-3 pb-3 flex flex-col justify-between md:mt-0 mt-2  ">
+            <p className="lg:text-base md:text-xs sm:text-sm text-[10px] h-12 font-semibold text-black  line-clamp-2 ">
+
+              {event.titleEnglish}
+
+            </p>
+            <div>
+              <div className="flex text-[10px] md:mb-0 mb-2 lg:text-base md:text-xs sm:text-sm text-xs md:gap-1 font-medium text-gray-800">
+                <div className="lg:mt-2">
+                  { event.durationFrom
+                    }{" "}
                 </div>
+                <p className="lg:text-base md:text-xs sm:text-sm text-xs translate-y-[1px] md:translate-y-[4px]">
+                  &#8226;
+                </p>
+                <div className="lg:mt-2">{event.timeFrom}</div>
+              </div>
+              <h2 className="text-gray-500 lg:text-base md:text-xs sm:text-sm text-xs">
+                {event.location}
+              </h2>
+              <div className=" w-full justify-between">
+                <h2 className="font-medium text-gray-800 lg:text-base md:text-xs sm:text-sm text-xs">
+                  {
+                    event.feeRupiah
+                  }
+                </h2>
+                <h2 className="lg:text-base md:text-xs sm:text-sm text-xs">Available Quota : {event.quota}</h2>
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </a>
+    </div>
+  );
+})
+}
+
+</div>
               </div>
             </div>
           </div>

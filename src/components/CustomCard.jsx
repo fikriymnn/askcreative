@@ -27,7 +27,7 @@ function CustomCard({ text, isi, isi2, img, id }) {
               {isi}
             </div>
           </div>
-          <div className="font-normal text-gray-700 dark:text-gray-400 ">
+          <div className="font-normal text-gray-700 dark:text-gray-400 line-clamp-3 ">
             <div>{parse(isi2)}</div>
            
           </div>

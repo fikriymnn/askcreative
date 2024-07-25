@@ -43,13 +43,13 @@ function HomePage({
         </div>
         <div className="w-full flex justify-center">
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-10 px-20 mt-10 pb-5 w-11/12">
+          <div className="grid grid-cols-2 md:grid-cols-3 md:gap-10 gap-5 md:px-20 px-5 mt-10 pb-5 w-11/12">
 
             {dataPackage.map((data, i) => {
               return (
                 <div key={i} className="rounded-md">
                   <a href={`/events/event?id=${data.id}`}>
-                    <div className="bg-white rounded-3xl shadow-xl md:hover:translate-y-[-10px] transition-transform duration-50 ease-in-out grid grid-cols-2 md:flex md:flex-col h-full ">
+                    <div className="bg-white rounded-3xl shadow-xl md:hover:translate-y-[-10px] transition-transform duration-50 ease-in-out  md:flex md:flex-col h-full ">
                       <div
                         className="bg-blue-700 md:mb-5 md:rounded-t-3xl rounded-s-3xl md:grid grid-cols-1  bg-cover bg-no-repeat bg-center"
                         style={{ backgroundImage: `url(${data.img})` }}
@@ -58,14 +58,14 @@ function HomePage({
 
                       </div>
 
-                      <div className="px-3 pb-3 flex flex-col justify-between ">
-                        <p className="lg:text-base md:text-xs sm:text-sm text-xs h-12 font-semibold text-black line-clamp-2  ">
+                      <div className="px-3 pb-3 flex flex-col justify-between md:mt-0 mt-2  ">
+                        <p className="lg:text-base md:text-xs sm:text-sm text-[10px] h-12 font-semibold text-black  line-clamp-2 ">
 
                           {data.titleEnglish}
 
                         </p>
                         <div>
-                          <div className="lg:flex text-[11px] lg:text-base md:text-xs sm:text-sm text-xs md:gap-1 font-medium text-gray-800">
+                          <div className="flex text-[10px] md:mb-0 mb-2 lg:text-base md:text-xs sm:text-sm text-xs md:gap-1 font-medium text-gray-800">
                             <div className="lg:mt-2">
                               {language == "en"
                                 ? data.durationFrom
@@ -152,7 +152,7 @@ function HomePage({
             </div>
           );
         })}
-        <div className=" flex flex-col">
+        <div className=" flex flex-col md:mt-0 mt-2">
           {dataArticle4.map((data, i) => {
             const secon = data.createdAt.seconds;
             const date = new Date(secon * 1000);
