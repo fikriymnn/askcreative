@@ -104,7 +104,7 @@ function EditAddress() {
         <div className=" bg-[#007aff] flex  text-2xl font-semibold py-7 rounded-t-xl text-white ">
           <div className="w-1/12"></div>
           <div className=" w-10/12 flex justify-center items-center">
-            <p>Edit Address</p>
+            <p>Edit About</p>
           </div>
           <div className="w-1/12 flex items-center justify-center">
             <a href="/dashboardAdmin/about">
