@@ -221,9 +221,9 @@ const CustomFooter = () => {
   }
   return (
     <div className=" w-full bg-[#184737] ">
-      <div className="w-full md:flex grid p-5 sm:p-8 md:p-12 gap-10 ">
-        <div className=" md:w-5/12">
-          <img src={logo} width={200} height={75} />
+      <div className="w-full md:flex grid px-5 pt-5 sm:p-8 md:p-12 md:gap-10 ">
+        <div className=" md:w-5/12 w-3/12">
+          <Image src={logo} width={200} height={75} />
           {/* <Image src={logo} width={200} height={75} /> */}
           <p className=" py-4 text-white text-[15px]">
             {language == "en" ? inggrisParagraph : chinaParagraph}

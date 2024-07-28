@@ -24,7 +24,7 @@ function GaleriPage({ dataGaleri }) {
                         <h1 className="text-[#184737] text-4xl font-bold">Galeri</h1>
 
                     </div>
-                    <div className="grid grid-cols-1 md:grid-cols-3 gap-5 px-5 pb-5">
+                    <div className="grid grid-cols-1 md:grid-cols-4 gap-5 md:px-5 pb-5">
 
                         {/* {dataGaleri.map((data, i) => (
                             <>
@@ -41,8 +41,8 @@ function GaleriPage({ dataGaleri }) {
                         {dataGaleri.map((data, i) => (
                             <>
 
-                                <div className="flex flex-col justify-center items-center w-96 h-96">
-                                    <Image alt="" src={data.img} width={400} height={400} className="w-96 h-96" />
+                                <div className="flex flex-col justify-center items-center ">
+                                    <Image alt="" src={data.img} width={400} height={400} className="h-72 w-72" />
                                     <h2 className="font-semibold">{data.title}</h2>
                                     <p className="font-medium text-sm text-gray-600">{data.date}</p>
                                 </div>

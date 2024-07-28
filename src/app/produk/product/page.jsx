@@ -47,7 +47,7 @@ function ProdukDetail() {
               <div className="md:flex justify-center items-center ">
                 <div></div>
                 <div className="md:w-5/6">
-                  <div className="py-2 flex gap-1">
+                  <div className="py-2 md:flex hidden gap-1">
                     <a href="/produk">
                       {language == "en" ? "produk" : "文章"}
                     </a>
@@ -70,21 +70,21 @@ function ProdukDetail() {
                       {data.title}
                     </p>
                   </div>
-                  <div className="bg-white ">
+                  <div className="bg-white mt-7">
                     <div className=" p-5 pb-0">
                       <div className="w-full h-full">
                         
                         
                         
-                        <div className="flex gap-10  py-10 px-5">
+                        <div className="flex md:flex-row flex-col gap-10  md:py-10 px-5">
                           <Image
                             src={data.img}
                             width={500}
                             height={10}
                             alt=""
                           />
-                        <div className=" pt-10 pb-10 ql-editor  -translate-x-4">
-<div className="mb-10">
+                        <div className=" md:pt-10 md:pb-10 ql-editor  -translate-x-4">
+<div className="md:mb-10">
 <h1 className="md:text-4xl sm:text-2xl text-xl  font-semibold">
                           {
                             data.title}

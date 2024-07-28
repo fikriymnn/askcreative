@@ -30,14 +30,14 @@ function EventPage({ dataEvents }) {
       </div>
       <div className="bg-[#b5c7c1] min-h-[700px]  pt-24 pb-5 ps-5 pe-5 ">
         <div className="">
-          <div className="flex justify-between mb-5  z-10  pt-8   mt-20 mx-5">
-            <h1 className="text-[#0E2233] text-3xl font-bold">Daftar Kegiatan</h1>
+          <div className="md:flex justify-between md:mb-5 mb-10  z-10  pt-8   mt-20 mx-5">
+            <h1 className="text-[#0E2233] text-3xl font-bold md:mb-0 mb-5">Daftar Kegiatan</h1>
             <div className="relative z-10 ">
               <input
                 type="text"
                 onChange={(e) => handleSearch(e.target.value)}
                 placeholder="Cari Judul..."
-                className="w-12/12 z-10 h-12 pl-4 pr-10 rounded-md border-none bg-white focus:outline-none !important"
+                className="w-12/12 z-10 h-12 pl-4 md:pr-10 pr-32 rounded-md border-none bg-white focus:outline-none !important"
               />
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -58,29 +58,29 @@ function EventPage({ dataEvents }) {
               </svg>
             </div>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-5 gap-5 px-5 pb-5">
+          <div className="grid grid-cols-2 md:grid-cols-5 gap-5 px-5 pb-5">
             {search == ""
               ? dataEvents.map((data, i) => {
                 return (
                   <div key={i} className="rounded-md">
                     <a href={`/events/event?id=${data.id}`}>
-                      <div className="bg-white rounded-3xl shadow-xl md:hover:translate-y-[-10px] transition-transform duration-50 ease-in-out grid grid-cols-2 md:flex md:flex-col h-full ">
+                      <div className="bg-white rounded-3xl shadow-xl md:hover:translate-y-[-10px] transition-transform duration-50 ease-in-out md:flex md:flex-col h-full ">
                         <div
                           className="bg-blue-700 md:mb-5 md:rounded-t-3xl rounded-s-3xl md:grid grid-cols-1  bg-cover bg-no-repeat bg-center"
                           style={{ backgroundImage: `url(${data.img})` }}
                         >
-                          <Image alt="" src={data.img} width={100} height={100} className="w-full h-full md:rounded-t-3xl rounded-s-3xl" />
+                          <Image alt="" src={data.img} width={1000} height={1000} className="w-full h-full md:rounded-t-3xl rounded-s-3xl" />
 
                         </div>
 
                         <div className="px-3 pb-3 flex flex-col justify-between ">
-                          <p className="lg:text-base md:text-xs sm:text-sm text-xs h-12 font-semibold text-black line-clamp-2  ">
+                          <p className="lg:text-base md:text-xs sm:text-sm text-[10px] h-12 font-semibold text-black line-clamp-2  ">
 
                             {data.titleEnglish}
 
                           </p>
                           <div>
-                            <div className="lg:flex text-[11px] lg:text-base md:text-xs sm:text-sm text-xs md:gap-1 font-medium text-gray-800">
+                            <div className="flex text-[9px] md:mb-0 md:mt-0 mt-2 mb-1 lg:text-base md:text-xs sm:text-sm text-xs md:gap-1 font-medium text-gray-800">
                               <div className="lg:mt-2">
                                 {language == "en"
                                   ? data.durationFrom

@@ -29,9 +29,9 @@ function ArticlePage({ dataArticle }) {
       <Navbar />
       <div className="bg-gray-200 pt-24 pb-5 ps-5 pe-5 min-h-[700px]">
         <div className="bg-white rounded-ss-[100px]">
-          <div className="flex justify-between   z-10 p-5 pt-8  px-10 mt-20 mx-5">
-            <h1 className="text-[#0E2233] text-3xl font-bold">Artikel</h1>
-            <div className="relative z-10 ">
+          <div className="md:flex justify-between md:mb-5 mb-10 px-10  z-10  pt-8   mt-20 mx-5">
+            <h1 className="text-[#0E2233] text-3xl font-bold md:mb-0 mb-5 md:mx-0 -mx-5">Artikel</h1>
+            <div className="relative z-10 -mx-5">
               <input
                 type="text"
                 onChange={(e) => handleSearch(e.target.value)}

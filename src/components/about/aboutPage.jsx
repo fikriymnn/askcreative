@@ -48,11 +48,11 @@ function AboutPage({
       <Navbar />
       <div className="py-5 px-6 bg-gray-200 pt-36">
 
-        <div className="bg-white px-5 mx-10 md:px-[5%] sm:px-10 mt-10 py-2 ">
-          <p className=" text-blue-600 text-[32px] font-semibold pb-4 font-sans">
+        <div className="bg-white px-5 md:mx-10 md:px-[5%] sm:px-10 md:mt-10 mt-12 py-2 ">
+          <p className=" text-blue-600 md:text-[32px] text-[25px] font-semibold pb-4 font-sans">
             {heading}
           </p>
-          <p className=" text-[19px] font-sans">
+          <p className=" md:text-[19px] text-[12px] font-sans">
             {paragraph}
           </p>
           <div className="md:grid md:grid-cols-2 py-10 gap-2 text-sm ">
@@ -85,7 +85,7 @@ function AboutPage({
                     ></path>
                   </svg>
                 </div>
-                <div className="my-auto text-base">{address}</div>
+                <div className="my-auto md:text-base text-sm ">{address}</div>
               </div>
 
               <div className="flex gap-4  pt-6">
@@ -96,7 +96,7 @@ function AboutPage({
                   alt=""
                   className=" "
                 />
-                <p className=" my-auto text-base">{phone}</p>
+                <p className=" my-auto md:text-base text-sm">{phone}</p>
               </div>
               <div className="flex gap-4  pt-6">
                 <Image
@@ -106,7 +106,7 @@ function AboutPage({
                   alt=""
                   className=" "
                 />
-                <p className=" my-auto text-base">{email}</p>
+                <p className=" my-auto md:text-base text-sm">{email}</p>
               </div>
             </div>
             {/* <form ref={form} onSubmit={sendEmail}>

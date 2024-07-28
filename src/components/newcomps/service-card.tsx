@@ -19,7 +19,7 @@ export const HoverEffect = ({
   return (
     <div
       className={cn(
-        "grid grid-cols-1 md:grid-cols-2  lg:grid-cols-3 gap-y-5  py-10 w-screen px-10",
+        "grid grid-cols-2 md:grid-cols-2  lg:grid-cols-3 gap-y-5  py-10 w-screen md:px-10 lg:px-10 px-5",
         className
       )}
     >
@@ -27,7 +27,7 @@ export const HoverEffect = ({
         <Link
           href={item?.link}
           key={item?.link}
-          className="relative group  block p-2 px-5 h-full w-full"
+          className="relative group  block p-2 md:px-5 lg:px-5 h-full w-full"
           onMouseEnter={() => setHoveredIndex(idx)}
           onMouseLeave={() => setHoveredIndex(null)}
         >
@@ -87,7 +87,7 @@ export const CardTitle = ({
   return (
     <h4
       className={cn(
-        "text-zinc-100 font-bold tracking-wide flex flex-col justify-center text-xl text-center",
+        "text-zinc-100 font-bold tracking-wide flex flex-col justify-center md:text-xl text-sm text-center",
         className
       )}
     >

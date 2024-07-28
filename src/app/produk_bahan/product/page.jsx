@@ -47,7 +47,7 @@ function ProdukDetail() {
               <div className="md:flex justify-center items-center ">
                 <div></div>
                 <div className="md:w-5/6">
-                  <div className="py-2 flex gap-1">
+                  <div className="py-2 md:flex hidden gap-1">
                     <a href="/produk">
                       {language == "en" ? "produk bahan" : "文章"}
                     </a>
@@ -70,13 +70,13 @@ function ProdukDetail() {
                       {data.title}
                     </p>
                   </div>
-                  <div className="bg-white ">
+                  <div className="bg-white md:mt-0 mt-7">
                     <div className=" p-5 pb-0">
                       <div className="w-full h-full">
                         
                         
                         
-                        <div className="flex  gap-10  py-10 px-5">
+                        <div className="md:flex  gap-10  md:py-10 py-5 px-5">
                           <div className="">
 
                           <Image
@@ -88,7 +88,7 @@ function ProdukDetail() {
                           />
                           </div>
                         <div className=" pt-10 pb-10 ql-editor  -translate-x-4">
-<div className="mb-10">
+<div className="md:mb-10">
 <h1 className="md:text-4xl sm:text-2xl text-xl  font-semibold">
                           {
                             data.title}
@@ -97,8 +97,8 @@ function ProdukDetail() {
                               <p className="text-slate-600 mt-10 text-lg"><span className="font-semibold  ">Harga:</span> {data.price}</p>
 <div className="flex gap-5 pt-2">
 
-                              <button className="bg-orange-500 p-2 rounded-md text-white"> Link to Shopee</button>
-                              <button className="bg-green-500 p-2 rounded-md text-white"> Link to Tokopedia</button>
+                              <button className="bg-orange-500 md:p-2 p-1 md:text-base text-sm rounded-md text-white"> Link to Shopee</button>
+                              <button className="bg-green-500 md:p-2 p-1 md:text-base text-sm rounded-md text-white"> Link to Tokopedia</button>
 </div>
                               </div>
                               <p className="border-y-2 pt-10 w-full"><span className="font-semibold">Kategori:</span> {data.kategori}</p>
