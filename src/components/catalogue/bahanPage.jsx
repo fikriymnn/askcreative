@@ -108,6 +108,7 @@ function BahanPage({ data }) {
                   {dataProduct.map((data, i) => {
                         return (
                           <>
+                          
                             <div className="flex bg-slate-300 rounded-md">
                               <div className="p-2 h-full w-[50px] flex justify-start items-center ">
                                 <p>{i + 1}</p>
@@ -153,6 +154,17 @@ function BahanPage({ data }) {
                                     alt=""
                                   />
                                 </a> */}
+                                 <a
+                                className="bg-yellow-400 rounded-md p-2"
+                                href={`/dashboardAdmin/catalogue/bahan/edit?id=${data.id}`}
+                              >
+                                <Image
+                                  width={35}
+                                  height={35}
+                                  src="/assets/images/edit-svgrepo-com.svg"
+                                  alt=""
+                                />
+                              </a>
                                 <button
                                   onClick={async (e) => {
                                     const confirmed = window.confirm(
