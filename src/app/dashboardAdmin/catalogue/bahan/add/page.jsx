@@ -24,13 +24,52 @@ import {
 import { db, storage, firebaseAnalytics } from "../../../../../../firebase/page";
 import Image from "next/image";
 
+import dynamic from "next/dynamic";
+const ReactQuill = dynamic(() => import("react-quill"), { ssr: false });
+import "react-quill/dist/quill.snow.css";
+
+
 
 function AddPerfCat() {
+const modules = {
+    toolbar: {
+      container: [
+        ["bold", "italic", "underline", "strike"], // toggled buttons
+        ["code-block", "link"],
+        [{ list: "ordered" }, { list: "bullet" }],
+        [{ script: "sub" }, { script: "super" }], // superscript/subscript
+        [{ indent: "-1" }, { indent: "+1" }], // outdent/indent
+        [{ direction: "rtl" }], // text direction
+        [{ color: [] }, { background: [] }], // dropdown with defaults from theme
+        [{ align: [] }],
+        ["clean"],
+      ],
+    },
+  };
+  const formats = [
+    "strike",
+    "bold",
+    "italic",
+    "underline",
+    "link",
+    "align",
+    "direction",
+    "list",
+    "code-block",
+    "script",
+    "indent",
+    "direction",
+    "color",
+
+    "background",
+  ];
 
   const [title, setTitle] = useState("");
   const [desIng, setDesIng] = useState("");
   const [price, setPrice] = useState("");
   const [category, setCategory] = useState("");
+  const [sopi, setSopi] = useState("");
+  const [toped, setToped] = useState("");
   const [downloadURL, setDownloadURL] = useState("");
 
   // progress
@@ -80,9 +119,11 @@ function AddPerfCat() {
     
    
     const eventDocRef = await addDoc(collection(db, "produk_bahan"), {
-        title:title,
+       title:title,
         desc:desIng,
         price:price,
+        tokped:toped,
+        shopee:sopi,
         kategori:category,
         img:downloadURL,
     });
@@ -154,11 +195,28 @@ function AddPerfCat() {
             </div>
              <div className="flex flex-col">
                 <p>Desctiption</p>
-                <input value={desIng} onChange={(e) => setDesIng(e.target.value)} type="text" name="img" className="w-full resize-none rounded-lg border-slate-300 "/>
+                <ReactQuill
+                  modules={modules}
+                  format={formats}
+                  value={desIng}
+                  onChange={(e) => setDesIng(e)}
+                  name="contentIng"
+                  placeholder={`Input Description English For Description ${1}`}
+                  maxLength={1000}
+                  className="h-[200px] w-full   pb-10"
+                />
             </div>
              <div className="flex flex-col">
                 <p>Category</p>
                 <input value={category} onChange={(e) => setCategory(e.target.value)} type="text" name="img" className="w-full resize-none rounded-lg border-slate-300 "/>
+            </div>
+             <div className="flex flex-col">
+                <p>Link Tokopedia</p>
+                <input value={toped} onChange={(e) => setToped(e.target.value)} type="text" name="img" className="w-full resize-none rounded-lg border-slate-300 "/>
+            </div>
+            <div className="flex flex-col">
+                <p>Link Shopee</p>
+                <input value={sopi} onChange={(e) => setSopi(e.target.value)} type="text" name="img" className="w-full resize-none rounded-lg border-slate-300 "/>
             </div>
             
             {loading? <></>:<>
