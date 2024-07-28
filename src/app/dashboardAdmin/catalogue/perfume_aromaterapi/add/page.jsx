@@ -198,6 +198,7 @@ const modules = {
                   format={formats}
                   onChange={(e) => setDesIng(e)}
                   name="contentIng"
+                  value={desing}
                   placeholder={`Input Description English For Description ${1}`}
                   maxLength={1000}
                   className="h-[200px] w-full   pb-10"
