@@ -7,9 +7,9 @@ function ProdukBahanCard({ img, title, price,kategori, id }) {
   return (
     <>
       <a href={`/produk_bahan/product?id=${id}`}>
-        <div className="bg-white rounded-3xl shadow-xl md:hover:translate-y-[-10px] transition-transform duration-50 ease-in-out grid grid-cols-2 md:flex md:flex-col h-full">
+        <div className="bg-white rounded-3xl shadow-xl md:hover:translate-y-[-10px] transition-transform duration-50 ease-in-out flex flex-col h-full">
           <div
-            className="bg-blue-700 rounded-3xl md:grid grid-cols-1 h-28 md:h-36 bg-cover bg-no-repeat bg-center"
+            className="bg-blue-700 rounded-3xl md:grid grid-cols-1 h-36 md:h-36 bg-cover bg-no-repeat bg-center"
             style={{ backgroundImage: `url(${img})` }}
           ></div>
           <div className="p-3  h-24 flex flex-col justify-between">

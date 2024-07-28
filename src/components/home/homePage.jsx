@@ -54,7 +54,7 @@ function HomePage({
                         className="bg-blue-700 md:mb-5 md:rounded-t-3xl rounded-s-3xl md:grid grid-cols-1  bg-cover bg-no-repeat bg-center"
                         style={{ backgroundImage: `url(${data.img})` }}
                       >
-                        <Image alt="" src={data.img} width={100} height={100} className="w-full h-full md:rounded-t-3xl rounded-s-3xl" />
+                        <Image alt="" src={data.img} width={1000} height={1000} className="w-full h-full md:rounded-t-3xl rounded-s-3xl" />
 
                       </div>
 

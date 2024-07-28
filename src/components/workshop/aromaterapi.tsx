@@ -172,12 +172,12 @@ function Aromaterapi({
             className="bg-blue-700 md:mb-5 md:rounded-t-3xl rounded-s-3xl md:grid grid-cols-1  bg-cover bg-no-repeat bg-center"
             style={{ backgroundImage: `url(${event.img})` }}
           >
-            <Image alt="" src={event.img} width={100} height={100} className="w-full h-full md:rounded-t-3xl rounded-s-3xl" />
+            <Image alt="" src={event.img} width={1000} height={1000} className="w-full h-full md:rounded-t-3xl rounded-s-3xl" />
 
           </div>
 
           <div className="px-3 pb-3 flex flex-col justify-between md:mt-0 mt-2  ">
-            <p className="lg:text-base md:text-xs sm:text-sm text-[10px] h-12 font-semibold text-black  line-clamp-2 ">
+            <p className="lg:text-base md:text-xs sm:text-sm text-[10px] min-h-[30px] font-semibold text-black  line-clamp-2 ">
 
               {event.titleEnglish}
 
