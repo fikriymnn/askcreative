@@ -142,17 +142,17 @@ function LabtoolPage({ data }) {
                                 </div>
                               </div>
                               <div className="w-32  flex gap-3 m-3 my-auto">
-                                {/* <a
-                                  className="bg-yellow-400  rounded-md p-2"
-                                  href={`/dashboardAdmin/articles/edit?id=${data.id}`}
-                                >
-                                  <Image
-                                    width={35}
-                                    height={35}
-                                    src="/assets/images/edit-svgrepo-com.svg"
-                                    alt=""
-                                  />
-                                </a> */}
+                               <a
+                                className="bg-yellow-400 rounded-md p-2"
+                                href={`/dashboardAdmin/catalogue/labtool/edit?id=${data.id}`}
+                              >
+                                <Image
+                                  width={35}
+                                  height={35}
+                                  src="/assets/images/edit-svgrepo-com.svg"
+                                  alt=""
+                                />
+                              </a>
                                 <button
                                   onClick={async (e) => {
                                     const confirmed = window.confirm(
