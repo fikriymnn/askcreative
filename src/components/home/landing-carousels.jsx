@@ -6,7 +6,9 @@ function LandCarousel({heading,paragraph,img}) {
     <div className="bg-black z-0" >
         <div className='flex h-[120vh]  items-center justify-center bg-left bg-cover relative text-white'>
         <div className='w-full h-full absolute'>
-         <Image alt="" src={img} width={1080} height={1080} className="w-full h-full md:rounded-t-3xl rounded-s-3xl" />
+         <Image layout="fill" // Use this to make the image fill the parent container
+    objectFit="cover" // Maintain the aspect ratio and cover the entire container
+    objectPosition="center" alt="" src={img}  className="w-full h-full md:rounded-t-3xl rounded-s-3xl bg-center bg-cover" />
         </div>
           <div
             className="w-full h-full flex items-center bakg absolute p-5 lg:px-[10%] py-[20vh] lg:py-[30vh]  "
