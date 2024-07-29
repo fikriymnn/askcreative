@@ -25,24 +25,24 @@ function AboutPage({
   const [sendPhone, setSendPhone] = useState("");
   const [message, setMessage] = useState("");
   const form = useRef();
-  const sendMail = async (e) => {
-    e.preventDefault();
-    emailjs
-      .sendForm(
-        "service_lu2s5ci",
-        "template_9nqk4cb",
-        form.current,
-        "-Ogru2wb76QTdI6Ci"
-      )
-      .then(
-        (result) => {
-          alert("message send");
-        },
-        (error) => {
-          alert("message error");
-        }
-      );
-  };
+  // const sendMail = async (e) => {
+  //   e.preventDefault();
+  //   emailjs
+  //     .sendForm(
+  //       "service_lu2s5ci",
+  //       "template_9nqk4cb",
+  //       form.current,
+  //       "-Ogru2wb76QTdI6Ci"
+  //     )
+  //     .then(
+  //       (result) => {
+  //         alert("message send");
+  //       },
+  //       (error) => {
+  //         alert("message error");
+  //       }
+  //     );
+  // };
   return (
     <>
       <Navbar />
@@ -119,7 +119,7 @@ function AboutPage({
             <input type="submit" value="Send" />
           </form> */}
             <div>
-              <form ref={form} onSubmit={(e) => sendMail(e)}>
+              <form ref={form} >
                 <div className="">
                   <h1 className=" text-md pb-3 md:pt-0 sm:pt-0 pt-10">
                     {language == "en" ? "Name" : "名称"}
