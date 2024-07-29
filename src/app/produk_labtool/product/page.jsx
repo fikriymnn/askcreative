@@ -93,8 +93,8 @@ function ProdukDetail() {
                               <p className="text-slate-600 mt-10 text-lg"><span className="font-semibold  ">Harga:</span> {data.price}</p>
 <div className="flex gap-5 pt-2">
 
-                              <button className="bg-orange-500 md:p-2 p-1 md:text-base text-sm rounded-md text-white"> Link to Shopee</button>
-                              <button className="bg-green-500 md:p-2 p-1 md:text-base text-sm rounded-md text-white"> Link to Tokopedia</button>
+                              <a href={data.shopee} className="bg-orange-500 md:p-2 p-1 md:text-base text-sm rounded-md text-white"> Link to Shopee</a>
+                              <a href={data.tokped} className="bg-green-500 md:p-2 p-1 md:text-base text-sm rounded-md text-white"> Link to Tokopedia</a>
 </div>
                               </div>
                               <p className="border-y-2 pt-10 w-full"><span className="font-semibold">Kategori:</span> {data.kategori}</p>
