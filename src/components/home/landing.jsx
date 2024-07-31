@@ -76,7 +76,7 @@ function Landing() {const responsive = {
         autoPlay={true}
         infinite={"true"}
         showDots="true"
-        autoPlaySpeed={1700}
+        autoPlaySpeed={10000}
         arrows={hide == true ? true : false}
       >
          {dataHeading.map((data,i) => {
