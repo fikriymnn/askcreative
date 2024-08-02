@@ -231,7 +231,7 @@ const CustomFooter = () => {
         </div>
         <div className="md:w-4/12 ">
           <p className=" uppercase font-bold text-white">
-           Kontak Kami
+            Kontak Kami
           </p>
           <a href={`https://www.google.com/maps/search/${address}`}>
             <p className=" text-white pt-3 pb-2 hover:translate-x-1 duration-100 hover:text-blue-200 ">
@@ -264,42 +264,42 @@ const CustomFooter = () => {
             Sosial Media Kami
           </p>
           <div className=" flex gap-4">
-          
-            
-              {/* <a href={`https://wa.me/${fb}`}>
+
+
+            {/* <a href={`https://wa.me/${fb}`}>
                 <img
                   src="/assets/images/wa.svg"
                   alt=""
                   className=" w-6 h-6 hover:scale-110"
                 />
               </a> */}
-              {/* <a href={linkedin}>
+            {/* <a href={linkedin}>
                 <img
                   src="/assets/images/linkedin.png"
                   alt=""
                   className=" w-6 h-6 hover:scale-110 my-5"
                 />
               </a> */}
-              <a href={`https://www.instagram.com/${ig}`}>
-                <img
-                  src="/assets/images/instagram (2).png"
-                  alt=""
-                  className=" w-6 h-6 hover:scale-110 mb-5"
-                />
-              </a>
-              
-            
+            <a href={`https://www.instagram.com/${ig}`}>
+              <img
+                src="/assets/images/instagram (2).png"
+                alt=""
+                className=" w-6 h-6 hover:scale-110 mb-5"
+              />
+            </a>
+
+
           </div>
         </div>
       </div>
       <hr className=" w-full bg-white " />
       <div className=" md:flex lg:justify-between md:p-5 pt-5  text-center ">
         <span className=" text-white ">
-          Copyright &copy; 2024 ASK Creative
+          Copyright &copy; 2024 ASKreatif.
         </span>
         <br />
         <span className=" text-white lg:visible invisible">
-          Powered by Fikri Zaki Aditama
+          Powered by Fikri Zaki Aditama.
         </span>
       </div>
     </div>
