@@ -47,7 +47,7 @@ function AddPerfCat() {
     const files = filess;
     try {
       setLoading(true);
-      const storageRef = ref(storage, `/shop/${files.name}`);
+      const storageRef = ref(storage, `/shop/ptf/${files.name}`);
 
       // progress can be paused and resumed. It also exposes progress updates.
       // Receives the storage reference and the file to upload.
