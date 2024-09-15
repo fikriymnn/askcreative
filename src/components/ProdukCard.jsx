@@ -21,7 +21,7 @@ function ProdukCard({ img, title, price,kategori, id }) {
             <h1 className="font-normal text-sm text-green-900 line-clamp-2 ">
               {kategori}
             </h1>
-            <h2 className="mt-auto">{price}</h2>
+            <h2 className="mt-auto">Rp {price.replace(/\B(?=(\d{3})+(?!\d))/g, ".")}</h2>
           </div>
         </div>
       </a>

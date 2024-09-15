@@ -1,4 +1,4 @@
-'use client'
+'use client';
 import Link from "next/link";
 import React, { useState, useEffect } from "react";
 
@@ -30,6 +30,38 @@ function Navbar() {
     };
   }, [prevScrollLocation]);
 
+  useEffect(() => {
+    // Load Google Translate script dynamically
+    const script = document.createElement('script');
+    script.src = 'https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit';
+    script.async = true;
+    document.body.appendChild(script);
+
+    script.onload = () => {
+      // Initialize Google Translate
+      window.googleTranslateElementInit = () => {
+        new window.google.translate.TranslateElement({ pageLanguage: 'id' }, 'google_translate_element');
+      };
+    };
+
+    return () => {
+      document.body.removeChild(script);
+    };
+  }, []);
+
+  const handleTranslate = (lang) => {
+    if (window.google && window.google.translate) {
+      const translateElement = window.google.translate.TranslateElement.getInstance();
+      if (translateElement) {
+        const iframe = document.querySelector('iframe.goog-te-banner-frame'); // Use this selector to find the iframe
+        if (iframe) {
+          const iframeWindow = iframe.contentWindow;
+          iframeWindow.postMessage({ event: 'setLanguage', language: lang }, '*');
+        }
+      }
+    }
+  };
+
   return (
     <div className={`relative z-50`}>
       <div className={`w-screen flex flex-col fixed ${scrollDirection === 'down' ? '-translate-y-[88px]' : ''} duration-300`}>
@@ -45,8 +77,7 @@ function Navbar() {
             <img className="h-12 rounded-md" src="/assets/images/asklogo2.png" alt="Logo" />
             <div className="flex items-center md:hidden">
               <div className="flex gap-2 ml-4">
-              
-                <button className="border border-slate-300">
+                <button onClick={() => handleTranslate('id')} className="border border-slate-300">
                   <img
                     src="https://flagcdn.com/h20/id.png"
                     srcSet="https://flagcdn.com/h40/id.png 2x,
@@ -54,7 +85,7 @@ function Navbar() {
                     height="20"
                     alt="ID" />
                 </button>
-                <button className="border border-slate-300">
+                <button onClick={() => handleTranslate('en')} className="border border-slate-300">
                   <img
                     src="https://flagcdn.com/h20/gb.png"
                     srcSet="https://flagcdn.com/h40/gb.png 2x,
@@ -63,11 +94,10 @@ function Navbar() {
                     alt="EN" />
                 </button>
                 <button className="p-2" onClick={() => setMobileMenu(!mobileMenu)}>
-                <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16m-7 6h7"></path>
-                </svg>
-              </button>
-                
+                  <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+                  </svg>
+                </button>
               </div>
             </div>
             <div className="hidden md:flex w-4/6 md:mx-16 justify-between items-center text-[#123227] text-xl font-bold">
@@ -93,7 +123,7 @@ function Navbar() {
               <a className="hover:bg-[#184737] p-2 rounded-md px-3 hover:text-white" href="/galeri">Galeri</a>
               <a className="hover:bg-[#184737] p-2 rounded-md px-3 hover:text-white" href="/about">Tentang</a>
               <div className="flex gap-2">
-                <button className="border border-slate-300">
+                <button onClick={() => handleTranslate('id')} className="border border-slate-300">
                   <img
                     src="https://flagcdn.com/h20/id.png"
                     srcSet="https://flagcdn.com/h40/id.png 2x,
@@ -101,7 +131,7 @@ function Navbar() {
                     height="20"
                     alt="ID" />
                 </button>
-                <button className="border border-slate-300">
+                <button onClick={() => handleTranslate('en')} className="border border-slate-300">
                   <img
                     src="https://flagcdn.com/h20/gb.png"
                     srcSet="https://flagcdn.com/h40/gb.png 2x,
@@ -147,7 +177,7 @@ function Navbar() {
         </div>
       </div>
     </div>
-  )
+  );
 }
 
 export default Navbar;
