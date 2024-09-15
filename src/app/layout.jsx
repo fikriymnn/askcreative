@@ -1,7 +1,7 @@
 import "./globals.css";
 
 import CustomFooter from "@/components/CustomFooter";
-
+import GoogleTranslate from "@/components/GoogleTranslate"
 import { Open_Sans } from "next/font/google";
 import { LanguageProvider } from "@/context/LanguageContext";
 
@@ -16,6 +16,7 @@ export default function RootLayout({ children }) {
   return (
     <LanguageProvider>
       <html lang="en">
+       
         <body>{children}</body>
       </html>
     </LanguageProvider>
