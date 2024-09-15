@@ -81,7 +81,7 @@ const modules = {
     const files = filess;
     try {
       setLoading(true);
-      const storageRef = ref(storage, `/shop/${files.name}`);
+      const storageRef = ref(storage, `/shop/lab${files.name}`);
 
       // progress can be paused and resumed. It also exposes progress updates.
       // Receives the storage reference and the file to upload.

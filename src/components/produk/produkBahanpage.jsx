@@ -96,16 +96,16 @@ function ProdukBahanPage({ dataProduk }) {
               All
             </button>
             <button
-              onClick={() => handleCategoryChange("parfum")}
-              className={`px-4 py-2 rounded-md ${selectedCategory === "parfum" ? "bg-green-500 text-white" : "bg-gray-200"}`}
+              onClick={() => handleCategoryChange("Essential Oil")}
+              className={`px-4 py-2 rounded-md ${selectedCategory === "Essential Oil" ? "bg-green-500 text-white" : "bg-gray-200"}`}
             >
-             Parfum
+             Essential Oil
             </button>
             <button
-              onClick={() => handleCategoryChange("aromaterapi")}
-              className={`px-4 py-2 rounded-md ${selectedCategory === "aromaterapi" ? "bg-green-500 text-white" : "bg-gray-200"}`}
+              onClick={() => handleCategoryChange("Non Essential Oil")}
+              className={`px-4 py-2 rounded-md ${selectedCategory === "Non Essential Oil" ? "bg-green-500 text-white" : "bg-gray-200"}`}
             >
-              Aromaterapi
+              Non Essential Oil
             </button>
           </div>
           <div className="grid grid-cols-2 md:grid-cols-5 gap-5 px-5 pb-5">
