@@ -102,13 +102,7 @@ function ProdukDetail() {
 </div>
                               </div>
                               <p className="border-y-2 pt-10 w-full"><span className="font-semibold">Kategori:</span> {data.kategori}</p>
-</div>
-                         
-                        </div>
-                        
-                      </div>
-                  
-                          <div className="w-full  text-black flex flex-col gap-1 px-5  h-full pb-10">
+                              <div className="w-full  text-black flex flex-col gap-1 pt-2  h-full pb-10">
                             <h1 className="text-lg font-semibold">Deskripsi</h1>
                             <hr />
                           <p>
@@ -120,6 +114,13 @@ function ProdukDetail() {
                           </p>
 
 </div>
+</div>
+                         
+                        </div>
+                        
+                      </div>
+                  
+                          
                         </div>
                     </div>
                   </div>
