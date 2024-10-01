@@ -295,7 +295,7 @@ const CustomFooter = () => {
       <hr className=" w-full bg-white " />
       <div className=" md:flex lg:justify-between md:p-5 pt-5  text-center ">
         <span className=" text-white ">
-          Copyright &copy; 2024 ASKreatif.
+          Copyright &copy; 2024 AskScentLab.
         </span>
         <br />
         <span className=" text-white lg:visible invisible">
