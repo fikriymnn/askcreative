@@ -105,9 +105,9 @@ function Navbar() {
               <a className="hover:bg-[#184737] p-2 rounded-md px-3 hover:text-white" href="/events">Kegiatan</a>
               <div className="relative ">
                 <button onClick={() => setDropdown(!dropdown)} className="hover:bg-[#184737] p-2 rounded-md px-3 hover:text-white cursor-pointer flex">Layanan <span><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-  <path d="M7 10l5 5 5-5H7z" fill="currentColor"/>
-</svg>
-</span></button>
+                  <path d="M7 10l5 5 5-5H7z" fill="currentColor" />
+                </svg>
+                </span></button>
                 {dropdown && (
                   <div className="absolute flex flex-col md:translate-y-5   bg-white rounded-md text-[#184737] py-2  md:w-96">
                     <Link href={'/workshop_aromaterapi'} className="hover:bg-[#184737] hover:text-white px-2 text-base font-normal">Workshop Aromaterapi</Link>
@@ -122,6 +122,7 @@ function Navbar() {
               <a className="hover:bg-[#184737] p-2 rounded-md px-3 hover:text-white" href="/articles">Artikel</a>
               <a className="hover:bg-[#184737] p-2 rounded-md px-3 hover:text-white" href="/galeri">Galeri</a>
               <a className="hover:bg-[#184737] p-2 rounded-md px-3 hover:text-white" href="/about">Tentang</a>
+              <a className="hover:bg-[#184737] p-2 rounded-md px-3 hover:text-white" href="https://pos.askreatif.com/">POS</a>
               <div className="flex gap-2">
                 <button onClick={() => handleTranslate('id')} className="border border-slate-300">
                   <img
@@ -148,9 +149,9 @@ function Navbar() {
               <a className="hover:bg-[#184737] p-2 rounded-md px-3 hover:text-white" href="/events">Kegiatan</a>
               <div className="relative">
                 <button onClick={() => setDropdown(!dropdown)} className="hover:bg-[#184737] p-2 rounded-md px-3 hover:text-white cursor-pointer flex" >Layanan <span><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-  <path d="M7 10l5 5 5-5H7z" fill="currentColor"/>
-</svg>
-</span></button>
+                  <path d="M7 10l5 5 5-5H7z" fill="currentColor" />
+                </svg>
+                </span></button>
                 {dropdown && (
                   <div className="flex flex-col translate-y-0 bg-white rounded-md text-[#184737] py-2">
                     <Link href={'/workshop_aromaterapi'} className="hover:bg-[#184737] hover:text-white px-2 text-base font-normal">Workshop Aromaterapi</Link>
@@ -165,6 +166,7 @@ function Navbar() {
               <a className="hover:bg-[#184737] p-2 rounded-md px-3 hover:text-white" href="/articles">Artikel</a>
               <a className="hover:bg-[#184737] p-2 rounded-md px-3 hover:text-white" href="/galeri">Galeri</a>
               <a className="hover:bg-[#184737] p-2 rounded-md px-3 hover:text-white" href="/about">Tentang</a>
+              <a className="hover:bg-[#184737] p-2 rounded-md px-3 hover:text-white" href="https://pos.askreatif.com/">POS</a>
             </div>
           )}
         </div>
