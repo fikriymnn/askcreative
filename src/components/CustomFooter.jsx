@@ -5,6 +5,7 @@ import { getDoc, doc } from "firebase/firestore";
 import { db, storage, firebaseAnalytics } from "../../firebase/page";
 import { useState, useEffect } from "react";
 import { useLanguage } from "@/context/LanguageContext";
+import Link from "next/link";
 
 const CustomFooter = () => {
   const { language, changeLanguage } = useLanguage();
@@ -280,13 +281,13 @@ const CustomFooter = () => {
                   className=" w-6 h-6 hover:scale-110 my-5"
                 />
               </a> */}
-            <a href={`https://www.instagram.com/${ig}`}>
+            <Link href={`https://www.instagram.com/${ig}`}>
               <img
                 src="/assets/images/instagram (2).png"
                 alt=""
                 className=" w-6 h-6 hover:scale-110 mb-5"
               />
-            </a>
+            </Link>
 
 
           </div>
